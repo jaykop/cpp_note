@@ -1,0 +1,9 @@
+1. use const, enum, and inline rather than #define
+	- use const when needs to debug(tracking address)
+	- use enum when dont want let them be tracked (no address/memory assignment to enum value)
+	- use inline function rather than #define macro
+
+2.  To avoid the code duplication, set non-const member function call const member function
+
+3. 
+
