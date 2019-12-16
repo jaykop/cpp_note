@@ -48,11 +48,3 @@ public:
 	}
 
 };
-
-int main() {
-
-	Solution a;
-	a.lengthOfLongestSubstring(std::string("aab"));
-
-	return 0;
-}
