@@ -142,6 +142,7 @@
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="longestPalindrome.h" />
+    <ClInclude Include="reverseInt.h" />
     <ClInclude Include="twoSum.h" />
   </ItemGroup>
   <ItemGroup>

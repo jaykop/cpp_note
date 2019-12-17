@@ -1,9 +1,9 @@
-#include "ZigZagConversion.h"
+#include "reverseInt.h"
 
 int main() {
 
 	Solution a;
-	auto result = a.convert("ABC", 2);
+	auto result = a.reverse(-2147483412);
 
 	return 0;
 }
