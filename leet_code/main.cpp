@@ -1,9 +1,9 @@
-#include "reverseInt.h"
+#include "numJewelsInStones.h"
 
 int main() {
 
 	Solution a;
-	auto result = a.reverse(-2147483412);
+	auto result = a.numJewelsInStones(string("aA"), string("aAAbbbbb"));
 
 	return 0;
 }

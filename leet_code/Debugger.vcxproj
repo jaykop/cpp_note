@@ -143,6 +143,7 @@
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="longestPalindrome.h" />
+    <ClInclude Include="numJewelsInStones.h" />
     <ClInclude Include="reverseInt.h" />
     <ClInclude Include="twoSum.h" />
   </ItemGroup>

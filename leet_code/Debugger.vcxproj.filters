@@ -7,6 +7,8 @@
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="reverseInt.h" />
+    <ClInclude Include="defangIPaddr.h" />
+    <ClInclude Include="numJewelsInStones.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
