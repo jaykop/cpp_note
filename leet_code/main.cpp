@@ -1,9 +1,9 @@
-#include "longestPalindrome.h"
+#include "defangIPaddr.h"
 
 int main() {
 
 	Solution a;
-	auto result = a.longestPalindrome(std::string("bb"));
+	auto result = a.defangIPaddr("1.1.1.1");
 
 	return 0;
 }

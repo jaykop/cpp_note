@@ -6,6 +6,7 @@
     <ClInclude Include="addTwoNumbers.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
+    <ClInclude Include="defangIPaddr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

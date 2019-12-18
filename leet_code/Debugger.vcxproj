@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="addTwoNumbers.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
+    <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="longestPalindrome.h" />
     <ClInclude Include="twoSum.h" />
