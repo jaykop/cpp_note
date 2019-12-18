@@ -1,9 +1,9 @@
-#include "defangIPaddr.h"
+#include "reverseInt.h"
 
 int main() {
 
 	Solution a;
-	auto result = a.defangIPaddr("1.1.1.1");
+	auto result = a.reverse(-2147483412);
 
 	return 0;
 }
