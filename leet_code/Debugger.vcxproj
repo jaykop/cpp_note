@@ -141,6 +141,7 @@
     <ClInclude Include="addTwoNumbers.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
+    <ClInclude Include="maxIncreaseKeepingSkyline.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="longestPalindrome.h" />
     <ClInclude Include="numJewelsInStones.h" />

@@ -9,6 +9,7 @@
     <ClInclude Include="reverseInt.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="numJewelsInStones.h" />
+    <ClInclude Include="maxIncreaseKeepingSkyline.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
