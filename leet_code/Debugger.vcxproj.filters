@@ -10,6 +10,7 @@
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="numJewelsInStones.h" />
     <ClInclude Include="maxIncreaseKeepingSkyline.h" />
+    <ClInclude Include="balancedStringSplit.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

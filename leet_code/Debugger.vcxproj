@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="addTwoNumbers.h" />
+    <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="maxIncreaseKeepingSkyline.h" />
