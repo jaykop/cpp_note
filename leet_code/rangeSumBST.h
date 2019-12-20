@@ -10,22 +10,17 @@
  */
 class Solution {
 public:
-    int dfs(TreeNode* root, int L, int R) {
-
-        int sum = 0;
-        int val = root->val;
-        if (L <= val && val <= R)
-            sum += val;
-        if (root->left)
-            sum += dfs(root->left, L, R);
-        if (root->right)
-            sum += dfs(root->right, L, R);
-
-        return sum;
-    }
 
     int rangeSumBST(TreeNode* root, int L, int R) {
+        
+        if (!root) return 0;
+        
+        int val = root->val;
+        int sum = val;
 
-        return dfs(root, L, R);
+        if (L <= val && val <= R)
+            sum += val + rangeSumBST(root->left, L, R) + rangeSumBST(root->right, L, R);
+
+        return sum;
     }
 };
