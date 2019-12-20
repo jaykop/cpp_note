@@ -142,6 +142,7 @@
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
+    <ClInclude Include="minTimeToVisitAllPoints.h" />
     <ClInclude Include="maxIncreaseKeepingSkyline.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="longestPalindrome.h" />

@@ -1,10 +1,10 @@
-#include "balancedStringSplit.h"
+#include "minTimeToVisitAllPoints.h"
 
 int main() {
 
 	Solution a;
-	string s = "RLRRRLLRLL";
-	auto result = a.balancedStringSplit(s);
+	vector<vector<int>> v = {{1, 1}, { 3, 4}, { -1, 0} };
+	auto result = a.minTimeToVisitAllPoints(v);
 
 	return 0;
 }

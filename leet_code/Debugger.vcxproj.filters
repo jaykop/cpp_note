@@ -11,6 +11,7 @@
     <ClInclude Include="numJewelsInStones.h" />
     <ClInclude Include="maxIncreaseKeepingSkyline.h" />
     <ClInclude Include="balancedStringSplit.h" />
+    <ClInclude Include="minTimeToVisitAllPoints.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
