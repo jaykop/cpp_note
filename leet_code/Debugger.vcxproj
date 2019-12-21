@@ -142,11 +142,15 @@
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
+    <ClInclude Include="bstToGst.h" />
+    <ClInclude Include="oddCells.h" />
+    <ClInclude Include="toLowerCase.h" />
     <ClInclude Include="minTimeToVisitAllPoints.h" />
     <ClInclude Include="maxIncreaseKeepingSkyline.h" />
     <ClInclude Include="lengthOfLongestSubstring.h" />
     <ClInclude Include="longestPalindrome.h" />
     <ClInclude Include="numJewelsInStones.h" />
+    <ClInclude Include="rangeSumBST.h" />
     <ClInclude Include="reverseInt.h" />
     <ClInclude Include="twoSum.h" />
   </ItemGroup>

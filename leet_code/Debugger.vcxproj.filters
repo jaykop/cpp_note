@@ -12,9 +12,24 @@
     <ClInclude Include="maxIncreaseKeepingSkyline.h" />
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="minTimeToVisitAllPoints.h" />
+    <ClInclude Include="rangeSumBST.h" />
+    <ClInclude Include="toLowerCase.h" />
+    <ClInclude Include="bstToGst.h" />
+    <ClInclude Include="oddCells.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ZigZagConversion.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Easy">
+      <UniqueIdentifier>{2aadfbea-8cba-4b06-a0f9-9778e4f6271d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Medium">
+      <UniqueIdentifier>{4d9c73b7-a214-4a88-95e1-6fc253a63fac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hard">
+      <UniqueIdentifier>{a158423a-f504-4a8c-b4ce-06c637062449}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

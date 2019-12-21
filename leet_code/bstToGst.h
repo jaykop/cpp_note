@@ -17,14 +17,11 @@ public:
 
         // starts from rightdown side
         TreeNode* right = bstToGst(root->right);
-        if (right);
-            sum += right->val;
-        
+
         root->val += sum;
-        
+        sum = root->val;
+
         TreeNode* left = bstToGst(root->left);
-        if (left)
-           sum += left->val;
 
         return root;
     }

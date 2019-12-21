@@ -1,10 +1,10 @@
-#include "minTimeToVisitAllPoints.h"
+#include "oddCells.h"
 
 int main() {
 
 	Solution a;
-	vector<vector<int>> v = {{1, 1}, { 3, 4}, { -1, 0} };
-	auto result = a.minTimeToVisitAllPoints(v);
+	vector<vector<int>> v = {{0, 1}, {1, 1} };
+	auto result = a.oddCells(2, 3, v);
 
 	return 0;
 }
