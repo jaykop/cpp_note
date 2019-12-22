@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{EDE919E3-F869-4001-BD9A-82631578452B}</ProjectGuid>
+    <ProjectGuid>{9B9E32D8-7F59-478C-AC6E-CF2F632D5E6A}</ProjectGuid>
     <RootNamespace>Debugger</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -138,28 +138,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="addTwoNumbers.h" />
-    <ClInclude Include="balancedStringSplit.h" />
-    <ClInclude Include="findMedianSortedArrays.h" />
-    <ClInclude Include="defangIPaddr.h" />
-    <ClInclude Include="bstToGst.h" />
-    <ClInclude Include="getDecimalValue.h" />
-    <ClInclude Include="groupThePeople.h" />
-    <ClInclude Include="oddCells.h" />
-    <ClInclude Include="subtractProductAndSum.h" />
-    <ClInclude Include="toLowerCase.h" />
-    <ClInclude Include="minTimeToVisitAllPoints.h" />
-    <ClInclude Include="maxIncreaseKeepingSkyline.h" />
-    <ClInclude Include="lengthOfLongestSubstring.h" />
-    <ClInclude Include="longestPalindrome.h" />
-    <ClInclude Include="numJewelsInStones.h" />
-    <ClInclude Include="rangeSumBST.h" />
-    <ClInclude Include="reverseInt.h" />
-    <ClInclude Include="twoSum.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="ZigZagConversion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

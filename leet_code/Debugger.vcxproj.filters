@@ -1,25 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="longestPalindrome.h" />
-    <ClInclude Include="twoSum.h" />
-    <ClInclude Include="addTwoNumbers.h" />
-    <ClInclude Include="findMedianSortedArrays.h" />
-    <ClInclude Include="lengthOfLongestSubstring.h" />
-    <ClInclude Include="reverseInt.h" />
-    <ClInclude Include="defangIPaddr.h" />
-    <ClInclude Include="numJewelsInStones.h" />
-    <ClInclude Include="maxIncreaseKeepingSkyline.h" />
-    <ClInclude Include="balancedStringSplit.h" />
-    <ClInclude Include="minTimeToVisitAllPoints.h" />
-    <ClInclude Include="rangeSumBST.h" />
-    <ClInclude Include="toLowerCase.h" />
-    <ClInclude Include="bstToGst.h" />
-    <ClInclude Include="oddCells.h" />
+    <ClInclude Include="toLowerCase.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="oddCells.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="defangIPaddr.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="groupThePeople.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="numJewelsInStones.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="subtractProductAndSum.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="getDecimalValue.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="maxIncreaseKeepingSkyline.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="balancedStringSplit.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="minTimeToVisitAllPoints.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="rangeSumBST.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="bstToGst.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="twoSum.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="longestPalindrome.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="addTwoNumbers.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="reverseInt.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="findMedianSortedArrays.h">
+      <Filter>Hard</Filter>
+    </ClInclude>
+    <ClInclude Include="lengthOfLongestSubstring.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ZigZagConversion.h" />
+    <ClCompile Include="ZigZagConversion.h">
+      <Filter>Medium</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Easy">
