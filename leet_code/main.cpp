@@ -1,9 +1,10 @@
-#include "removeOuterParentheses.h"
+#include "uniqueMorseRepresentations.h"
 
 int main() {
 
 	Solution a;
-	auto result = a.removeOuterParentheses("(()())(())");
+	vector<string> i = {"gin", "zen", "gig", "msg"};
+	auto result = a.uniqueMorseRepresentations(i);
 
 	return 0;
 }

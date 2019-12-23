@@ -67,11 +67,17 @@
     <ClInclude Include="removeOuterParentheses.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="uniqueMorseRepresentations.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ZigZagConversion.h">
       <Filter>Medium</Filter>
+    </ClCompile>
+    <ClCompile Include="uniqueMorseRepresentations.cpp">
+      <Filter>Easy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
