@@ -1,10 +1,9 @@
-#include "constructMaximumBinaryTree.h"
+#include "removeOuterParentheses.h"
 
 int main() {
 
 	Solution a;
-	vector<int> test = { 3,2,1,6,0,5 };
-	auto result = a.constructMaximumBinaryTree(test);
+	auto result = a.removeOuterParentheses("(()())(())");
 
 	return 0;
 }

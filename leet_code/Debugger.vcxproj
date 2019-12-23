@@ -144,10 +144,12 @@
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
+    <ClInclude Include="findNumbers.h" />
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="oddCells.h" />
+    <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="subtractProductAndSum.h" />
     <ClInclude Include="toLowerCase.h" />
     <ClInclude Include="minTimeToVisitAllPoints.h" />
