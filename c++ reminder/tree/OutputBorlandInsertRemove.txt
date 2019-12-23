@@ -1,0 +1,105 @@
+type: AVLTree<char>, height: 3, nodes: 14
+                      N   
+
+          G                    S   
+
+    D           I           P        U   
+
+ C     E     H     L     O        T     Y   
+
+type: AVLTree<char>, height: 3, nodes: 13
+                   L   
+
+          G                 S   
+
+    D           I        P        U   
+
+ C     E     H        O        T     Y   
+
+type: AVLTree<char>, height: 3, nodes: 12
+                I   
+
+          G              S   
+
+    D        H        P        U   
+
+ C     E           O        T     Y   
+
+type: AVLTree<char>, height: 3, nodes: 11
+             H   
+
+    D                 S   
+
+ C        G        P        U   
+
+       E        O        T     Y   
+
+type: AVLTree<char>, height: 3, nodes: 10
+          G   
+
+    D              S   
+
+ C     E        P        U   
+
+             O        T     Y   
+
+type: AVLTree<char>, height: 3, nodes: 9
+       E   
+
+    D           S   
+
+ C           P        U   
+
+          O        T     Y   
+
+type: AVLTree<char>, height: 3, nodes: 8
+             S   
+
+    D              U   
+
+ C        P     T     Y   
+
+       O   
+
+type: AVLTree<char>, height: 2, nodes: 7
+          P   
+
+    D           U   
+
+ C     O     T     Y   
+
+type: AVLTree<char>, height: 2, nodes: 6
+       O   
+
+    D        U   
+
+ C        T     Y   
+
+type: AVLTree<char>, height: 2, nodes: 5
+    D   
+
+ C        U   
+
+       T     Y   
+
+type: AVLTree<char>, height: 2, nodes: 4
+       U   
+
+ C        Y   
+
+    T   
+
+type: AVLTree<char>, height: 1, nodes: 3
+   T   
+
+C     Y   
+
+type: AVLTree<char>, height: 1, nodes: 2
+C   
+
+   Y   
+
+type: AVLTree<char>, height: 0, nodes: 1
+Y   
+
+type: AVLTree<char>, height: -1, nodes: 0

@@ -1,0 +1,176 @@
+------------------------------
+height: 7
+ nodes: 11
+
+   2   
+
+      4   
+
+         6   
+
+                     10  
+
+               8                 22  
+
+            7     9     12  
+
+                           19  
+
+                              20  
+
+-------------------------------
+------------------------------
+height: 3
+ nodes: 11
+
+             8   
+
+    4                 12  
+
+ 2     6           10       20  
+
+          7     9        19    22  
+
+--------------------------------
+------------------------------
+height: 14
+ nodes: 15
+
+       d   
+
+          e   
+
+             f   
+
+                g   
+
+                   h   
+
+                      i   
+
+                         j   
+
+                            k   
+
+                               l   
+
+                                  m   
+
+                                     n   
+
+                                        o   
+
+                                           p   
+
+                                              q   
+
+                                                 r   
+
+-------------------------------
+--------------------------------
+------------------------------
+height: 3
+ nodes: 15
+
+                      k   
+
+          g                       o   
+
+    e           i           m           q   
+
+ d     f     h     j     l     n     p     r   
+
+-------------------------------
+--------------------------------
+type: 6BSTreeIcE, height: 7, nodes: 10
+   C   
+
+      E   
+
+         G   
+
+                  K   
+
+            I                 W   
+
+               J     M   
+
+                        T   
+
+                           U   
+
+T was found after 7 compares.
+V was not found after 9 compares.
+type: 6BSTreeIcE, height: 7, nodes: 9
+   C   
+
+      E   
+
+         G   
+
+               J   
+
+            I              W   
+
+                  M   
+
+                     T   
+
+                        U   
+
+type: 6BSTreeIcE, height: 5, nodes: 6
+  E   
+
+     G   
+
+        J   
+
+                 W   
+
+           T   
+
+              U   
+
+Tree is not empty.
+Tree is empty.
+K was not found after 1 compares.
+K was not found after 2 compares.
+type: 6BSTreeIcE, height: 0, nodes: 1
+type: 6BSTreeIcE, height: 0, nodes: 1
+Exception caught: insert_item: Duplicate value
+--------------------------------
+type: 7AVLTreeIcE, height: 3, nodes: 10
+          I   
+
+    E              M   
+
+ C     G        K        U   
+
+             J        T     W   
+
+T was found after 4 compares.
+V was not found after 5 compares.
+type: 7AVLTreeIcE, height: 3, nodes: 9
+          I   
+
+    E           M   
+
+ C     G     J        U   
+
+                   T     W   
+
+type: 7AVLTreeIcE, height: 2, nodes: 6
+       J   
+
+    G        U   
+
+ E        T     W   
+
+Tree is not empty.
+Tree is empty.
+K was not found after 1 compares.
+K was not found after 2 compares.
+type: 7AVLTreeIcE, height: 0, nodes: 1
+type: 7AVLTreeIcE, height: 0, nodes: 1
+Exception caught: insert_item2: Duplicate value
+--------------------------------

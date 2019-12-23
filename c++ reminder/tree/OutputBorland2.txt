@@ -1,0 +1,232 @@
+
+====================== Test1 - random insert ======================
+BSTree<int>
+height: 5
+ nodes: 10
+tree is NOT empty
+
+     1   
+
+  0     2   
+
+                    6   
+
+           3                 9   
+
+              4           8   
+
+                 5     7   
+
+
+====================== Test2 - sorted insert ======================
+BSTree<int>
+height: 9
+ nodes: 10
+tree is NOT empty
+
+    0   
+
+       1   
+
+          2   
+
+             3   
+
+                4   
+
+                   5   
+
+                      6   
+
+                         7   
+
+                            8   
+
+                               9   
+
+
+====================== Test3 - random insert/remove ======================
+BSTree<int>
+     1   
+
+  0     2   
+
+                    6   
+
+           3                 9   
+
+              4           8   
+
+                 5     7   
+
+remove 2, 6, 3:
+height: 4
+ nodes: 7
+tree is NOT empty
+
+     1   
+
+  0        5   
+
+        4           9   
+
+                 8   
+
+              7   
+
+
+====================== Test4 - random insert/remove all ======================
+BSTree<int>
+remove all and then some:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test5 - random insert/clear ======================
+BSTree<int>
+clear:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test6 - random insert/find ======================
+BSTree<int>
+     1   
+
+  0     2   
+
+                    6   
+
+           3                 9   
+
+              4           8   
+
+                 5     7   
+
+Value 1 found with 1 compares
+Value 3 found with 4 compares
+Value 5 found with 6 compares
+Value 50 NOT found with 5 compares
+
+====================== Test1 - random insert ======================
+AVLTree<int>
+height: 3
+ nodes: 10
+tree is NOT empty
+
+       2   
+
+    1              6   
+
+ 0           4           8   
+
+          3     5     7     9   
+
+
+====================== Test2 - sorted insert ======================
+AVLTree<int>
+height: 3
+ nodes: 10
+tree is NOT empty
+
+          3   
+
+    1                 7   
+
+ 0     2        5        8   
+
+             4     6        9   
+
+
+====================== Test3 - random insert/remove ======================
+AVLTree<int>
+       2   
+
+    1              6   
+
+ 0           4           8   
+
+          3     5     7     9   
+
+remove 2, 6, 3:
+height: 2
+ nodes: 7
+tree is NOT empty
+
+          5   
+
+    1           8   
+
+ 0     4     7     9   
+
+
+====================== Test4 - random insert/remove all ======================
+AVLTree<int>
+remove all and then some:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test5 - random insert/clear ======================
+AVLTree<int>
+clear:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test6 - random insert/find ======================
+AVLTree<int>
+       2   
+
+    1              6   
+
+ 0           4           8   
+
+          3     5     7     9   
+
+Value 1 found with 2 compares
+Value 3 found with 4 compares
+Value 5 found with 4 compares
+Value 50 NOT found with 5 compares
+
+====================== TestStrings ======================
+type: BSTree<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >, height: 6, nodes: 21
+         abe 
+
+      abd                              for 
+
+   abc                        fad               one 
+
+            box                  fat      hit               two 
+
+                     car            fav      man   six         zoo 
+
+                  cab      dog                           sox 
+
+               boy      dig                           sow 
+
+Value dig found with 7 compares
+Value abe found with 1 compares
+Value hot NOT found with 6 compares
+Value abcd NOT found with 4 compares
+
+====================== TestStrings ======================
+type: AVLTree<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >, height: 4, nodes: 21
+                             fad 
+
+                    car                        one 
+
+           box            dog      fav                     two 
+
+     abd         cab   dig      fat      hit         sow      zoo 
+
+  abc   abe   boy                     for   man   six   sox 
+
+Value dig found with 4 compares
+Value abe found with 5 compares
+Value hot NOT found with 6 compares
+Value abcd NOT found with 6 compares

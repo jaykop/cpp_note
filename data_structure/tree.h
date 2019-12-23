@@ -11,10 +11,16 @@ struct TreeNode {
 
 class Tree {
 
-	TreeNode* make_node(int val) {
+public: 
+
+	static TreeNode* make_node(int val) {
 		return new TreeNode(val);
 	}
 
 	void insert(TreeNode* n);
-	void 
+	void remove(TreeNode* n);
+	TreeNode* find(int val);
+	void rotate();
+
+	TreeNode* root_;
 };

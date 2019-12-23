@@ -1,0 +1,228 @@
+
+====================== Test1 - random insert ======================
+6BSTreeIiE
+height: 4
+ nodes: 10
+tree is NOT empty
+
+              4   
+
+  0                 6   
+
+           3     5           9   
+
+        2                 8   
+
+     1                 7   
+
+
+====================== Test2 - sorted insert ======================
+6BSTreeIiE
+height: 9
+ nodes: 10
+tree is NOT empty
+
+    0   
+
+       1   
+
+          2   
+
+             3   
+
+                4   
+
+                   5   
+
+                      6   
+
+                         7   
+
+                            8   
+
+                               9   
+
+
+====================== Test3 - random insert/remove ======================
+6BSTreeIiE
+              4   
+
+  0                 6   
+
+           3     5           9   
+
+        2                 8   
+
+     1                 7   
+
+remove 2, 6, 3:
+height: 4
+ nodes: 7
+tree is NOT empty
+
+        4   
+
+  0        5   
+
+     1              9   
+
+                 8   
+
+              7   
+
+
+====================== Test4 - random insert/remove all ======================
+6BSTreeIiE
+remove all and then some:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test5 - random insert/clear ======================
+6BSTreeIiE
+clear:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test6 - random insert/find ======================
+6BSTreeIiE
+              4   
+
+  0                 6   
+
+           3     5           9   
+
+        2                 8   
+
+     1                 7   
+
+Value 1 found with 5 compares
+Value 3 found with 3 compares
+Value 5 found with 3 compares
+Value 50 NOT found with 4 compares
+
+====================== Test1 - random insert ======================
+7AVLTreeIiE
+height: 3
+ nodes: 10
+tree is NOT empty
+
+             4   
+
+       2                 8   
+
+ 0        3        6        9   
+
+    1           5     7   
+
+
+====================== Test2 - sorted insert ======================
+7AVLTreeIiE
+height: 3
+ nodes: 10
+tree is NOT empty
+
+          3   
+
+    1                 7   
+
+ 0     2        5        8   
+
+             4     6        9   
+
+
+====================== Test3 - random insert/remove ======================
+7AVLTreeIiE
+             4   
+
+       2                 8   
+
+ 0        3        6        9   
+
+    1           5     7   
+
+remove 2, 6, 3:
+height: 3
+ nodes: 7
+tree is NOT empty
+
+       4   
+
+    1           8   
+
+ 0        5        9   
+
+             7   
+
+
+====================== Test4 - random insert/remove all ======================
+7AVLTreeIiE
+remove all and then some:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test5 - random insert/clear ======================
+7AVLTreeIiE
+clear:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test6 - random insert/find ======================
+7AVLTreeIiE
+             4   
+
+       2                 8   
+
+ 0        3        6        9   
+
+    1           5     7   
+
+Value 1 found with 4 compares
+Value 3 found with 3 compares
+Value 5 found with 4 compares
+Value 50 NOT found with 4 compares
+
+====================== TestStrings ======================
+type: 6BSTreeISsE, height: 6, nodes: 21
+         abe 
+
+      abd                              for 
+
+   abc                        fad               one 
+
+            box                  fat      hit               two 
+
+                     car            fav      man   six         zoo 
+
+                  cab      dog                           sox 
+
+               boy      dig                           sow 
+
+Value dig found with 7 compares
+Value abe found with 1 compares
+Value hot NOT found with 6 compares
+Value abcd NOT found with 4 compares
+
+====================== TestStrings ======================
+type: 7AVLTreeISsE, height: 4, nodes: 21
+                             fad 
+
+                    car                        one 
+
+           box            dog      fav                     two 
+
+     abd         cab   dig      fat      hit         sow      zoo 
+
+  abc   abe   boy                     for   man   six   sox 
+
+Value dig found with 4 compares
+Value abe found with 5 compares
+Value hot NOT found with 6 compares
+Value abcd NOT found with 6 compares

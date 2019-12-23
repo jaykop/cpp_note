@@ -1,0 +1,10 @@
+type: 7AVLTreeIiE, height: 15, nodes: 10000
+type: 7AVLTreeIiE, height: 3, nodes: 10
+                5569
+
+    3489              8926
+
+ 1409     5181     8551  9448
+
+       4274  5374           9862
+

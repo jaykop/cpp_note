@@ -1,0 +1,10 @@
+type: AVLTree<int>, height: 15, nodes: 10000
+type: AVLTree<int>, height: 3, nodes: 10
+                5188
+
+    1351              7768
+
+ 379      4018     7694  9454
+
+       3027  4740           9542
+

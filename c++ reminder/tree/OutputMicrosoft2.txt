@@ -1,0 +1,224 @@
+
+====================== Test1 - random insert ======================
+class BSTree<int>
+height: 4
+ nodes: 10
+tree is NOT empty
+
+           3   
+
+  0                    7   
+
+     1              6        9   
+
+        2     4           8   
+
+                 5   
+
+
+====================== Test2 - sorted insert ======================
+class BSTree<int>
+height: 9
+ nodes: 10
+tree is NOT empty
+
+    0   
+
+       1   
+
+          2   
+
+             3   
+
+                4   
+
+                   5   
+
+                      6   
+
+                         7   
+
+                            8   
+
+                               9   
+
+
+====================== Test3 - random insert/remove ======================
+class BSTree<int>
+           3   
+
+  0                    7   
+
+     1              6        9   
+
+        2     4           8   
+
+                 5   
+
+remove 2, 6, 3:
+height: 3
+ nodes: 7
+tree is NOT empty
+
+    1   
+
+ 0           7   
+
+       4           9   
+
+          5     8   
+
+
+====================== Test4 - random insert/remove all ======================
+class BSTree<int>
+remove all and then some:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test5 - random insert/clear ======================
+class BSTree<int>
+clear:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test6 - random insert/find ======================
+class BSTree<int>
+           3   
+
+  0                    7   
+
+     1              6        9   
+
+        2     4           8   
+
+                 5   
+
+Value 1 found with 3 compares
+Value 3 found with 1 compares
+Value 5 found with 5 compares
+Value 50 NOT found with 4 compares
+
+====================== Test1 - random insert ======================
+class AVLTree<int>
+height: 3
+ nodes: 10
+tree is NOT empty
+
+          3   
+
+    1              6   
+
+ 0     2     4           8   
+
+                5     7     9   
+
+
+====================== Test2 - sorted insert ======================
+class AVLTree<int>
+height: 3
+ nodes: 10
+tree is NOT empty
+
+          3   
+
+    1                 7   
+
+ 0     2        5        8   
+
+             4     6        9   
+
+
+====================== Test3 - random insert/remove ======================
+class AVLTree<int>
+          3   
+
+    1              6   
+
+ 0     2     4           8   
+
+                5     7     9   
+
+remove 2, 6, 3:
+height: 2
+ nodes: 7
+tree is NOT empty
+
+          5   
+
+    1           8   
+
+ 0     4     7     9   
+
+
+====================== Test4 - random insert/remove all ======================
+class AVLTree<int>
+remove all and then some:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test5 - random insert/clear ======================
+class AVLTree<int>
+clear:
+height: -1
+ nodes: 0
+tree is empty
+
+
+====================== Test6 - random insert/find ======================
+class AVLTree<int>
+          3   
+
+    1              6   
+
+ 0     2     4           8   
+
+                5     7     9   
+
+Value 1 found with 2 compares
+Value 3 found with 1 compares
+Value 5 found with 4 compares
+Value 50 NOT found with 5 compares
+
+====================== TestStrings ======================
+type: class BSTree<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >, height: 6, nodes: 21
+         abe 
+
+      abd                              for 
+
+   abc                        fad               one 
+
+            box                  fat      hit               two 
+
+                     car            fav      man   six         zoo 
+
+                  cab      dog                           sox 
+
+               boy      dig                           sow 
+
+Value dig found with 7 compares
+Value abe found with 1 compares
+Value hot NOT found with 6 compares
+Value abcd NOT found with 4 compares
+
+====================== TestStrings ======================
+type: class AVLTree<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >, height: 4, nodes: 21
+                             fad 
+
+                    car                        one 
+
+           box            dog      fav                     two 
+
+     abd         cab   dig      fat      hit         sow      zoo 
+
+  abc   abe   boy                     for   man   six   sox 
+
+Value dig found with 4 compares
+Value abe found with 5 compares
+Value hot NOT found with 6 compares
+Value abcd NOT found with 6 compares

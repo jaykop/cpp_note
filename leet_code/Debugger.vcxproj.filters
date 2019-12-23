@@ -55,6 +55,12 @@
     <ClInclude Include="lengthOfLongestSubstring.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="constructMaximumBinaryTree.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="insertIntoBST.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
