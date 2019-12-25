@@ -76,6 +76,9 @@
     <ClInclude Include="sortArrayByParity.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="flipAndInvertImage.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

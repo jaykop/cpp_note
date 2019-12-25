@@ -146,6 +146,7 @@
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
     <ClInclude Include="findNumbers.h" />
+    <ClInclude Include="flipAndInvertImage.h" />
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="insertIntoBST.h" />
