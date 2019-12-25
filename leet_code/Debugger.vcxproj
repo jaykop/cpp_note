@@ -151,6 +151,7 @@
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="removeOuterParentheses.h" />
+    <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="subtractProductAndSum.h" />
     <ClInclude Include="toLowerCase.h" />
     <ClInclude Include="minTimeToVisitAllPoints.h" />

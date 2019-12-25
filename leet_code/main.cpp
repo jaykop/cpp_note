@@ -1,10 +1,10 @@
-#include "uniqueMorseRepresentations.h"
+#include "sortArrayByParity.h"
 
 int main() {
 
 	Solution a;
-	vector<string> i = {"gin", "zen", "gig", "msg"};
-	auto result = a.uniqueMorseRepresentations(i);
+	vector<int> i = { 0, 2 };
+	auto result = a.sortArrayByParity(i);
 
 	return 0;
 }

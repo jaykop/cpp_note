@@ -73,6 +73,9 @@
     <ClInclude Include="bstFromPreorder.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="sortArrayByParity.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
