@@ -1,10 +1,10 @@
-#include "flipAndInvertImage.h"
+#include "deckRevealedIncreasing.h"
 
 int main() {
 
 	Solution a;
-	vector<vector<int>> i = { {0,1,0},{0,0,1},{0,1,1} };
-	auto result = a.flipAndInvertImage(i);
+	vector<int> i = { 17,13,11,2,3,5,7 };
+	auto result = a.deckRevealedIncreasing(i);
 
 	return 0;
 }

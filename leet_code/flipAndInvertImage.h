@@ -35,7 +35,7 @@ public:
                 if (i <= j) {
                     swap(A[i][i2], A[i][j2]);
 
-                    if (i2 < j2)
+                    if (i != j && i2 < j2)
                         swap(A[j][i2], A[j][j2]);
                 }
             }

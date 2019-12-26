@@ -142,6 +142,7 @@
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
+    <ClInclude Include="deckRevealedIncreasing.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
