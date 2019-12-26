@@ -151,6 +151,7 @@
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="insertIntoBST.h" />
+    <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="sortArrayByParity.h" />
