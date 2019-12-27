@@ -85,6 +85,9 @@
     <ClInclude Include="numTilePossibilities.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="partitionLabels.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

@@ -153,6 +153,7 @@
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
+    <ClInclude Include="partitionLabels.h" />
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="subtractProductAndSum.h" />
