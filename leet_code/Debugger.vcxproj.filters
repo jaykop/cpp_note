@@ -91,6 +91,9 @@
     <ClInclude Include="allPathsSourceTarget.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="allPossibleFBT.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

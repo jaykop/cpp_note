@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="addTwoNumbers.h" />
     <ClInclude Include="allPathsSourceTarget.h" />
+    <ClInclude Include="allPossibleFBT.h" />
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />

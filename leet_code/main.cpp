@@ -1,10 +1,10 @@
-#include "allPathsSourceTarget.h"
+#include "allPossibleFBT.h"
 
 int main() {
 
 	Solution a;
-	vector<vector<int>> i = {{4, 3, 1}, {3, 2, 4}, {3}, {4}, {}};
-	auto result = a.allPathsSourceTarget(i);
+	int i = 7;
+	auto result = a.allPossibleFBT(i);
 
 	return 0;
 }
