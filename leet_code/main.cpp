@@ -1,10 +1,10 @@
-#include "numTilePossibilities.h"
+#include "allPossibleFBT.h"
 
 int main() {
 
 	Solution a;
-	string i = "AAB";
-	auto result = a.numTilePossibilities(i);
+	int i = 7;
+	auto result = a.allPossibleFBT(i);
 
 	return 0;
 }

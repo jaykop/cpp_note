@@ -139,6 +139,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="addTwoNumbers.h" />
+    <ClInclude Include="allPathsSourceTarget.h" />
+    <ClInclude Include="allPossibleFBT.h" />
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
@@ -153,6 +155,7 @@
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
+    <ClInclude Include="partitionLabels.h" />
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="subtractProductAndSum.h" />
