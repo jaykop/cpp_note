@@ -1,10 +1,10 @@
-#include "partitionLabels.h"
+#include "allPathsSourceTarget.h"
 
 int main() {
 
 	Solution a;
-	string i = "ababcbacadefegdehijhklij";
-	auto result = a.partitionLabels(i);
+	vector<vector<int>> i = {{4, 3, 1}, {3, 2, 4}, {3}, {4}, {}};
+	auto result = a.allPathsSourceTarget(i);
 
 	return 0;
 }
