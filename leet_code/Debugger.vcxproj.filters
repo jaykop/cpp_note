@@ -97,6 +97,9 @@
     <ClInclude Include="sortedSquares.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="uniqueOccurrences.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

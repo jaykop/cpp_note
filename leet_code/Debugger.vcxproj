@@ -170,6 +170,7 @@
     <ClInclude Include="reverseInt.h" />
     <ClInclude Include="twoSum.h" />
     <ClInclude Include="uniqueMorseRepresentations.h" />
+    <ClInclude Include="uniqueOccurrences.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
