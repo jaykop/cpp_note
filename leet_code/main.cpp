@@ -1,10 +1,10 @@
-#include "allPossibleFBT.h"
+#include "sortedSquares.h"
 
 int main() {
 
 	Solution a;
-	int i = 7;
-	auto result = a.allPossibleFBT(i);
+	vector<int> i = { -4,-1,0,3,10 };
+	auto result = a.sortedSquares(i);
 
 	return 0;
 }
