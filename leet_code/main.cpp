@@ -1,10 +1,10 @@
-#include "uniqueOccurrences.h"
+#include "uniquePathsIII.h"
 
 int main() {
 
 	Solution a;
-	vector<int> i = { 1,2,2,1,1,3 };
-	auto result = a.uniqueOccurrences(i);
+	vector<vector<int>> i = {{0, 1}, {2, 0}};
+	auto result = a.uniquePathsIII(i);
 
 	return 0;
 }

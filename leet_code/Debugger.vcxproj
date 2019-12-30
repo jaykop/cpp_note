@@ -172,6 +172,7 @@
     <ClInclude Include="twoSum.h" />
     <ClInclude Include="uniqueMorseRepresentations.h" />
     <ClInclude Include="uniqueOccurrences.h" />
+    <ClInclude Include="uniquePathsIII.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
