@@ -139,8 +139,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="linkedlist.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="tree.cpp" />
-    <ClCompile Include="vector.cpp" />
+    <ClCompile Include="vector.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h" />
