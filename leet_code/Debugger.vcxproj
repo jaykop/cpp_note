@@ -153,7 +153,10 @@
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="getElements.h" />
     <ClInclude Include="groupThePeople.h" />
+    <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="insertIntoBST.h" />
+    <ClInclude Include="matrixScore.h" />
+    <ClInclude Include="maxLevelSum.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />

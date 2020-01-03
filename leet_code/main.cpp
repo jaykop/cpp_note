@@ -1,18 +1,10 @@
-#include "uniquePathsIII.h"
+#include "matrixScore.h"
 
 int main() {
 
-	//Solution a;
-	//vector<vector<int>> i = {{0, 1}, {2, 0}};
-	//auto result = a.uniquePathsIII(i);
-
-	int a = (1 ^ 4);
-	int count = 0;
-	while (a) {
-		int bit = a % 2;
-		if (bit) count++;
-		a /= 2;
-	}
+	Solution a;
+	vector<vector<int>> i = {{0, 0, 1, 1}, {1, 0, 1, 0}, {1, 1, 0, 0}};
+	auto result = a.matrixScore(i);
 
 	return 0;
 }

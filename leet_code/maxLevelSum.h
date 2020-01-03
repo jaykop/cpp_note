@@ -39,7 +39,7 @@ public:
 
         // get the largest value
         for (auto& it : sum_table) {
-            if (it.second > * max_sum) {
+            if (it.second > max_sum) {
                 max_level = it.first;
                 max_sum = it.second;
             }
