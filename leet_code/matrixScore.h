@@ -12,11 +12,13 @@ public:
 
         int sum = 0; //return value
         int size = int(b.size());
+        int mul = 1;
         // convert
-        for (int i = 0; i < size; i++) {
+        for (int i = size - 1; i >= 0; i--) {
             // if the i-th index is 1, 
             // add the value
-            if (b[i]) sum += int(std::powf(2, size-i-1));
+            if (b[i]) sum += mul;
+            mul *= 2;
         }
 
         return sum;
@@ -73,3 +75,31 @@ public:
         return last_max;
     }
 };
+
+// best answer...
+//class Solution {
+//public:
+//    int matrixScore(vector<vector<int>>& A) {
+//        int r = A.size();
+//        int c = A[0].size();
+//        int rowflip[r];
+//        memset(rowflip, -1, sizeof(rowflip));
+//        for (int i = 0; i < r; i++)
+//        {
+//            if (A[i][0] == 0) rowflip[i] = 1;
+//        }
+//        int ans = 0, p = 1, count = 0;
+//        for (int j = c - 1; j >= 0; j--)
+//        {
+//            count = 0;
+//            for (int i = 0; i < r; i++)
+//            {
+//                if (rowflip[i] == 1) count += (A[i][j] ^ 1);
+//                else count += A[i][j];
+//            }
+//            ans += p * max(count, r - count);
+//            p *= 2;
+//        }
+//        return ans;
+//    }
+//};
