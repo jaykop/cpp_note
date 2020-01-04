@@ -1,10 +1,10 @@
-#include "matrixScore.h"
+#include "pathInZigZagTree.h"
 
 int main() {
 
 	Solution a;
-	vector<vector<int>> i = {{0, 0, 1, 1}, {1, 0, 1, 0}, {1, 1, 0, 0}};
-	auto result = a.matrixScore(i);
+	int i = 26;
+	auto result = a.pathInZigZagTree(i);
 
 	return 0;
 }

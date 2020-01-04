@@ -160,6 +160,7 @@
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />
+    <ClInclude Include="pathInZigZagTree.h" />
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="sortedSquares.h" />
