@@ -1,10 +1,10 @@
-#include "pathInZigZagTree.h"
+#include "minFlips.h"
 
 int main() {
 
 	Solution a;
-	int i = 26;
-	auto result = a.pathInZigZagTree(i);
+	vector<vector<int>> i = { {1} };
+	auto result = a.minFlips(i);
 
 	return 0;
 }

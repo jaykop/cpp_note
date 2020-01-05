@@ -157,6 +157,7 @@
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="matrixScore.h" />
     <ClInclude Include="maxLevelSum.h" />
+    <ClInclude Include="minFlips.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />
