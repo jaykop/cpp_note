@@ -121,6 +121,12 @@
     <ClInclude Include="minFlips.h">
       <Filter>Hard</Filter>
     </ClInclude>
+    <ClInclude Include="RecentCounter.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="maxScoreWords.h">
+      <Filter>Hard</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
