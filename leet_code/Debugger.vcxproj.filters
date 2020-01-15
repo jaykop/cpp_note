@@ -127,6 +127,9 @@
     <ClInclude Include="maxScoreWords.h">
       <Filter>Hard</Filter>
     </ClInclude>
+    <ClInclude Include="freqAlphabets.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
