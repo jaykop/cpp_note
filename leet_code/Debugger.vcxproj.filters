@@ -136,6 +136,9 @@
     <ClCompile Include="uniqueMorseRepresentations.cpp">
       <Filter>Easy</Filter>
     </ClCompile>
+    <ClCompile Include="ReducingDishes.h">
+      <Filter>Hard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Easy">
