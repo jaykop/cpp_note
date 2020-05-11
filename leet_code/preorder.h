@@ -30,33 +30,24 @@ public:
 
     }
     vector<int> preorder(Node* root) {
-        vector<int> v;
-        dfs(v, root);
-        return v;
+        // vector<int> v;
+        // dfs(v, root);
+        // return v;
+        
+        vector<int> list;
+        stack<Node*> q;
+        q.push(root);
+        while (!q.empty()){
+            
+            Node* x = q.top();
+            q.pop();
+            if (!x) continue;
+            int size = int(x->children.size());
+            for (int i = size - 1; i >= 0; i--)
+                q.push(x->children[i]);
+            list.push_back(x->val);
+        }
+        
+        return list;
     }
 };
-
-// iterative solution
-// class Solution {
-// public:
-//     vector<int> preorder(Node* root) {
-//         vector<int> result;
-//         if (root == nullptr) {
-//             return result;
-//         }
-        
-//         stack<Node*> stk;
-//         stk.push(root);
-//         while (!stk.empty()) {
-//             Node* cur = stk.top();
-//             stk.pop();
-//             result.push_back(cur -> val);
-//             for (int i = cur -> children.size() - 1; i >= 0; i--) {
-//                 if (cur -> children[i] != nullptr) {
-//                     stk.push(cur -> children[i]);
-//                 }
-//             }
-//         }
-//         return result;
-//     }
-// };

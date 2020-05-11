@@ -1,10 +1,11 @@
-#include "decompressRLElist.h"
+<<<<<<< HEAD
+#include "ReducingDishes.h"
 
 int main() {
 
+	vector<int> v = { -1,-8,0,5,-9 };
 	Solution a;
-	vector<int> i = {1,2,3,4};
-	auto result = a.decompressRLElist(i);
+	auto result = a.maxSatisfaction(v);
 
 	return 0;
 }
