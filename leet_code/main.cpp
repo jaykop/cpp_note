@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-#include "ReducingDishes.h"
+#include "smallerNumbersThanCurrent.h"
 
 int main() {
 
-	vector<int> v = { -1,-8,0,5,-9 };
+	vector<int> v = { 6,3,7,6,9 };
 	Solution a;
-	auto result = a.maxSatisfaction(v);
+	auto result = a.smallerNumbersThanCurrent(v);
 
 	return 0;
 }
