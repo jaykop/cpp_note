@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "ReducingDishes.h"
 
 int main() {

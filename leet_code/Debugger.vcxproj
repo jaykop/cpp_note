@@ -145,11 +145,13 @@
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="deckRevealedIncreasing.h" />
+    <ClInclude Include="decompressRLElist.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
     <ClInclude Include="findNumbers.h" />
     <ClInclude Include="flipAndInvertImage.h" />
+    <ClInclude Include="freqAlphabets.h" />
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="getElements.h" />
     <ClInclude Include="groupThePeople.h" />
