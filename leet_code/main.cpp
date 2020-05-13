@@ -1,11 +1,9 @@
-#include "createTargetArray.h"
+#include "maximum69Number.h"
 
 int main() {
 
-	vector<int> nums = { 0, 1, 2, 3, 4 },
-		index = { 0, 1, 2, 2, 1 };
 	Solution a;
-	auto result = a.createTargetArray(nums, index);
+	auto result = a.maximum69Number(9669);
 
 	return 0;
 }

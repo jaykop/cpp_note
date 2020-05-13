@@ -136,6 +136,9 @@
     <ClInclude Include="createTargetArray.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="maximum69Number.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
