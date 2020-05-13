@@ -147,6 +147,7 @@
     <ClInclude Include="createTargetArray.h" />
     <ClInclude Include="deckRevealedIncreasing.h" />
     <ClInclude Include="decompressRLElist.h" />
+    <ClInclude Include="diagonalSort.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
