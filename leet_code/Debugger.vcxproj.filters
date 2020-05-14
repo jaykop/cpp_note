@@ -145,6 +145,12 @@
     <ClInclude Include="countNegatives.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="minSteps.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="sortString.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

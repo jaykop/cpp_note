@@ -165,6 +165,7 @@
     <ClInclude Include="maxLevelSum.h" />
     <ClInclude Include="maxScoreWords.h" />
     <ClInclude Include="minFlips.h" />
+    <ClInclude Include="minSteps.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="sortedSquares.h" />
+    <ClInclude Include="sortString.h" />
     <ClInclude Include="subtractProductAndSum.h" />
     <ClInclude Include="toLowerCase.h" />
     <ClInclude Include="minTimeToVisitAllPoints.h" />
