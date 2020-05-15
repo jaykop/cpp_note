@@ -1,11 +1,10 @@
-#include "processQueries.h"
+#include "balanceBST.h"
 
 int main() {
 
-	vector<int> q = {3,1,2,1};
-	int m = 5;
+	TreeNode* q = nullptr;
 	Solution a;
-	auto result = a.processQueries(q, m);
+	auto result = a.balanceBST(q);
 
 	return 0;
 }
