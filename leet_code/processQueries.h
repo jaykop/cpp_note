@@ -5,7 +5,6 @@
 #include <list>
 
 using namespace std;
-
 class Solution {
 public:
     vector<int> processQueries(vector<int>& queries, int m) {
@@ -17,18 +16,21 @@ public:
 
         for (auto& q : queries)
         {
-            for (auto it  = a.begin() ; it != a.end(); it++)
+            int i = 0;
+            for (auto it = a.begin(); it != a.end(); it++)
             {
                 if (*it == q) {
-                    int v = *it;
-                    toReturn.emplace_back(distance(a.begin(), it));
+                    toReturn.emplace_back(i);
                     a.erase(it);
-                    a.push_front(v);
+                    a.push_front(q);
                     break;
                 }
+                i++;
             }
         }
 
         return toReturn;
     }
 };
+
+// do not use std::distance!!!!
