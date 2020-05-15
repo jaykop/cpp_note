@@ -157,6 +157,9 @@
     <ClInclude Include="balanceBST.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="CustomStack.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

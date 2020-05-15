@@ -147,6 +147,7 @@
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countNegatives.h" />
     <ClInclude Include="createTargetArray.h" />
+    <ClInclude Include="CustomStack.h" />
     <ClInclude Include="deckRevealedIncreasing.h" />
     <ClInclude Include="decompressRLElist.h" />
     <ClInclude Include="diagonalSort.h" />

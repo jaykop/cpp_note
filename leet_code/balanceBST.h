@@ -53,9 +53,9 @@ public:
 
     TreeNode* balanceBST(TreeNode* root) {
 
-        //vector<int> a;
-        //inOrder(root, a);
-        vector<int> a = { 1,2,3,4 };
+        vector<int> a;
+        inOrder(root, a);
+
         return buildTree(a, 0, int(a.size()) - 1);
     }
 };
