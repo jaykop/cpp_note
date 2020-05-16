@@ -162,6 +162,7 @@
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="insertIntoBST.h" />
+    <ClInclude Include="luckyNumbers.h" />
     <ClInclude Include="matrixScore.h" />
     <ClInclude Include="maximum69Number.h" />
     <ClInclude Include="maxLevelSum.h" />
