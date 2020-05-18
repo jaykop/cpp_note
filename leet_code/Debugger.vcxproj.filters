@@ -160,6 +160,12 @@
     <ClInclude Include="CustomStack.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="busyStudent.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="matrixBlockSum.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

@@ -144,6 +144,7 @@
     <ClInclude Include="balanceBST.h" />
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
+    <ClInclude Include="busyStudent.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countNegatives.h" />
     <ClInclude Include="createTargetArray.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="insertIntoBST.h" />
+    <ClInclude Include="matrixBlockSum.h" />
     <ClInclude Include="matrixScore.h" />
     <ClInclude Include="maximum69Number.h" />
     <ClInclude Include="maxLevelSum.h" />
