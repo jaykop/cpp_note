@@ -30,3 +30,23 @@ public:
         return res;
     }
 };
+
+// class Solution {
+// public:
+    // vector<int> minSubsequence(vector<int>& nums) {
+        
+        // int sub_sum = 0;
+        // int half_sum = accumulate(begin(nums), end(nums), 0) / 2;
+        // vector<int> res;
+        // priority_queue<int> pq(begin(nums), end(nums));
+        // while (half_sum >= sub_sum)
+        // {            
+            // int back = pq.top();
+            // sub_sum += back;
+            // res.emplace_back(back);
+            // pq.pop();
+            
+        // }
+        // return res;
+    // }
+// };
