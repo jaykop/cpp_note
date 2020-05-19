@@ -1,10 +1,10 @@
-#include "getKth.h"
+#include "minDeletionSize.h"
 
 int main() {
 
-
+	vector<string> A = { "cba", "daf", "ghi" };
 	Solution a;
-	auto b = a.getKth(10, 20, 5);
+	auto b = a.minDeletionSize(A);
 
 	return 0;
 }

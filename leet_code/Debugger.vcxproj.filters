@@ -166,6 +166,9 @@
     <ClInclude Include="getKth.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="minDeletionSize.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

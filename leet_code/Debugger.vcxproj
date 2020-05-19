@@ -168,6 +168,7 @@
     <ClInclude Include="maximum69Number.h" />
     <ClInclude Include="maxLevelSum.h" />
     <ClInclude Include="maxScoreWords.h" />
+    <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
     <ClInclude Include="minSteps.h" />
     <ClInclude Include="numTilePossibilities.h" />
