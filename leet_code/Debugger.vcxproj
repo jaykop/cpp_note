@@ -159,6 +159,7 @@
     <ClInclude Include="freqAlphabets.h" />
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="getElements.h" />
+    <ClInclude Include="getKth.h" />
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="insertIntoBST.h" />
