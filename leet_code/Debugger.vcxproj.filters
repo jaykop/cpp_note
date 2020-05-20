@@ -172,6 +172,12 @@
     <ClInclude Include="heightChecker.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="maxDepthAfterSplit.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="getHappyString.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

@@ -1,10 +1,9 @@
-#include "minDeletionSize.h"
+#include "getHappyString.h"
 
 int main() {
 
-	vector<string> A = { "cba", "daf", "ghi" };
 	Solution a;
-	auto b = a.minDeletionSize(A);
+	auto b = a.getHappyString(3, 9);
 
 	return 0;
 }
