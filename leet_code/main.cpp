@@ -1,9 +1,20 @@
-#include "getHappyString.h"
+#include "countBattleships.h"
 
 int main() {
 
+	vector<vector<char>> v =
+	{
+		/*{'X', '.'},
+		{'.', 'X'}*/
+		/*{'X'}*/
+		{'X', 'X', 'X'}
+		/*{'X', '.', '.', 'X'},
+		{'.', '.', '.', 'X'},
+		{'.', '.', '.', 'X'}*/
+	};
+
 	Solution a;
-	auto b = a.getHappyString(3, 9);
+	auto b = a.countBattleships(v);
 
 	return 0;
 }

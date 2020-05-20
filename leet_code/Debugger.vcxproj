@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="-countBattleships.h" />
     <ClInclude Include="addTwoNumbers.h" />
     <ClInclude Include="allPathsSourceTarget.h" />
     <ClInclude Include="allPossibleFBT.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="heightChecker.h" />
+    <ClInclude Include="inOrder.h" />
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="luckyNumbers.h" />
     <ClInclude Include="matrixScore.h" />
@@ -181,6 +183,7 @@
     <ClInclude Include="processQueries.h" />
     <ClInclude Include="RecentCounter.h" />
     <ClInclude Include="removeOuterParentheses.h" />
+    <ClInclude Include="reverseWords.h" />
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="sortedSquares.h" />
     <ClInclude Include="sortString.h" />
