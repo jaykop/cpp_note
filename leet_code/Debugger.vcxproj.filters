@@ -169,6 +169,9 @@
     <ClInclude Include="minDeletionSize.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="heightChecker.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
