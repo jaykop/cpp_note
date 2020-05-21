@@ -1,15 +1,17 @@
 #pragma once
 #include <vector>
-
+#include <algorithm>
 using namespace std;
 
+// low memory...
 class Solution {
 public:
     vector<vector<int>> spiralMatrixIII(int R, int C, int r0, int c0) {
 
         vector<vector<int>> res;
         int m1 = 1, m2 = 1;
-        int total = R * C, added = 0, count = 0;
+        int total = R* C, count = 0, added =0;
+        total *= total;
         int direction = 0; // 0 - right, 1 - down, 2 - left, 3 - up
 
         while (added < total)
