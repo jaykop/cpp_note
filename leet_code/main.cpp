@@ -1,20 +1,11 @@
-#include "countBattleships.h"
+#include "subdomainVisits.h"
 
 int main() {
 
-	vector<vector<char>> v =
-	{
-		/*{'X', '.'},
-		{'.', 'X'}*/
-		/*{'X'}*/
-		{'X', 'X', 'X'}
-		/*{'X', '.', '.', 'X'},
-		{'.', '.', '.', 'X'},
-		{'.', '.', '.', 'X'}*/
-	};
-
+	vector<string > v =
+	{ "900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org" };
 	Solution a;
-	auto b = a.countBattleships(v);
+	auto b = a.subdomainVisits(v);
 
 	return 0;
 }

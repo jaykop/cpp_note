@@ -1,0 +1,701 @@
+commit 958ba591e28256012ec2669b7fc101f697e1b168
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 20 15:23:52 2020 -0700
+
+    could not solve countBattleships
+
+commit 3a5d2fcfbf82094c98a5a5e963bbbb8a8a5f6e58
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 20 13:18:06 2020 -0700
+
+    a little better solution for reverseWords
+
+commit fdaedc5dac8da75cb4b99eb647b2a4db1ae91ceb
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 20 13:06:19 2020 -0700
+
+    solved reverseWords
+
+commit 53c2226706b4feb5dafe36fef983aa36c3446ddf
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 20 12:52:19 2020 -0700
+
+    solved 2 easy problems
+
+commit 3f26464e589be05b02994920a7dccce8663da004
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 22:16:28 2020 -0700
+
+    improved to 12%
+
+commit 7126a64a3fa499282a519b8c89a1699ab08085d4
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 21:35:52 2020 -0700
+
+    solved getHappyString
+
+commit 2d08615b31e4c966f9aaf4fc5fecdaaee5bf68ca
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 17:07:56 2020 -0700
+
+    solved maxDepthAfterSplit
+
+commit 4dcb4f2cfdb9051dbce4d34409f7514b03cf918e
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 16:41:13 2020 -0700
+
+    solved heightChecker
+
+commit b1510d1718b3d8e674f108b7939b3b9f61aaff05
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 16:36:13 2020 -0700
+
+    solved minDeletionSize
+
+commit dbfe3e72972aec99d60a13a6cc4ed422fbb8a855
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 16:02:22 2020 -0700
+
+    solved getKth
+
+commit 87afe791403cc5961e3d06dfc0e5bc58c7f97629
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 13:25:42 2020 -0700
+
+    minSubsequence using pq
+
+commit acaca8aedb5cf25b8997de4f379b8488f65dd735
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 11:51:49 2020 -0700
+
+    solved minSubsequence
+
+commit cd3c5634ea7662ee8ca51eeb0ac0623756476322
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue May 19 11:20:54 2020 -0700
+
+    solved removeLeafNodes
+
+commit 39ff97c6d1175ff46b7ef6380e90c1618f6bb403
+Merge: a276047 a571298
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 18 14:40:14 2020 -0700
+
+    merged
+
+commit a276047fddb3c8c8d72d5fb8249b6523f695e142
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 18 14:38:33 2020 -0700
+
+    new pc
+
+commit d4813f6c851c68cdd68bc9ee80aff955107ff341
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 18 12:28:52 2020 -0700
+
+    solved matrixBlockSum in better solution(prefix)
+
+commit 9e0f6335be4afc30768e60d2e1a2b36c66e58f86
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 18 11:01:17 2020 -0700
+
+    solved matrixBlockSum in easy way
+
+commit 75f762ba0819cd6eab5d5deb0e3d315101dac588
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 18 10:32:15 2020 -0700
+
+    solved busyStudent
+
+commit a57129856c44f37118a24dba3e160f559e8d5e85
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri May 15 21:36:29 2020 -0700
+
+    warping up
+
+commit 8b65ed05aeda76b14784b94fed2d91c23068ae63
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri May 15 20:08:06 2020 -0700
+
+    solved luckyNumbers
+
+commit 6b2491c1204eb73249a6c970c6438148d2d89478
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri May 15 14:01:49 2020 -0700
+
+    solved CustomStack
+
+commit 7721c6fbd8af1ebf8c6fc94cbbbb05dd213d3a3a
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri May 15 12:14:06 2020 -0700
+
+    solved balanceBST
+
+commit a53fa602008433e3d013fe32c4b020829fc62c45
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri May 15 11:32:34 2020 -0700
+
+    better sol for processQueries
+
+commit b812aa7c2e69fcf399c1d56433ec012d809f60c9
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri May 15 10:27:32 2020 -0700
+
+    solved processQueries
+
+commit d8e3a31e25a58cf39957998e7fab224faf1a16e6
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Thu May 14 11:34:47 2020 -0700
+
+    2 easy 1 medium
+
+commit c67a7d200d2daf2b8975f3a9f45512c5336a9ddb
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 13 15:15:29 2020 -0700
+
+    solved countNegatives
+
+commit adce029250f6e586212efa8571e3841d4e5d874e
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 13 14:03:44 2020 -0700
+
+    solved diagonalSort
+
+commit 989300fd640a1ee05aaa16be6f46c0f10a0e05cf
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 13 12:38:44 2020 -0700
+
+    solved maximum69Number
+
+commit 9f5e4324b0dea7f6b4616f8054a3915fd221b49e
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 13 12:08:43 2020 -0700
+
+    added better answer
+
+commit ff0db6b5475bb24688934f75304d0693ac2b672e
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed May 13 11:58:36 2020 -0700
+
+    solved destCity
+
+commit b2e89ae84d3ccd195afb539cc2472ff53b0d8f5f
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 11 17:58:23 2020 -0700
+
+    added createTargetArray
+
+commit ac50c989976d0a3d4fa419a3326792667083bab2
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 11 13:03:19 2020 -0700
+
+    added smallerNumbersThanCurrent a little better
+
+commit 73a1b0b23c6e9b835d5c702cb74c228313e263e3
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 11 12:54:32 2020 -0700
+
+    added smallerNumbersThanCurrent
+
+commit 6fc927e38ba6e0a4f5eea60f0a67fedb963e899e
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 11 10:32:14 2020 -0700
+
+    numberOfSteps
+
+commit 856d5ce9f68bd829ab44ea7343eeedc8b676fb85
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Mon May 11 10:26:49 2020 -0700
+
+    added kidsWithCandies
+
+commit 737c7c4c47a03d65c74e35f4dca39cfc488139da
+Merge: 4f50638 f8cb9ce
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun May 10 18:00:56 2020 -0700
+
+    Merge branch 'master' of https://github.com/jaykop/cpp_note
+
+commit 4f50638e22baf3294fc6de569cae3e96a96abdff
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun May 10 18:00:53 2020 -0700
+
+    30days challenges
+
+commit f8cb9ce465f7a1ee9a4c409f82b94747f9e2a1e5
+Merge: 05bb66c fd48d7a
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sun May 10 17:56:12 2020 -0700
+
+    solved maxSatisfaction
+
+commit 05bb66c97539993fd45c0830dd0431701f0cad84
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sun May 10 17:55:25 2020 -0700
+
+    solved maxSatisfaction
+
+commit a83ed21a672ac9f36ee4e210be39db5e1d448533
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Jan 15 14:42:59 2020 -0800
+
+    solved postorder
+
+commit 570fa51455a5fddeab6312015872652175fe10e0
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Jan 15 12:46:06 2020 -0800
+
+    added bfs to preorder
+
+commit fd48d7a49bd911c3a4fea1735d3882cc5e4ea700
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Wed Jan 15 00:17:59 2020 -0800
+
+    solved sumEvenGrandparent
+
+commit 80e24c634d7757f532b1bc00ffdfa1dc4d03c2a4
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue Jan 14 21:19:41 2020 -0800
+
+    solved decompressRLElist
+
+commit 02eef8f5b8c65707526cf585783a8b4c4d930ee1
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue Jan 14 21:05:26 2020 -0800
+
+    solved and optimized freqAlphabets
+
+commit 4e05f5f3f5af559ea96140c3c665198f7aa4763d
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Jan 9 00:10:04 2020 -0800
+
+    solved preorder but need to check faster way
+
+commit 896383212c6a685ac2e81723d553c81198bc1bdc
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sun Jan 5 23:56:02 2020 -0800
+
+    solving maxScoreWords
+
+commit 92a6207cf5f51a795fb5725a65776a8e9fa69a3a
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sun Jan 5 23:02:52 2020 -0800
+
+    solved RecentCounter
+
+commit 5ea0b0fc7bda518fbd85d6c8a17b85ec1d6701d3
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Jan 4 23:30:51 2020 -0800
+
+    need to re-study BFS
+
+commit f6b688a6c8f0190dc00ba37fee67af7ec3d374a7
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Jan 4 23:20:24 2020 -0800
+
+    solved minFlips, but slow...
+
+commit 38336ea77e702022250e082411178aeef58bc7b9
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Jan 4 22:08:32 2020 -0800
+
+    solved searchBST
+
+commit 8a48a7135611108222bd8eef29274a6182134eeb
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Jan 3 23:43:49 2020 -0800
+
+    solved pathInZigZagTree
+
+commit 9bb29cc7d047d3f07e5c5d81004c811b06360438
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Jan 3 22:46:57 2020 -0800
+
+    solved diStringMatch
+
+commit 55a62499bb24139ded9534fdffe56847ba1a8c52
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Jan 3 22:26:53 2020 -0800
+
+    solved two easy problems
+
+commit 5c55e1b473663e1c39fe721f0855feb47870c535
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Jan 2 23:14:16 2020 -0800
+
+    added the best matrixScore answer
+
+commit 010cb475f47156a8c60c5c809dd5c1f1d4348d7c
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Jan 2 22:51:32 2020 -0800
+
+    finished matrixScore, but so slow
+
+commit 891492f3c59ea4913766c8274b20d7a0a4f70b2b
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Jan 2 21:53:25 2020 -0800
+
+    finished maxLevelSum
+
+commit 8fbcb0eab16c5c0c0b593adb6b015dc95bf5a547
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Jan 2 21:23:28 2020 -0800
+
+    finished hammingDistance
+
+commit 916a494449bda5bee02d470428f7aef82bf5f9f9
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 30 15:57:38 2019 -0800
+
+    setting up custom vector
+
+commit 17a24aed4c15ac2ae9913a65a6781ee95237683e
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 30 15:11:24 2019 -0800
+
+    added dp answer
+
+commit 8d89b7c5055a7ae732ca38cbf84fc2462b478539
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 30 15:06:22 2019 -0800
+
+    finished uniquePathsIII
+
+commit 6f3f76f22a608160a6ddf4714aae3068f8a61eaa
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 30 14:05:28 2019 -0800
+
+    added several problems
+
+commit 162969853ab658be70b7acc29983a48190f98f70
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun Dec 29 19:31:29 2019 -0800
+
+    updated prj file
+
+commit b73c288cb9593d171e11f0368eac50c456c78e26
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun Dec 29 17:32:44 2019 -0800
+
+    finished deepestLeavesSum
+
+commit a36a0f20ab96f1aa2566d639fccb38a6645912c3
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun Dec 29 17:21:51 2019 -0800
+
+    finished getAllElements
+
+commit b1d3b2bb71cfed2bab2ce6a550e8d57423d5d2ec
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun Dec 29 16:43:55 2019 -0800
+
+    finished sumZero
+
+commit e317bc68414c911ceccd2c253e3ed47d500a7209
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sat Dec 28 12:10:21 2019 -0800
+
+    finished uniqueOccurrences
+
+commit acab89fa792d0e1086e3cdf523c05e3701baf9b9
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sat Dec 28 11:58:28 2019 -0800
+
+    finished sortedSquares
+
+commit cd65c79cec28c28c12e6905945053ab95cdaa96f
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri Dec 27 18:48:59 2019 -0800
+
+    finished selfDividingNumbers
+
+commit db8d12cc605bb5bc0f8334ec764121e9a07e6be7
+Merge: 49897f0 64baa90
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 27 18:06:38 2019 -0800
+
+    Merge branch 'master' of https://github.com/jaykop/cpp_note
+
+commit 49897f0d7abaf4b3b558c1d22069034207be6668
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 27 18:06:32 2019 -0800
+
+    c++ reminder: exception
+
+commit 64baa90022f49eb0c5b5afb5ff238fcc6741462f
+Merge: 9e0d5f7 51729bf
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri Dec 27 10:53:28 2019 -0800
+
+    Merge branch 'master' of https://github.com/jaykop/cpp_note
+
+commit 9e0d5f7c626319dedbf60c656c2e47fcc49e7162
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri Dec 27 10:53:12 2019 -0800
+
+    finished FindElements
+
+commit f69655e5277046e99117fcd6c0bcd3a62fdc6b53
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri Dec 27 10:38:15 2019 -0800
+
+    finished pruneTree
+
+commit 51729bfa17b73b06e6192d2b61a025d4cb540093
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 26 22:28:08 2019 -0800
+
+    solved judgeCircle
+
+commit 5479ea2958d197ab088746a2651aea8993d21c74
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 26 22:13:14 2019 -0800
+
+    could not solve allPossibleFBT
+
+commit a39e07b7af2ffacab82a9daf4f85e342cc26798d
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 26 17:27:23 2019 -0800
+
+    finished allPathsSourceTarget
+
+commit 47a2c935a952d55b712b44e1465a725dc85eb2a1
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 26 16:27:48 2019 -0800
+
+    could not finished partitionLabels
+
+commit c6cf5a37ceb71e73a8a4745d13517030824e6ade
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 26 01:29:35 2019 -0800
+
+    finished numTilePossibilities
+
+commit d96250c6ab586f3f5f022e58d6b3709a57f005e1
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 26 00:10:35 2019 -0800
+
+    finished deckRevealedIncreasing
+
+commit f86731cb4c716a3ec26f32949b51f67e63e57f79
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Tue Dec 24 18:27:45 2019 -0800
+
+    finally finished flipAndInvertImage
+
+commit cc89aeae4fc22feb5e3064cfc0dd035342002c8c
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Tue Dec 24 17:08:48 2019 -0800
+
+    finished sortArrayByParity
+
+commit 2e912ae882c590949d8490cb8005ccd40cdb38e3
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 23 15:36:49 2019 -0800
+
+    project file
+
+commit 9838d79eabe5ff38ebe5aa2f845d205ce6fc9b1c
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 23 15:33:10 2019 -0800
+
+    finished bstFromPreorder
+
+commit 0641e2f270dee3b2be374eab900bd38c85818823
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 23 15:17:21 2019 -0800
+
+    finished uniqueMorseRepresentations
+
+commit fb37932f8a7d2d5bedc7374244066797d7ab6400
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 23 14:35:29 2019 -0800
+
+    finished removeOuterParentheses
+
+commit 0fda6a6e95c85b7ae08a1ced338c4e36a68731aa
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 23 14:08:32 2019 -0800
+
+    finished findNumbers
+
+commit 46b180e618cc679aea4c781887606e0ecf5fbe4d
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sun Dec 22 17:00:43 2019 -0800
+
+    finished two bt problems, building up tree structure
+
+commit 309f001403210e0bce8155fa9ae81b89e1d3ab36
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Dec 21 16:31:02 2019 -0800
+
+    filtered
+
+commit 9b0bf9a5a7bbe5e29067cd0c80f7b7978d77a706
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Dec 21 14:47:11 2019 -0800
+
+    finished severals
+
+commit 0e759f454da48ef73d5b84037879e197d06dd5b7
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 20 17:02:34 2019 -0800
+
+    scratch stl placeholders
+
+commit 46bfe4c5d3f1d221071e823dcce24e9e8cf1acc8
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 20 17:01:07 2019 -0800
+
+    finished bstToGst
+
+commit 3cab18d45178b71ed9a641d1e65f319b5e8a5425
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 20 15:38:28 2019 -0800
+
+    improved rangeSumBST
+
+commit 14dba0e30bbb29e2242d6c95c992e41ec1a126f1
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 20 15:24:02 2019 -0800
+
+    finished rangeSumBST
+
+commit 1048caa7f9f5b5667b02d37568ad784d17383270
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 20 15:04:08 2019 -0800
+
+    finished minTimeToVisitAllPoints
+
+commit 4331addefc273286a4d38df8363b5e6c679cf698
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Fri Dec 20 14:14:14 2019 -0800
+
+    finished balancedStringSplit
+
+commit 394b1455a51f9f1dec914bb71023e17661c6071d
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Dec 18 14:36:36 2019 -0800
+
+    finished maxIncreaseKeepingSkyline
+
+commit 6edcc76e43a217664b6565ae86a3e35964584c1e
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Dec 18 13:57:11 2019 -0800
+
+    finished subtractProductAndSum
+
+commit 291bc9cefcf7f95085d6bb7c6534339511432181
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Dec 18 13:34:14 2019 -0800
+
+    I can use stl...
+
+commit 201408eb40f209216d3110f3e9bdb35e54ef91c0
+Merge: a5a6155 e4e331c
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Dec 18 01:56:39 2019 -0800
+
+    changed file name
+
+commit a5a6155894481ddd1926c06640997e6959a677c6
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Dec 18 01:54:10 2019 -0800
+
+    finished groupThePeople
+
+commit 70ad793c76dc816a00efde60e33750878ccba35b
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Wed Dec 18 01:32:59 2019 -0800
+
+    finished getDecimalValue and defangIPaddr
+
+commit e4e331c5ace9eebf3914d561478281b2c97d094d
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue Dec 17 15:11:02 2019 -0800
+
+    fukcing overflow
+
+commit bbf8fe5463dceaa4646aa9cfb8e0a0964618e19f
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Tue Dec 17 11:37:19 2019 -0800
+
+    finished ZigZagConversion
+
+commit ce2e7bc3a9bbd03f7753c6f63ca8ca101a44aefd
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 16 17:05:24 2019 -0800
+
+    working on zigzag
+
+commit 254a57f7442a1cd934312b2a80621f01b17bc723
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 16 16:32:55 2019 -0800
+
+    added simple dynamic programming reminder
+
+commit 560106758a1466c327c23a5d94978e942da1f079
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 16 15:36:45 2019 -0800
+
+    finished longestPalindrome and added debugger sln
+
+commit 6f22b177c8eb802e92a9aa37e915dc02dd96ae35
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 16 02:44:37 2019 -0800
+
+    finished findMedianSortedArrays
+
+commit 405fda3b58864a7a1bfe93fdb8410052345368b1
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Mon Dec 16 02:20:52 2019 -0800
+
+    working on leetcode
+
+commit 22507af35d96c34b9ccd1215e8d61dba5c4bf824
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Dec 14 23:40:15 2019 -0800
+
+    effective c++ note updated
+
+commit 5fd8005ad7ac0dbede48962eeb1aee2530159168
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Dec 14 22:05:00 2019 -0800
+
+    Longest Substring Without Repeating Characters
+
+commit 7481c8280d5cf9338d6a91301b91c9aed89672e6
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Dec 14 19:48:24 2019 -0800
+
+    added .ignore file
+
+commit c90d4e23ec9c7b926de94638709bab45edc6fa61
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Sat Dec 14 19:45:50 2019 -0800
+
+    add two numbers
+
+commit 96ed7c7e9f96f3772aaecf267ff187780381e70c
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sat Dec 14 18:53:18 2019 -0800
+
+    added leet codes
+
+commit 4621167305331b1179e1dbfe5b37098a5de4447c
+Author: Jay Jeong <jaykop.jy@gmail.com>
+Date:   Thu Dec 12 12:40:02 2019 -0800
+
+    updated category
+
+commit 95c8d4a38f99f4630370107659a863ed2204d268
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Sun Jun 2 16:25:00 2019 -0700
+
+    added reference part, adding custom string part
+
+commit 3d5e1af1991084e963da950377dccc3fcdde84f2
+Author: jaykop <jaykop.jy@gmail.com>
+Date:   Fri May 31 21:51:13 2019 -0700
+
+    Namepace part

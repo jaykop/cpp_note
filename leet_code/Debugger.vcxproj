@@ -187,6 +187,7 @@
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="sortedSquares.h" />
     <ClInclude Include="sortString.h" />
+    <ClInclude Include="subdomainVisits.h" />
     <ClInclude Include="subtractProductAndSum.h" />
     <ClInclude Include="toLowerCase.h" />
     <ClInclude Include="minTimeToVisitAllPoints.h" />
