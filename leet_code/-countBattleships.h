@@ -1,4 +1,7 @@
 #pragma once
+#include <vector>
+using namespace std;
+
 class Solution {
 public:
 
@@ -8,7 +11,9 @@ public:
 
         for (int r = 0; r < m; r++)
             for (int c = 0; c < n; c++)
-                cnt += board[r][c] == 'X' && (r == 0 || board[r - 1][c] != 'X') && (c == 0 || board[r][c - 1] != 'X');
+                cnt += board[r][c] == 'X' 
+                && (r == 0 || board[r - 1][c] != 'X') 
+                && (c == 0 || board[r][c - 1] != 'X');
 
         return cnt;
     }

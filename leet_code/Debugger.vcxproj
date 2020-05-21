@@ -156,6 +156,7 @@
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
     <ClInclude Include="findNumbers.h" />
+    <ClInclude Include="findSolution.h" />
     <ClInclude Include="flipAndInvertImage.h" />
     <ClInclude Include="freqAlphabets.h" />
     <ClInclude Include="getDecimalValue.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="sortedSquares.h" />
     <ClInclude Include="sortString.h" />
+    <ClInclude Include="spiralMatrixIII.h" />
     <ClInclude Include="subdomainVisits.h" />
     <ClInclude Include="subtractProductAndSum.h" />
     <ClInclude Include="toLowerCase.h" />

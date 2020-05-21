@@ -1,11 +1,10 @@
-#include "subdomainVisits.h"
+#include "spiralMatrixIII.h"
 
 int main() {
 
-	vector<string > v =
-	{ "900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org" };
+	int R = 5, C = 6, r0 = 1, c0 = 4;
 	Solution a;
-	auto b = a.subdomainVisits(v);
+	auto b = a.spiralMatrixIII(R, C, r0, c0);
 
 	return 0;
 }
