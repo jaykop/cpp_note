@@ -2,7 +2,7 @@
 
 int main() {
 
-	string s1 = "hello", s2 = "ooolleoooleh";
+	string s1 = "abc", s2 = "cccccbabbbaaaa";
 	Solution a;
 	auto b = a.checkInclusion(s1, s2);
 
