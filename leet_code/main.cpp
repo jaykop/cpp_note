@@ -1,10 +1,10 @@
-#include "checkInclusion.h"
+#include "recoverFromPreorder.h"
 
 int main() {
 
-	string s1 = "abc", s2 = "cccccbabbbaaaa";
 	Solution a;
-	auto b = a.checkInclusion(s1, s2);
+	auto b = a.recoverFromPreorder(
+		"1-401--349---90--88");
 
 	return 0;
 }

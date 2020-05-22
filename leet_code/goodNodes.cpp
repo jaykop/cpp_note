@@ -46,3 +46,51 @@ public:
         return v.size();
     }
 };
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    
+    void recursive(TreeNode* t, int& count, int maxSoFar)
+    {
+        TreeNode* l = t->left;
+        TreeNode* r = t->right;
+        if (l)
+        {
+            int copied = maxSoFar;
+            if(l->val >= copied)
+            {
+                copied = l->val;
+                count++;
+            }
+            recursive(l, count, copied);
+        }
+        if (r)
+        {
+            int copied = maxSoFar;
+            if(r->val >= copied)
+            {
+                copied = r->val;
+                count++;
+            }
+            recursive(r, count, copied);
+        }
+    }
+    
+    int goodNodes(TreeNode* root) {
+        
+        int count = 1;
+        recursive(root, count, root->val);
+        return count;
+    }
+};
