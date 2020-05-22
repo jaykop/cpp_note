@@ -10,57 +10,57 @@ using namespace std;
 class Solution {
 public:
 
-    void recursive(string newStr, string givenStr, 
-        set<string>& p, int len)
-    {
-        int size = givenStr.length();
-        for (int i = 0; i < size; i++)
-        {
-            string given = givenStr;
-            string next = newStr + given.substr(i, 1);
-            given.erase(i, 1);
-            if (next.length() == len)
-            {
-                p.insert(next);
-                return;
-            }
-            recursive(next, given, p, len);
-        }
-    }
-
     bool checkInclusion(string s1, string s2) {
         
         if (s1.length() > s2.length())
             return false;
 
-        unordered_map<char, int> d1, d2;
         int size1 = s1.length();
         int size2 = s2.length();
         int size = max(size1, size2);
+
+        unordered_map<char, int> d1, d2;
         for (int i = 0; i < size; i++)
         {
             if (i < size1) d1[s1[i]]++;
             if (i < size2) d2[s2[i]]++;
         }
+
         size = min(size1, size2);
         for (int i = 0; i < size; i++)
         {
             char c = s1[i];
-            if (d1[c] > d2[c]) 
+            // more c in s1
+            if (d1[c] > d2[c])
                 return false;
         }
 
-        set<string> p;
-        string start;
-
-        recursive(start, s1, p, size1);
-
-        for (const auto& s : p)
+        int count = 0;
+        for (int i = 0; i < size2; i++)
         {
-            if (string::npos != s2.find(s))
-                return true;
+            // check if c is in s1
+            if (s1.find(s2[i]) != string::npos)
+            {
+                if (d1[s2[i]] > 0)
+                    d1[s2[i]]--;
+                else
+                    return false;
+
+                // check continuity
+                count++;
+            }
+            else
+            {
+                // broken or done
+                if (count)
+                    break;
+            }
         }
 
-        return false;
+        // s1 can be in count range
+        if (count < size1)
+            return false;
+
+        return true;
     }
 };
