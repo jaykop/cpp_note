@@ -145,6 +145,7 @@
     <ClInclude Include="balanceBST.h" />
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
+    <ClInclude Include="checkInclusion.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countNegatives.h" />
     <ClInclude Include="createTargetArray.h" />

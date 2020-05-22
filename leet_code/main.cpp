@@ -1,10 +1,10 @@
-#include "spiralMatrixIII.h"
+#include "checkInclusion.h"
 
 int main() {
 
-	int R = 5, C = 6, r0 = 1, c0 = 4;
+	string s1 = "abcdxabcde", s2 = "abcdeabcdx";
 	Solution a;
-	auto b = a.spiralMatrixIII(R, C, r0, c0);
+	auto b = a.checkInclusion(s1, s2);
 
 	return 0;
 }
