@@ -33,9 +33,7 @@ public:
 
                 int len = 1;
                 while (pos + depth + len <= S.length() && S[pos + depth + len] != '-')
-                {
                     len++;
-                }
 
                 string number = S.substr(pos + depth, len);
                 int n = 0;
@@ -51,14 +49,21 @@ public:
 
                         S = S.erase(pos + depth - offset, len + offset);
                         t->left = new TreeNode(n);
-                        recursive(t->left, S, line + "-", depth + 1);
+                        int sibling = S.find(line);
+                        int child = S.find(line + "-");
+                        if (sibling == -1 || child <= sibling)
+                            recursive(t->left, S, line + "-", depth + 1);
                     }
                 }
 
                 pos = S.find(line, pos);
-                if (S.empty() || pos == string::npos)
+                if (S.empty() || pos != 0)
                     break;
 
+                len = 1;
+                while (pos + depth + len <= S.length() && S[pos + depth + len] != '-')
+                    len++;
+                
                 number = S.substr(pos + depth, len);
                 if (is_number(number)) {
 
@@ -71,7 +76,10 @@ public:
 
                         S = S.erase(pos + depth - offset, len + offset);
                         t->right = new TreeNode(n);
-                        recursive(t->right, S, line + "-", depth + 1);
+                        int sibling = S.find(line);
+                        int child = S.find(line + "-");
+                        if (sibling == -1 || child <= sibling)
+                            recursive(t->right, S, line + "-", depth + 1);
                     }
                 }
                 else
@@ -86,11 +94,15 @@ public:
 
         string line("-");
         int pos = S.find(line);
-        int val = stoi(S.substr(0, pos));
-        TreeNode* root = new TreeNode(val);
-        string cut = S.substr(1, S.length());
-        recursive(root, cut, line, 1);
-
-        return root;
+        if (pos == string::npos)
+            return new TreeNode(stoi(S));
+        
+        else
+        {
+            TreeNode* root = new TreeNode(stoi(S.substr(0, pos)));
+            string cut = S.substr(pos, S.length());
+            recursive(root, cut, line, 1);
+            return root;
+        }
     }
 };

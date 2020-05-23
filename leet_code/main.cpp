@@ -4,7 +4,8 @@ int main() {
 
 	Solution a;
 	auto b = a.recoverFromPreorder(
-		"1-401--349---90--88");
+		"10"
+	);
 
 	return 0;
 }
