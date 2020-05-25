@@ -169,6 +169,7 @@
     <ClInclude Include="heightChecker.h" />
     <ClInclude Include="inOrder.h" />
     <ClInclude Include="insertIntoBST.h" />
+    <ClInclude Include="isPalindrome.h" />
     <ClInclude Include="luckyNumbers.h" />
     <ClInclude Include="matrixScore.h" />
     <ClInclude Include="maxDepthAfterSplit.h" />

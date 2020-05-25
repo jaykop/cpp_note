@@ -1,11 +1,9 @@
-#include "recoverFromPreorder.h"
+#include "isPalindrome.h"
 
 int main() {
 
 	Solution a;
-	auto b = a.recoverFromPreorder(
-		"10"
-	);
+	auto b = a.isPalindrome(1000001);
 
 	return 0;
 }

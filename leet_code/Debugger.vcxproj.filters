@@ -202,6 +202,9 @@
     <ClInclude Include="recoverFromPreorder.h">
       <Filter>Hard</Filter>
     </ClInclude>
+    <ClInclude Include="isPalindrome.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
