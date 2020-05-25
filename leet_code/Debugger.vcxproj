@@ -172,6 +172,7 @@
     <ClInclude Include="isPalindrome.h" />
     <ClInclude Include="luckyNumbers.h" />
     <ClInclude Include="matrixScore.h" />
+    <ClInclude Include="maxArea.h" />
     <ClInclude Include="maxDepthAfterSplit.h" />
     <ClInclude Include="maximum69Number.h" />
     <ClInclude Include="maxLevelSum.h" />

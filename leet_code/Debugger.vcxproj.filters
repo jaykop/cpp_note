@@ -205,6 +205,9 @@
     <ClInclude Include="isPalindrome.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="maxArea.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
