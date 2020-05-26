@@ -214,6 +214,9 @@
     <ClInclude Include="longestCommonPrefix.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="romanToInt.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
