@@ -217,6 +217,9 @@
     <ClInclude Include="romanToInt.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="intToRoman.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
