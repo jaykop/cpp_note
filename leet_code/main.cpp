@@ -2,7 +2,7 @@
 #include <iostream>
 int main() {
 
-	vector<string> v =	{ "ca", "a" };
+	vector<string> v =	{ "flower","flow","flight" };
 	Solution a;
 	auto b = a.longestCommonPrefix(v);
 
