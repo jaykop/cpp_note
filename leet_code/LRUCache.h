@@ -1,45 +1,64 @@
 #pragma once
-#include <list>
-#include <map>
+#include <unordered_map>
 #include <deque>
 
 using namespace std; 
+//class LRUCache {
+//public:
+//    LRUCache(int capacity) : _capacity(capacity) {}
+//
+//    int get(int key) {
+//        auto it = cache.find(key);
+//        if (it == cache.end()) return -1;
+//        touch(it);
+//        return it->second.first;
+//    }
+//
+//    void put(int key, int value) {
+//        auto it = cache.find(key);
+//        if (it != cache.end()) touch(it);
+//        else {
+//            if (cache.size() == _capacity) {
+//                cache.erase(used.back());
+//                used.pop_back();
+//            }
+//            used.push_front(key);
+//        }
+//        cache[key] = { value, used.begin() };
+//    }
+//
+//private:
+//    typedef list<int> LI;
+//    typedef pair<int, LI::iterator> PII;
+//    typedef unordered_map<int, PII> HIPII;
+//
+//    void touch(HIPII::iterator it) {
+//        int key = it->first;
+//        used.erase(it->second.second);
+//        used.push_front(key);
+//        it->second.second = used.begin();
+//    }
+//
+//    HIPII cache;
+//    LI used;
+//    int _capacity;
+//};
+
 class LRUCache {
 public:
 
-    deque<int> order;
-    map<int, int> table;
-    int size;
-
-    LRUCache(int capacity) {
-        size = capacity;
-    }
+    LRUCache(int capacity) : size(capacity) {}
 
     int get(int key) {
 
         auto found = table.find(key);
-
-        // no such key
         if (found == table.end()) return -1;
 
-        int to_front_val = found->second;
-
-        if (order.size() > 1)
-        {
-            // update the order
-            for (auto it = order.begin(); it != order.end(); it++)
-            {
-                if (*it == key)
-                {
-                    order.erase(it);
-                    break;
-                }
-            }
-            order.push_front(key);
-        }
-
-        // found valid value
-        return to_front_val;
+        order.erase(table[key].second);
+        order.push_front(key);
+        Pair p = { table[key].first, order.begin() };
+        table[key] = p;
+        return table[key].first;
     }
 
     void put(int key, int value) {
@@ -47,54 +66,41 @@ public:
         // add as usual
         if (order.size() < size)
         {
-            // search existing key
             auto found = table.find(key);
 
+            // found such key, erase the existing iterator(key)
             if (found != table.end())
-            {
-                for (auto it = order.begin(); it != order.end(); it++)
-                {
-                    if (*it == key)
-                    {
-                        order.erase(it);
-                        break;
-                    }
-                }
-            }
+                order.erase(table[key].second);
+            
             order.push_front(key);
+            Pair p = { value, order.begin() };
+            table[key] = p;
         }
 
         else
         {
-            // search existing key
             auto found = table.find(key);
 
-            // no such key
-            if (found == table.end())
-            {
-                table.erase(order.back()); // remove the key
-                order.pop_back(); // remove the last element
-            }
+            // found such key, erase the existing iterator(key)
+            if (found != table.end())
+                order.erase(table[key].second);
 
             else
             {
-                for (auto it = order.begin(); it != order.end(); it++)
-                {
-                    if (*it == key)
-                    {
-                        order.erase(it);
-                        break;
-                    }
-                }
+                table.erase(order.back());
+                order.pop_back();
             }
-            order.push_front(key);
-        }
-        table[key] = value;
 
-        //if (table.size() != order.size())
-        //{
-        //    std::cout << "key: " << key;
-        //    std::cout << "value: " << value;
-        //}
+            order.push_front(key);
+            Pair p = { value, order.begin() };
+            table[key] = p;
+        }
     }
+
+private:
+    list<int> order;
+    using Pair = pair<int, list<int>::iterator>;
+    unordered_map<int, Pair> table; // key, (value, iterator)
+    int size;
+
 };
