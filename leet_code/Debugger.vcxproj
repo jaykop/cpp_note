@@ -170,6 +170,7 @@
     <ClInclude Include="inOrder.h" />
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="isPalindrome.h" />
+    <ClInclude Include="longestCommonPrefix.h" />
     <ClInclude Include="LRUCache.h" />
     <ClInclude Include="luckyNumbers.h" />
     <ClInclude Include="matrixScore.h" />
