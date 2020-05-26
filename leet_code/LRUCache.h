@@ -1,39 +1,15 @@
 #pragma once
 #include <list>
 #include <map>
-using namespace std;
+#include <deque>
+
+using namespace std; 
 class LRUCache {
 public:
 
-    list<int> order;
+    deque<int> order;
     map<int, int> table;
-    list<int>::iterator tail;
     int size;
-
-    void update_tail(int key)
-    {
-        if (order.size() > 1)
-        {
-            for (auto it = order.begin(); it != order.end(); it++)
-            {
-                if (*it == key)
-                {
-                    if (it == tail)
-                    {
-                        auto new_tail = prev(tail);
-                        table.erase(*tail);
-                        order.erase(tail);
-                        tail = new_tail;
-                    }
-                    else
-                    {
-                        order.erase(it);
-                    }
-                    break;
-                }
-            }
-        }
-    }
 
     LRUCache(int capacity) {
         size = capacity;
@@ -42,36 +18,83 @@ public:
     int get(int key) {
 
         auto found = table.find(key);
-        if (found == table.end())
-            return -1;
 
-        update_tail(key);
+        // no such key
+        if (found == table.end()) return -1;
 
-        // cycle to the front
-        order.insert(order.begin(), key);
-        return found->second;
+        int to_front_val = found->second;
+
+        if (order.size() > 1)
+        {
+            // update the order
+            for (auto it = order.begin(); it != order.end(); it++)
+            {
+                if (*it == key)
+                {
+                    order.erase(it);
+                    break;
+                }
+            }
+            order.push_front(key);
+        }
+
+        // found valid value
+        return to_front_val;
     }
 
     void put(int key, int value) {
 
-        if (order.empty())
-            tail = order.insert(order.begin(), key);
-        else
+        // add as usual
+        if (order.size() < size)
         {
-            if (order.size() < size)
+            // search existing key
+            auto found = table.find(key);
+
+            if (found != table.end())
             {
-                update_tail(key);
-                order.insert(order.begin(), key);
+                for (auto it = order.begin(); it != order.end(); it++)
+                {
+                    if (*it == key)
+                    {
+                        order.erase(it);
+                        break;
+                    }
+                }
             }
+            order.push_front(key);
         }
 
+        else
+        {
+            // search existing key
+            auto found = table.find(key);
+
+            // no such key
+            if (found == table.end())
+            {
+                table.erase(order.back()); // remove the key
+                order.pop_back(); // remove the last element
+            }
+
+            else
+            {
+                for (auto it = order.begin(); it != order.end(); it++)
+                {
+                    if (*it == key)
+                    {
+                        order.erase(it);
+                        break;
+                    }
+                }
+            }
+            order.push_front(key);
+        }
         table[key] = value;
+
+        //if (table.size() != order.size())
+        //{
+        //    std::cout << "key: " << key;
+        //    std::cout << "value: " << value;
+        //}
     }
 };
-
-/**
- * Your LRUCache object will be instantiated and called as such:
- * LRUCache* obj = new LRUCache(capacity);
- * int param_1 = obj->get(key);
- * obj->put(key,value);
- */
