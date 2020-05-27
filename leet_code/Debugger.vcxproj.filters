@@ -220,6 +220,9 @@
     <ClInclude Include="intToRoman.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="threeSum.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

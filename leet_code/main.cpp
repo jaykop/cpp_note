@@ -1,10 +1,10 @@
-#include "intToRoman.h"
+#include "threeSum.h"
 #include <iostream>
 int main() {
 
-	// vector<string> v =	{ "flower","flow","flight" };
+	vector<int> v =	{ -1, 0, 1, 2, -1, -4 };
 	Solution a;
-	auto b = a.intToRoman(20);
+	auto b = a.threeSum(v);
 
 	return 0;
 }
