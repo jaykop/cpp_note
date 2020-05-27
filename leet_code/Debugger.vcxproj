@@ -160,6 +160,7 @@
     <ClInclude Include="findSolution.h" />
     <ClInclude Include="flipAndInvertImage.h" />
     <ClInclude Include="freqAlphabets.h" />
+    <ClInclude Include="generateParenthesis.h" />
     <ClInclude Include="getDecimalValue.h" />
     <ClInclude Include="getElements.h" />
     <ClInclude Include="getHappyString.h" />
