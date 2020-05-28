@@ -191,6 +191,7 @@
     <ClInclude Include="processQueries.h" />
     <ClInclude Include="RecentCounter.h" />
     <ClInclude Include="recoverFromPreorder.h" />
+    <ClInclude Include="removeDuplicates.h" />
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="reverseWords.h" />
     <ClInclude Include="romanToInt.h" />
