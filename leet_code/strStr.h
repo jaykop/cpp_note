@@ -45,17 +45,29 @@ public:
     {
         int size = s.size();
         v.resize(size, 0);
+        int i = 1, len = 0;
 
-        for (int last = 1; last < size - 1; last++)
+        while (i < size)
         {
-            int i = 0, j = last;
-            while (i < last && s[i] == s[j])
+            if (s[i] == s[len])
             {
+                len++;
+                v[i] = len; // increase the len (save the longest len so far)
                 i++;
-                j--;
             }
-
-            v[last] = i;
+            else
+            {
+                // no chance to be same
+                if (len == 0)
+                {
+                    v[i] = 0;
+                    i++;
+                }
+                else
+                    // load the last longest length
+                    len = v[len - 1];
+                
+            }
         }
     }
 
@@ -63,8 +75,8 @@ public:
 
         string s("AABAACAABAA");
         vector<int> v;
+        // searchLPS(s, v);
         searchLPS(s, v);
-        computeLPSArray(s, v);
         if (haystack == needle || needle.empty())
             return 0;
 
