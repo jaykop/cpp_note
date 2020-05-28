@@ -1,10 +1,9 @@
-#include "threeSum.h"
+#include "strStr.h"
 #include <iostream>
 int main() {
 
-	vector<int> v = { -2,0,1,1,2 };
 	Solution a;
-	auto b = a.threeSum(v);
+	auto b = a.strStr("mississippi", "issip");
 
 	return 0;
 }
