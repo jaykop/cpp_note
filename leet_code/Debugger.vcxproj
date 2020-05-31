@@ -184,6 +184,7 @@
     <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
     <ClInclude Include="minSteps.h" />
+    <ClInclude Include="nextPermutation.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />

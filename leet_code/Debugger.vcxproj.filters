@@ -238,6 +238,9 @@
     <ClInclude Include="removeElement.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="nextPermutation.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
