@@ -197,6 +197,7 @@
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="reverseWords.h" />
     <ClInclude Include="romanToInt.h" />
+    <ClInclude Include="searchRange.h" />
     <ClInclude Include="sortArrayByParity.h" />
     <ClInclude Include="sortedSquares.h" />
     <ClInclude Include="sortString.h" />
