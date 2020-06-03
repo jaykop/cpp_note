@@ -21,13 +21,15 @@ struct vector {
 	class const_iterator
 	{
 	public:
-		const_iterator(T* p);// conversion ctor
+		const_iterator(T* p); // conversion ctor
 
-		const_iterator& operator++(void);// pre-increment
-		const_iterator& operator--(void);// pre-decrement                          
+		const_iterator& operator++(void); // pre-increment
+		const_iterator& operator--(void); // pre-decrement                          
 		const T& operator*(void) const; // dereference op
+
 		// inequality op
 		bool  operator!=(const const_iterator& rhs) const;
+
 	private:
 		T* cucrrent; //!< Pointer to the current node
 	};

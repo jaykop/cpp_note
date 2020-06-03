@@ -3,4 +3,10 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shared_ptr.h" />
+    <ClInclude Include="classA.h" />
+    <ClInclude Include="unique_ptr.h" />
+    <ClInclude Include="weak_ptr.h" />
+  </ItemGroup>
 </Project>
