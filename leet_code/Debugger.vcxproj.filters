@@ -247,6 +247,12 @@
     <ClInclude Include="countAndSay.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="combinationSum.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="isValidSudoku.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

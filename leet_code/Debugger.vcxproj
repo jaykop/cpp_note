@@ -146,6 +146,7 @@
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="checkInclusion.h" />
+    <ClInclude Include="combinationSum.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countAndSay.h" />
     <ClInclude Include="countNegatives.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="intToRoman.h" />
     <ClInclude Include="isPalindrome.h" />
+    <ClInclude Include="isValidSudoku.h" />
     <ClInclude Include="longestCommonPrefix.h" />
     <ClInclude Include="LRUCache.h" />
     <ClInclude Include="luckyNumbers.h" />
