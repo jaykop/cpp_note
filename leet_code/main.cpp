@@ -1,11 +1,13 @@
-#include "searchRange.h"
+#include "countAndSay.h"
 #include <iostream>
 int main() {
-
-	vector<int> v = { 2,2 };
-	
+		
 	Solution a;
-	a.searchRange(v, 2);
+	for (int i = 4; i < 10; i++)
+	{
+		auto ans = a.countAndSay(i);
+		std::cout << ans <<	std::endl;
+	}
 
 	return 0;
 }

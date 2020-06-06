@@ -147,6 +147,7 @@
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="checkInclusion.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
+    <ClInclude Include="countAndSay.h" />
     <ClInclude Include="countNegatives.h" />
     <ClInclude Include="createTargetArray.h" />
     <ClInclude Include="CustomStack.h" />

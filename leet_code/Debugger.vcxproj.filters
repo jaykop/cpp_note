@@ -244,6 +244,9 @@
     <ClInclude Include="searchRange.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="countAndSay.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
