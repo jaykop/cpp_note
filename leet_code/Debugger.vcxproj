@@ -146,7 +146,7 @@
     <ClInclude Include="balancedStringSplit.h" />
     <ClInclude Include="bstFromPreorder.h" />
     <ClInclude Include="checkInclusion.h" />
-    <ClInclude Include="combinationSum.h" />
+    <ClInclude Include="-combinationSum.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countAndSay.h" />
     <ClInclude Include="countNegatives.h" />
@@ -187,6 +187,7 @@
     <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
     <ClInclude Include="minSteps.h" />
+    <ClInclude Include="multiply.h" />
     <ClInclude Include="nextPermutation.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />

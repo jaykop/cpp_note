@@ -247,10 +247,13 @@
     <ClInclude Include="countAndSay.h">
       <Filter>Easy</Filter>
     </ClInclude>
-    <ClInclude Include="combinationSum.h">
+    <ClInclude Include="isValidSudoku.h">
       <Filter>Medium</Filter>
     </ClInclude>
-    <ClInclude Include="isValidSudoku.h">
+    <ClInclude Include="-combinationSum.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="multiply.h">
       <Filter>Medium</Filter>
     </ClInclude>
   </ItemGroup>
