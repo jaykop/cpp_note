@@ -1,11 +1,11 @@
-#include "permute.h"
+#include "permuteUnique.h"
 #include <iostream>
 
 int main() {
 
-	vector<int> v = { 1, 2, 3 };
+	vector<int> v = { 1, 1, 1 };
 
 	Solution a;
-	auto ans = a.permute(v);
+	auto ans = a.permuteUnique(v);
 
 	return 0;}
