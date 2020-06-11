@@ -256,6 +256,9 @@
     <ClInclude Include="multiply.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="combinationSum2.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
