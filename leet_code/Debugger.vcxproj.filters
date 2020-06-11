@@ -259,6 +259,9 @@
     <ClInclude Include="combinationSum2.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="permute.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

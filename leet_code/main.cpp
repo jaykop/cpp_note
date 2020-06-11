@@ -1,12 +1,11 @@
-#include "combinationSum2.h"
+#include "permute.h"
 #include <iostream>
 
 int main() {
 
-	vector<int> v = { 1 };
-	int target = 1;
+	vector<int> v = { 1, 2, 3 };
 
 	Solution a;
-	auto ans = a.combinationSum2(v, target);
+	auto ans = a.permute(v);
 
 	return 0;}
