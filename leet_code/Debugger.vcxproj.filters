@@ -265,6 +265,9 @@
     <ClInclude Include="permuteUnique.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="rotate.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

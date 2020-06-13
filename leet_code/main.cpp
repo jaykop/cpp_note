@@ -1,11 +1,25 @@
-#include "permuteUnique.h"
+#include "rotate.h"
 #include <iostream>
 
 int main() {
 
-	vector<int> v = { 1, 1, 1 };
+	vector<vector<int>> v =
+	/*{ {5, 1, 9, 11},
+		{2, 4, 8, 10},
+		{13, 3, 6, 7},
+		{15, 14, 12, 16} };*/
+		/*{
+	  {1,2,3},
+	  {4,5,6},
+	  {7,8,9}
+	};*/
+
+	{ {2, 29, 20, 26, 16, 28}, { 12, 27, 9, 25, 13, 21 }, { 32, 33, 32, 2, 28, 14 }, { 13, 14, 32, 27, 22, 26 }, { 33, 1, 20, 7, 21, 7 }, { 4, 24, 1, 6, 32, 34 }};
+
+	
 
 	Solution a;
-	auto ans = a.permuteUnique(v);
+	a.rotate(v);
 
-	return 0;}
+	return 0;
+}
