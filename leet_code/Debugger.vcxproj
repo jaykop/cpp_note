@@ -168,6 +168,7 @@
     <ClInclude Include="getElements.h" />
     <ClInclude Include="getHappyString.h" />
     <ClInclude Include="getKth.h" />
+    <ClInclude Include="groupAnagrams.h" />
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="heightChecker.h" />
