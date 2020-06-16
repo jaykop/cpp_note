@@ -168,7 +168,7 @@
     <ClInclude Include="getElements.h" />
     <ClInclude Include="getHappyString.h" />
     <ClInclude Include="getKth.h" />
-    <ClInclude Include="groupAnagrams.h" />
+    <ClInclude Include="-groupAnagrams.h" />
     <ClInclude Include="groupThePeople.h" />
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="heightChecker.h" />
@@ -186,6 +186,7 @@
     <ClInclude Include="maximum69Number.h" />
     <ClInclude Include="maxLevelSum.h" />
     <ClInclude Include="maxScoreWords.h" />
+    <ClInclude Include="maxSubArray.h" />
     <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
     <ClInclude Include="minSteps.h" />
@@ -212,6 +213,7 @@
     <ClInclude Include="sortedSquares.h" />
     <ClInclude Include="sortString.h" />
     <ClInclude Include="spiralMatrixIII.h" />
+    <ClInclude Include="spiralOrder.h" />
     <ClInclude Include="strStr.h" />
     <ClInclude Include="subdomainVisits.h" />
     <ClInclude Include="subtractProductAndSum.h" />

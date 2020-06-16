@@ -271,7 +271,13 @@
     <ClInclude Include="myPow.h">
       <Filter>Medium</Filter>
     </ClInclude>
-    <ClInclude Include="groupAnagrams.h">
+    <ClInclude Include="-groupAnagrams.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="maxSubArray.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
+    <ClInclude Include="spiralOrder.h">
       <Filter>Medium</Filter>
     </ClInclude>
   </ItemGroup>
