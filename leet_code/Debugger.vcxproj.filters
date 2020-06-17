@@ -280,6 +280,12 @@
     <ClInclude Include="spiralOrder.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="canJump.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="merge.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

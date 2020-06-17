@@ -1,4 +1,4 @@
-#include "spiralOrder.h"
+#include "merge.h"
 #include <iostream>
 
 int main() {
@@ -6,16 +6,12 @@ int main() {
 	Solution a;
 	vector<vector<int>> v = 
 	{
-		{ 1, 2, 3 },
-		{ 4, 5, 6 },
-		{ 7, 8, 9 }
-
-		//{1, 2, 3, 4},
-  //{5, 6, 7, 8},
-  //{9,10,11,12}
+		///*{1,4}, {0,4}*/{1,4},{4,5}/*{1,3} ,{2,6},{8,10},{15,18}*/
+		/*{1,4}, {0,2}, {3,5}*/
+		{2,3},{4,6},{5,7},{3,4}
 	};
 	
-	auto i = a.spiralOrder(v);
+	auto i = a.merge(v);
 
 	return 0;
 }
