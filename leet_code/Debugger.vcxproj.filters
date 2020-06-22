@@ -301,6 +301,9 @@
     <ClCompile Include="smallerNumbersThanCurrent.h">
       <Filter>Easy</Filter>
     </ClCompile>
+    <ClCompile Include="lengthOfLastWord.cpp">
+      <Filter>Medium</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Easy">
