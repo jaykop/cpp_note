@@ -292,6 +292,9 @@
     <ClInclude Include="getPermutation.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="uniquePaths.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
