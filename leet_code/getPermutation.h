@@ -8,6 +8,8 @@ class Solution {
 public:
 
     string getPermutation(int n, int k) {
+        
+        --k;
 
         string s;
         int division = 1;
@@ -19,16 +21,17 @@ public:
 
         division /= n; // combinations for each number
 
-        if (k / division > 1)
+        if (k / division > 0)
         {
-            char head = char(k / division) + '0';
-            s.erase(head - '1', 1);
-            s = head + s;
+            char num = char(k / division) + '1';
+            int pos = num - '1';
+            s.erase(pos, 1);
+            s = num + s;
 
             k = k % division;
         }
 
-        while (k && --k)
+        while (k-- > 0)
         {
             string next;
             int p = -1;
