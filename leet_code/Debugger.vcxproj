@@ -236,6 +236,7 @@
     <ClInclude Include="uniqueOccurrences.h" />
     <ClInclude Include="uniquePaths.h" />
     <ClInclude Include="uniquePathsIII.h" />
+    <ClInclude Include="uniquePathsWithObstacles.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lengthOfLastWord.h" />
