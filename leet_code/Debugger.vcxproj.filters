@@ -316,6 +316,9 @@
     <ClCompile Include="lengthOfLastWord.h">
       <Filter>Medium</Filter>
     </ClCompile>
+    <ClCompile Include="fib.h">
+      <Filter>Easy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Easy">

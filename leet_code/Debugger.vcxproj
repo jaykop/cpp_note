@@ -239,6 +239,7 @@
     <ClInclude Include="uniquePathsWithObstacles.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="fib.h" />
     <ClCompile Include="lengthOfLastWord.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ReducingDishes.h" />
