@@ -298,6 +298,9 @@
     <ClInclude Include="uniquePathsWithObstacles.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="numDecodings.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

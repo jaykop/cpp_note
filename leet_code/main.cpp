@@ -1,10 +1,10 @@
-#include "fib.h"
+#include "numDecodings.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	auto i = a.fib(3);
+	auto i = a.numDecodings("12");
 
 	return 0;
 }
