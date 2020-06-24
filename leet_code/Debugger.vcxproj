@@ -193,6 +193,7 @@
     <ClInclude Include="merge.h" />
     <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
+    <ClInclude Include="minPathSum.h" />
     <ClInclude Include="minSteps.h" />
     <ClInclude Include="multiply.h" />
     <ClInclude Include="myPow.h" />

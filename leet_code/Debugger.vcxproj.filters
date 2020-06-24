@@ -301,6 +301,9 @@
     <ClInclude Include="-numDecodings.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="minPathSum.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
