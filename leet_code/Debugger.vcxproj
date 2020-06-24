@@ -197,7 +197,7 @@
     <ClInclude Include="multiply.h" />
     <ClInclude Include="myPow.h" />
     <ClInclude Include="nextPermutation.h" />
-    <ClInclude Include="numDecodings.h" />
+    <ClInclude Include="-numDecodings.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />

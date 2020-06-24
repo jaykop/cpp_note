@@ -4,7 +4,7 @@
 int main() {
 
 	Solution a;
-	auto i = a.numDecodings("12");
+	auto i = a.numDecodings("00");
 
 	return 0;
 }

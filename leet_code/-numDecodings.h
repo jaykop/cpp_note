@@ -1,12 +1,36 @@
 #pragma once
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Solution {
 public:
 
-    int count = 0;
+    int numDecodings(string s) {
+        int n = s.size();
+        vector<int> mem(n + 1, -1);
+        mem[n] = 1;
+        return s.empty() ? 0 : num(0, s, mem);
+    }
+
+    int num(int i, string& s, vector<int>& mem) {
+        if (mem[i] > -1) 
+            return mem[i];
+
+        // invalid case by zero
+        if (s[i] == '0') 
+            return mem[i] = 0;
+
+        int res = num(i + 1, s, mem); // single digit case
+
+        // two digits case
+        if (i < s.size() - 1 && (s[i] == '1' || s[i] == '2' && s[i + 1] < '7')) 
+            res += num(i + 2, s, mem);
+        return mem[i] = res;
+    }
+
+    /*int count = 0;
 
     int numDecodings(string s) {
 
@@ -41,7 +65,7 @@ public:
         }
 
         return count;
-    }
+    }*/
 };
 
 //2 = B
