@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="-countBattleships.h" />
+    <ClInclude Include="addBinary.h" />
     <ClInclude Include="addTwoNumbers.h" />
     <ClInclude Include="allPathsSourceTarget.h" />
     <ClInclude Include="allPossibleFBT.h" />
