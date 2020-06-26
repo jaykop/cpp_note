@@ -307,6 +307,9 @@
     <ClInclude Include="addBinary.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="setZeroes.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
