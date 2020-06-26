@@ -1,0 +1,24 @@
+* How can single core run multiple programs?
+- Context switching.
+	OS scheduler manage which program to run
+	Each program runs for small time slices 
+	and scheduler switches into other program.
+	
+* Thread of execution 
+- the smallest sequence of programmed instructions 
+	that can be managed independently by a scheduler, 
+	which is typically a part of the operating system.	
+
+So single process can run with several threads.
+Process is a running program, and each program does not share memory with others.
+However, threads in the same process do.
+
+Parallelization works for independent task.
+*Even if you assign 3 threads, 
+it does not guarantee that all of them are assigned 
+to different core.
+Maybe if you are lucky, but if all of them are assigned into the same core,
+it runs under context switching.
+
+* detach?: forgetting running thread
+* thread does not return 
