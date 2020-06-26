@@ -1,7 +1,8 @@
 #pragma once
 #include <vector>
 
-using namespace std;
+using namespace std; 
+
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
@@ -19,17 +20,19 @@ public:
         {
             if (target <= matrix[i][max_c])
             {
-                for (auto n : matrix[i])
+                for (const auto& n : matrix[i])
                     if (n == target)
                         return true;
+                break;
             }
 
             else if (target < matrix[i][0])
             {
                 --i;
-                for (auto n : matrix[i])
+                for (const auto& n : matrix[i])
                     if (n == target)
                         return true;
+                break;
             }
         }
 
