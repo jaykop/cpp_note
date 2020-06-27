@@ -13,11 +13,12 @@ struct vector {
 	size_t capacity() const;
 	bool empty() const;
 	void clear();
+	// reserve, resize, ...
 
 	const T& at(int index) const;
 	T& operator[](int index);
 
-	void push_back();
+	void push_back(const T& obj);
 	void pop_back();
 	const T& back() const { return *head_; }
 	const T& front() const { *(head_ + size_); }
@@ -50,7 +51,7 @@ struct vector {
 
 private:
 
-	size_t size_;
+	size_t size_, capacity_;
 	T* head_ = nullptr;
 
 };

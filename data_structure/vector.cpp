@@ -5,13 +5,13 @@
 ///////////////////////////////////////////////////////////
 template<typename T>
 inline vector<T>::vector()
-	: head_(NULL), size_(0)
+	: head_(nullptr), size_(0), capacity_(0)
 {
 }
 
 template<typename T>
 inline vector<T>::vector(size_t size)
-	: head_(NULL), size_(size)
+	: head_(nullptr), size_(size), capacity_(size)
 {
 
 	head_ = (T*)malloc(sizeof(T) * size + 1);
@@ -23,7 +23,7 @@ inline vector<T>::vector(size_t size)
 
 template<typename T>
 inline vector<T>::vector(size_t size, T value)
-	: head_(NULL), size_(size)
+	: head_(nullptr), size_(size), capacity_(size)
 {
 	head_ = (T*)malloc(sizeof(T) * size + 1);
 	for (int i = 0; i < size_; i++) {
@@ -74,6 +74,21 @@ T& vector<T>::operator[](int index)
 		throw std::out_of_range("out of range!\n");
 
 	return *(head_ + index);
+}
+
+template<typename T>
+void vector<T>::push_back(const T& obj)
+{
+	if (capacity_ == size_)
+		++capacity_;
+
+	++size_;
+}
+
+template<typename T>
+void vector<T>::pop_back()
+{
+	size_ = size_ > 0 ? --size_ : 0;
 }
 
 template<typename T>
