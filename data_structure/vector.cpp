@@ -14,26 +14,29 @@ inline vector<T>::vector(size_t size)
 	: head_(NULL), size_(size)
 {
 
-	head_ = (T*)malloc(sizeof(T) * size);
+	head_ = (T*)malloc(sizeof(T) * size + 1);
 	for (int i = 0; i < size_; i++) {
 		*(head_ + i) = 0;
 	}
+	*(head_ + size) = -1;
 }
 
 template<typename T>
 inline vector<T>::vector(size_t size, T value)
 	: head_(NULL), size_(size)
 {
-	head_ = (T*)malloc(sizeof(T) * size);
+	head_ = (T*)malloc(sizeof(T) * size + 1);
 	for (int i = 0; i < size_; i++) {
 		*(head_ + i) = value;
 	}
+	*(head_ + size) = -1;
 }
 
 template<typename T>
 vector<T>::~vector()
 {
 	clear();
+	free(head_);
 }
 
 template<typename T>
@@ -51,46 +54,52 @@ bool vector<T>::empty() const
 template<typename T>
 void vector<T>::clear()
 {
-	free(head_);
-	head_ = NULL;
+	head_ = nullptr;
 	size_ = 0;
 }
 
 template<typename T>
 const T& vector<T>::at(int index) const
 {
+	if (unsigned(index) >= size_)
+		throw std::out_of_range("out of range!\n");
+
 	return *(head_ + index);
 }
 
 template<typename T>
 T& vector<T>::operator[](int index)
 {
+	if (unsigned(index) >= size_)
+		throw std::out_of_range("out of range!\n");
+
 	return *(head_ + index);
 }
 
 template<typename T>
-vector<T>::const_iterator vector<T>::begin(void) const
+typename vector<T>::const_iterator vector<T>::begin(void) const
 {
 	return const_iterator(head_);
 }
 
 template<typename T>
-vector<T>::const_iterator vector<T>::end(void) const
+typename vector<T>::const_iterator vector<T>::end(void) const
 {
-	return const_iterator(head_ + size_)); // need dummy
+	return const_iterator(head_ + size_); // need dummy
 }
 
-template<typename T>
-vector<T>::const_iterator vector<T>::rbegin(void) const
-{
-	return const_iterator(head_ + size_ - 1);
-}
-
-template<typename T>
-vector<T>::const_iterator vector<T>::rend(void) const
-{
-	return const_iterator(head_ - 1); // need dummy
-}
+// new new const_iterator
+//template<typename T>
+//typename vector<T>::const_iterator vector<T>::rbegin(void) const
+//{
+//	return const_iterator(head_ + size_ - 1);
+//}
+//
+//template<typename T>
+//typename vector<T>::const_iterator vector<T>::rend(void) const
+//{
+//	return const_iterator(head_ - 1); // need dummy
+//}
 
 ///////////////////////////////////////////////////////////
 // const_iterator
@@ -102,13 +111,13 @@ inline vector<T>::const_iterator::const_iterator(T* p)
 }
 
 template<typename T>
-inline vector<T>::const_iterator& vector<T>::const_iterator::operator++(void)
+inline typename vector<T>::const_iterator& vector<T>::const_iterator::operator++(void)
 {
 	return const_iterator(current + 1);
 }
 
 template<typename T>
-inline vector<T>::const_iterator& vector<T>::const_iterator::operator--(void)
+inline typename vector<T>::const_iterator& vector<T>::const_iterator::operator--(void)
 {
 	return const_iterator(current - 1);
 }

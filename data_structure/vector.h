@@ -10,11 +10,17 @@ struct vector {
 	~vector();
 
 	size_t size() const;
+	size_t capacity() const;
 	bool empty() const;
 	void clear();
 
 	const T& at(int index) const;
 	T& operator[](int index);
+
+	void push_back();
+	void pop_back();
+	const T& back() const { return *head_; }
+	const T& front() const { *(head_ + size_); }
 
 	//**************************************************
 	// const_iterator
@@ -31,13 +37,14 @@ struct vector {
 		bool  operator!=(const const_iterator& rhs) const;
 
 	private:
-		T* cucrrent; //!< Pointer to the current node
+		T* current; //!< Pointer to the current node
 	};
 	//**************************************************
 
 	  // iteration
 	const_iterator begin(void) const;  // the first node
 	const_iterator end(void) const;    // one past the end
+
 	const_iterator rbegin(void) const; // the last node
 	const_iterator rend(void) const;   // one before the first
 
