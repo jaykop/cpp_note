@@ -3,12 +3,12 @@
   <ItemGroup>
     <ClCompile Include="vector.cpp" />
     <ClCompile Include="tree.cpp" />
-    <ClCompile Include="linkedlist.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="list.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="linkedlist.h" />
     <ClInclude Include="tree.h" />
     <ClInclude Include="vector.h" />
+    <ClInclude Include="list.h" />
   </ItemGroup>
 </Project>

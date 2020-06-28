@@ -1,15 +1,18 @@
 #include <iostream>
 #include "vector.h"
-// #include <vector>
+// #include "list.h"
+
+//#include <vector>
+#include <list>
 
 using namespace std;
 
-int main(void) {
-
+void test_vector()
+{
 	vector<int> a;
 
 	std::cout << "Test push back\n";
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 10; i++)
 		a.push_back(i);
 	for (auto it = a.begin(); it != a.end(); ++it)
 		std::cout << *it << " ";
@@ -29,7 +32,7 @@ int main(void) {
 
 	std::cout << "Test resize - increment\n";
 	a.resize(20, 1);
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 10; i++)
 		a.push_back(i);
 	for (auto it = a.begin(); it != a.end(); ++it)
 		std::cout << *it << " ";
@@ -43,7 +46,7 @@ int main(void) {
 
 	std::cout << "Test reserve - increment\n";
 	a.reserve(30);
-	for (int i = 0; i < 20; i++) 
+	for (int i = 0; i < 20; i++)
 		a.push_back(i);
 	for (auto it = a.begin(); it != a.end(); ++it)
 		std::cout << *it << " ";
@@ -60,6 +63,18 @@ int main(void) {
 	for (auto it = a.begin(); it != a.end(); ++it)
 		std::cout << *it << " ";
 	std::cout << "\n";
+}
+
+void test_list()
+{
+	std::list<int> a;
+	a.erase(a.begin());
+}
+
+int main(void) {
+
+	test_vector();
+	test_list();
 
 	return 0;
 }
