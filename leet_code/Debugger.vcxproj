@@ -150,6 +150,7 @@
     <ClInclude Include="checkInclusion.h" />
     <ClInclude Include="-combinationSum.h" />
     <ClInclude Include="combinationSum2.h" />
+    <ClInclude Include="combine.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countAndSay.h" />
     <ClInclude Include="countNegatives.h" />
