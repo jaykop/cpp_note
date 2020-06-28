@@ -68,7 +68,8 @@ void test_vector()
 void test_list()
 {
 	std::list<int> a;
-	a.erase(a.begin());
+	a.
+		erase(a.begin());
 }
 
 int main(void) {
