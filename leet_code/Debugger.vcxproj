@@ -226,6 +226,7 @@
     <ClInclude Include="spiralOrder.h" />
     <ClInclude Include="strStr.h" />
     <ClInclude Include="subdomainVisits.h" />
+    <ClInclude Include="subsets.h" />
     <ClInclude Include="subtractProductAndSum.h" />
     <ClInclude Include="threeSum.h" />
     <ClInclude Include="threeSumClosest.h" />

@@ -1,11 +1,11 @@
-#include "combine.h"
+#include "subsets.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-
-	auto i = a.combine(4, 2);
+	vector<int> v = { 1,2,3 };
+	auto i = a.subsets(v);
 
 	return 0;
 }
