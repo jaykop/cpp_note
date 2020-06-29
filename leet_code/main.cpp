@@ -1,17 +1,12 @@
-#include "exist.h"
+#include "removeDuplicates2.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<vector<char>> v = { 
-		  {'A','B','C','E'} ,
-		  {'S','F','C','S'},
-		  {'A','D','E','E'}
-	};
-	string s = "ABCB";
+	vector<int> v = { 0,1,2,2,2,2,2,3,4,4,4 };
 
-	auto i = a.exist(v, s);
+	auto i = a.removeDuplicates(v);
 
 	return 0;
 }

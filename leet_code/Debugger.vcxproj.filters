@@ -322,6 +322,9 @@
     <ClInclude Include="exist.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="removeDuplicates2.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

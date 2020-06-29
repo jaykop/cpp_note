@@ -212,6 +212,7 @@
     <ClInclude Include="RecentCounter.h" />
     <ClInclude Include="recoverFromPreorder.h" />
     <ClInclude Include="removeDuplicates.h" />
+    <ClInclude Include="removeDuplicates2.h" />
     <ClInclude Include="removeElement.h" />
     <ClInclude Include="removeOuterParentheses.h" />
     <ClInclude Include="reverseWords.h" />
