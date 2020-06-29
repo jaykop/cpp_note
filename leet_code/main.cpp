@@ -1,11 +1,17 @@
-#include "subsets.h"
+#include "exist.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 1,2,3 };
-	auto i = a.subsets(v);
+	vector<vector<char>> v = { 
+		  {'A','B','C','E'} ,
+		  {'S','F','C','S'},
+		  {'A','D','E','E'}
+	};
+	string s = "ABCB";
+
+	auto i = a.exist(v, s);
 
 	return 0;
 }
