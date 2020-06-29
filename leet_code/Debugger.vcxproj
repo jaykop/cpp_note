@@ -158,6 +158,7 @@
     <ClInclude Include="CustomStack.h" />
     <ClInclude Include="deckRevealedIncreasing.h" />
     <ClInclude Include="decompressRLElist.h" />
+    <ClInclude Include="deleteDuplicates.h" />
     <ClInclude Include="diagonalSort.h" />
     <ClInclude Include="exist.h" />
     <ClInclude Include="findMedianSortedArrays.h" />

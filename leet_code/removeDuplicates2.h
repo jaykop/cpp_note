@@ -15,7 +15,7 @@ public:
         int i = 0;
         bool toggle = false;
 
-        while (i < ans - 1 && nums[i] <= nums[i + 1])
+        while (i < ans - 1)
         {
             if (nums[i] == nums[i + 1])
             {
@@ -47,5 +47,22 @@ public:
         }
 
         return ans;
+    }
+};
+
+//???
+
+e : 0 0 1 1 1 2 2 3
+i : 0 1 2 3 4 4 5 6
+e': 0 0 1 1 2 2 3
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i = 0;
+        for (auto e : nums) {
+            if (i < 2 || e > nums[i - 2])
+                nums[i++] = e;
+        }
+        return i;
     }
 };
