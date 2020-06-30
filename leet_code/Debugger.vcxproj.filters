@@ -328,6 +328,9 @@
     <ClInclude Include="deleteDuplicates.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="search.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

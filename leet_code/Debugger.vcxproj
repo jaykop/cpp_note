@@ -219,6 +219,7 @@
     <ClInclude Include="reverseWords.h" />
     <ClInclude Include="romanToInt.h" />
     <ClInclude Include="rotate.h" />
+    <ClInclude Include="search.h" />
     <ClInclude Include="searchMatrix.h" />
     <ClInclude Include="searchRange.h" />
     <ClInclude Include="setZeroes.h" />

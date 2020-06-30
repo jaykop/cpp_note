@@ -1,12 +1,12 @@
-#include "removeDuplicates2.h"
+#include "search.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 0,1,2,2,2,2,2,3,4,4,4 };
+	vector<int> v = { 1, 3 };
 
-	auto i = a.removeDuplicates(v);
+	auto i = a.search(v, 1);
 
 	return 0;
 }
