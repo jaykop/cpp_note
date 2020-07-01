@@ -195,6 +195,7 @@
     <ClInclude Include="maxScoreWords.h" />
     <ClInclude Include="maxSubArray.h" />
     <ClInclude Include="merge.h" />
+    <ClInclude Include="merge_easy.h" />
     <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
     <ClInclude Include="minPathSum.h" />
