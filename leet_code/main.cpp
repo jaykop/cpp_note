@@ -1,11 +1,11 @@
-#include "grayCode.h"
+#include "subsetsWithDup.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-
-	auto i = a.grayCode(2);
+	vector<int> v = { 1,2,2 };
+	auto i = a.subsetsWithDup(v);
 
 	return 0;
 }

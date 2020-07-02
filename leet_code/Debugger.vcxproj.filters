@@ -337,6 +337,9 @@
     <ClInclude Include="grayCode.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="subsetsWithDup.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
