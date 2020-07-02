@@ -8,6 +8,20 @@ class Solution {
 public:
 
     int numDecodings(string s) {
+        int prev = 1, // save for valid case
+			pp = 0, n = s.size();
+        for(int i=n-1;i>=0;i--) {
+			// if s[i] is zero, set current 0
+			// unless succeed the prev 
+            int current = s[i]=='0' ? 0 : prev;
+            if(i<n-1 && (s[i]=='1'||s[i]=='2'&&s[i+1]<'7')) current+=pp; // figured out the string is valid
+            pp = prev;
+            prev = current;
+        }
+        return s.empty()? 0 : p;   
+    }
+
+    int numDecodings(string s) {
         int n = s.size();
         vector<int> mem(n + 1, -1);
         mem[n] = 1;
