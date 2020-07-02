@@ -1,11 +1,11 @@
 #include <iostream>
 #include "vector.h"
-// #include "list.h"
+#include "list.h"
 
-//#include <vector>
+#include <vector>
 #include <list>
 
-using namespace std;
+// using namespace std;
 
 void test_vector()
 {
@@ -67,9 +67,10 @@ void test_vector()
 
 void test_list()
 {
-	std::list<int> a;
-	a.
-		erase(a.begin());
+	std::list<int> a, b;
+	a.merge(b);
+	//a.insert(, 0);
+	//a.erase(,);
 }
 
 int main(void) {

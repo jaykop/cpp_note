@@ -1,7 +1,17 @@
 #pragma once
 
 template<typename T>
-struct list {
+class list {
+
+	template<typename T>
+	struct node
+	{
+		node* prev = nullptr;
+		node* next = nullptr;
+		T value = 0;
+	};
+
+public:
 
 	list();
 	list(size_t size, T value = 0);
@@ -13,17 +23,12 @@ struct list {
 
 	const T& at(int index) const;
 
-	void insert(const T& obj);
-	void erase();
-	const T& back() const { return *head_; }
-	const T& front() const { return *(head_ + size_); }
-
 	//**************************************************
 	// const_iterator
 	class const_iterator
 	{
 	public:
-		const_iterator(T* p); // conversion ctor
+		const_iterator(node<T>* n); // conversion ctor
 
 		const_iterator operator++(void); // pre-increment
 		const_iterator operator--(void); // pre-decrement                          
@@ -33,7 +38,7 @@ struct list {
 		bool  operator!=(const const_iterator& rhs) const;
 
 	private:
-		T* current; //!< Pointer to the current node
+		node<T>* current; //!< Pointer to the current node
 	};
 
 	// const_reverse_iterator
@@ -50,7 +55,7 @@ struct list {
 		bool  operator!=(const const_reverse_iterator& rhs) const;
 
 	private:
-		T* current; //!< Pointer to the current node
+		node* current; //!< Pointer to the current node
 	};
 	//**************************************************
 
@@ -61,10 +66,18 @@ struct list {
 	const_reverse_iterator rbegin(void) const; // the last node
 	const_reverse_iterator rend(void) const;   // one before the first
 
+	void insert(const_iterator it, const T& obj);
+	void erase(const_iterator it);
+	void push_back(const T& obj);
+	void pop_back();
+	const T& back() const { return tail_->value; }
+	const T& front() const { return head_->value; }
+	void merge(list& other);
+
 private:
 
 	size_t size_;
-	T* head_ = nullptr, * tail_ = nullptr;
+	node* head_ = nullptr, *tail_ = nullptr;
 
 };
 

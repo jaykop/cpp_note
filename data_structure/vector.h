@@ -2,7 +2,9 @@
 // #include <iterator>
 
 template<typename T>
-struct vector {
+class vector {
+
+public:
 
 	vector();
 	vector(size_t size, T value = 0);

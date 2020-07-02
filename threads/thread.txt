@@ -32,8 +32,7 @@ Atomic: an operation cannot be interrupted
 진행(Progress) : 임계 구역에 들어간 프로세스가 없는 상태에서, 들어가려고 하는 프로세스가 여러 개 있다면 어느 것이 들어갈지를 적절히 결정해주어야 한다.
 한정 대기(Bounded waiting) : 다른 프로세스의 기아(Starvation)를 방지하기 위해, 한 번 임계 구역에 들어간 프로세스는 다음 번 임계 구역에 들어갈 때 제한을 두어야 한다.
 
-Dekker’s algorithm
-
+*Dekker’s algorithm
 Awantsin = 0
 Bwantsin = 0;
 favor = A
