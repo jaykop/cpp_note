@@ -340,6 +340,15 @@
     <ClInclude Include="subsetsWithDup.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="inorderTraversal.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="reverseBetween.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="numTrees.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

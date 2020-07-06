@@ -1,11 +1,10 @@
-#include "subsetsWithDup.h"
+#include "numTrees.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 1,2,2 };
-	auto i = a.subsetsWithDup(v);
+	auto i = a.numTrees(3);
 
 	return 0;
 }

@@ -181,6 +181,7 @@
     <ClInclude Include="hammingDistance.h" />
     <ClInclude Include="heightChecker.h" />
     <ClInclude Include="inOrder.h" />
+    <ClInclude Include="inorderTraversal.h" />
     <ClInclude Include="insertIntoBST.h" />
     <ClInclude Include="intToRoman.h" />
     <ClInclude Include="isPalindrome.h" />
@@ -206,6 +207,7 @@
     <ClInclude Include="nextPermutation.h" />
     <ClInclude Include="-numDecodings.h" />
     <ClInclude Include="numTilePossibilities.h" />
+    <ClInclude Include="numTrees.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />
     <ClInclude Include="pathInZigZagTree.h" />
@@ -218,6 +220,7 @@
     <ClInclude Include="removeDuplicates2.h" />
     <ClInclude Include="removeElement.h" />
     <ClInclude Include="removeOuterParentheses.h" />
+    <ClInclude Include="reverseBetween.h" />
     <ClInclude Include="reverseWords.h" />
     <ClInclude Include="romanToInt.h" />
     <ClInclude Include="rotate.h" />
