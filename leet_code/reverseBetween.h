@@ -57,3 +57,39 @@ public:
         return head;
     }
 };
+
+// using recursion
+class Solution {
+public:
+
+    bool stop = false;
+    ListNode* left = nullptr;
+
+    void recursive(ListNode* right, int m, int n)
+    {
+        if (n == 1)
+            return;
+
+        right = right->next;
+        if (m > 1) left = left->next;
+
+        recursive(right, m - 1, n - 1);
+
+        if (right == left || right->next == left)
+            stop = true;
+
+        if (stop) return;
+
+        swap(right->val, left->val);
+        left = left->next;
+    }
+
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+
+        left = head;
+        recursive(left, m, n);
+
+        return head;
+
+    }
+};
