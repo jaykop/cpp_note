@@ -68,3 +68,49 @@ CS
 favor = A;
 Bwantsin = 0;
 NonCS
+
+Rendezvous Barrier: 
+a synchronization primitive in which threads "meet". 
+Threads that get to the rendezvous point wait 
+until all the threads have reached the rendezvous point, 
+and then they continue.
+
+Semaphore: initialization, wait, signal
+Thread that desires to enter a CS executes wait,
+Semaphore Count that is N - up to N threads are allowed to enter CS.
+The next thread will block on wait until another thread executes signal.
+signal: 내가 들어간다 -1
+wait: 누가 들어있냐 check == 0
+
+Multiplex: 임계구역에 여러 쓰레드가 동시에 들어가도록 허락하는 것이
+Barrier: rendezvous for more than 2 thread. 
+The synchronization requirement is that 
+no thread executes critical point 
+until after all threads have executed rendezvous.
+2개 이상의 Thread가 Rendezvous하도록 해주는 것
+
+while (1) 
+
+	// rendezvous
+	
+	mutex.wait()
+	count = count +1
+	if ( count == n ) 
+		barrier2.wait()
+		barrier.signal()
+	mutex.signal()
+	
+	barrier.wait()
+	barrier.signal()
+	
+	// critical point
+	
+	mutex.wait()
+	count = count -1
+	if ( count == 0 ) 
+		barrier.wait()
+		barrier2.signal()
+	mutex.signal()
+	
+	barrier2.wait()
+	barrier2.signal()
