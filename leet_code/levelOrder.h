@@ -18,13 +18,13 @@ public:
         int depth;
     };
     
-    int maxDepth(TreeNode* root) {
+    vector<vector<int>> levelOrder(TreeNode* root) {
         
-        if (!root) return 0;
-        
-        int ans = 1;
+        vector<vector<int>> ans;
+        if (!root) return ans;
         queue<node> q;
-        q.push(node{root, ans});
+        q.push(node{root, 1});
+        ans.push_back({root->val});
         while (!q.empty())
         {
             auto t = q.front();
@@ -32,15 +32,18 @@ public:
             
             if (t.n->left) 
             {
+                ans.resize(t.depth + 1);
                 q.push(node{t.n->left, t.depth + 1});
-                ans = q.back().depth;
+                ans[t.depth].push_back(t.n->left->val);
             }
             if (t.n->right) 
             {
+                ans.resize(t.depth + 1);
                 q.push(node{t.n->right, t.depth + 1});
-                ans = q.back().depth;
+                ans[t.depth].push_back(t.n->right->val);
             }
         }
+        
         
         return ans;
     }
