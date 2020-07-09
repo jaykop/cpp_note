@@ -1,0 +1,11 @@
+*There are at least two (related) potential problems
+with SSHashFirst4 function. What are they?
+???
+
+*Linear probing - O(1)??
+=>
+	If the table is sparsely populated, searching is fast
+since we’d expect to perform one or two probes.
+ If the table is nearly full, we will be spending most
+of our time resolving collisions. O(N) is the worst
+case.

@@ -130,13 +130,16 @@ void test_list()
 	std::cout << "Test clear\n";
 	a.clear();
 
-	a.erase();
+	// a.erase();
 }
 
 int main(void) {
 
+	std::vector<int> a;
+	a.reserve(10);
+
 	// test_vector();
-	test_list();
+	//test_list();
 
 	return 0;
 }
