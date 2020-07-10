@@ -1,5 +1,6 @@
 #include "OAHashTable.h"
 #include <cmath>
+#include <queue>
 
 template<typename T>
 inline OAHashTable<T>::OAHashTable(const OAHTConfig& Config)
@@ -30,7 +31,7 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	//	When an insertion will cause the maximum load factor to be surpassed, you must grow the
 	//	table before inserting. A load factor of 1.0 means that you will grow the table only when an
 	//	item is to be inserted into a full table.
-	if (Clusters_.empty() && currentLoadFactor >= MaxLoadFactor_)
+	if (currentLoadFactor >= MaxLoadFactor_)
 	{
 		// increase the expansion number
 		++Stats_.Expansions_;
@@ -67,17 +68,7 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	}
 
 	unsigned probing = 1;
-	unsigned newIndex = 0;
-
-	if (!Clusters_.empty())
-	{
-		auto slot = Clusters_.front();
-		Clusters_.pop();
-		newIndex = Stats_.PrimaryHashFunc_(slot->Key, Stats_.TableSize_);
-	}
-
-	else
-		Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the unoccupied slot
 	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
@@ -100,37 +91,69 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 template<typename T>
 void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 {
-	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned probing = 1;
+	unsigned removeIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
-	if (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+	while (strcmp(Slots_[removeIndex].Key, Key) && probing <= Stats_.TableSize_)
 	{
+		removeIndex = ++removeIndex % Stats_.TableSize_;
+		++probing;
+	}
+
+	if (!strcmp(Slots_[removeIndex].Key, Key) &&
+		Slots_[removeIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+	{
+		Slots_[removeIndex].State = OAHTSlot::OAHTSlot_State::DELETED;
+
+		// MARK
 		if (DeletionPolicy_ == OAHTDeletionPolicy::MARK)
-			Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::DELETED;
+			;
 
 		// PACK
-		else 
-			Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
+		else
+		{
+			// std::queue<OAHTSlot*> cluster;
+			unsigned move = removeIndex;
+			unsigned next = (move + 1) % Stats_.TableSize_;
 
-		// add it to the clusters
-		Clusters_.push(&Slots_[newIndex]);
+			while (Slots_[next].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+			{
+				Slots_[next].State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
+				insert(Slots_[next].Key, Slots_[next].Data);
+				// cluster.push(&Slots_[next]);
+				move = next;
+				next = ++next % Stats_.TableSize_;
+				++probing;
+			}
+
+			/*while (!cluster.empty())
+			{
+				auto slot = cluster.front();
+				cluster.pop();
+				insert(slot->Key, slot->Data);
+			}*/
+		}
 
 		--Stats_.Count_;
 	}
+
+	// update probing
+	Stats_.Probes_ += probing;
 }
 
 template<typename T>
 const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 {
-	unsigned indexToReturn = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned findIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the slot
 	bool found = false;
 	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
 	{
-		int index = (i + indexToReturn) % Stats_.TableSize_;
+		int index = (i + findIndex) % Stats_.TableSize_;
 		if (Slots_[index].Key == Key)
 		{
-			indexToReturn = index;
+			findIndex = index;
 			found = true;
 			break;
 		}
@@ -139,7 +162,7 @@ const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 	// not found
 	if (!found) return 0;
 
-	return Slots_[indexToReturn].Data;
+	return Slots_[findIndex].Data;
 }
 
 template<typename T>
