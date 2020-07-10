@@ -30,7 +30,7 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	//	When an insertion will cause the maximum load factor to be surpassed, you must grow the
 	//	table before inserting. A load factor of 1.0 means that you will grow the table only when an
 	//	item is to be inserted into a full table.
-	if (currentLoadFactor >= MaxLoadFactor_)
+	if (Clusters_.empty() && currentLoadFactor >= MaxLoadFactor_)
 	{
 		// increase the expansion number
 		++Stats_.Expansions_;
@@ -67,7 +67,17 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	}
 
 	unsigned probing = 1;
-	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned newIndex = 0;
+
+	if (!Clusters_.empty())
+	{
+		auto slot = Clusters_.front();
+		Clusters_.pop();
+		newIndex = Stats_.PrimaryHashFunc_(slot->Key, Stats_.TableSize_);
+	}
+
+	else
+		Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the unoccupied slot
 	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
@@ -90,7 +100,22 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 template<typename T>
 void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 {
-	--Stats_.Count_;
+	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+
+	if (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+	{
+		if (DeletionPolicy_ == OAHTDeletionPolicy::MARK)
+			Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::DELETED;
+
+		// PACK
+		else 
+			Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
+
+		// add it to the clusters
+		Clusters_.push(&Slots_[newIndex]);
+
+		--Stats_.Count_;
+	}
 }
 
 template<typename T>
