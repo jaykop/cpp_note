@@ -933,18 +933,18 @@ int main(void)
 
   // ***************** Linear probing and PACK tests ************************
 
-  /*TestALot(&HashingFuncs[SIMPLE], &HashingFuncs[NONE]);
+  TestALot(&HashingFuncs[SIMPLE], &HashingFuncs[NONE]);
 
   TestSimpleGrow1();         
   TestSimpleDeletePresent(); 
   TestSimpleDeleteMissing(); 
   TestSimpleDispose();       
-  TestInsertConstant(); */     
+  TestInsertConstant();      
 
 
   // ****************** Double hashing and MARK tests ***********************
 
-  TestALot(&HashingFuncs[PJW], &HashingFuncs[RS]);
+  //TestALot(&HashingFuncs[PJW], &HashingFuncs[RS]);
 
   //TestSimpleInsert1();       
   //TestSimpleInsert2();       

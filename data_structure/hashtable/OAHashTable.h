@@ -95,7 +95,7 @@ class OAHashTable
       char Key[MAX_KEYLEN]; // Key is a string
       T Data;               // Client data is external
       enum OAHTSlot_State {OCCUPIED, UNOCCUPIED, DELETED};
-      OAHTSlot_State State;
+      OAHTSlot_State State = UNOCCUPIED;
       int reserved;
     };
 
@@ -136,7 +136,13 @@ class OAHashTable
     int IndexOf(const char *Key, OAHTSlot* &Slot) const;
     
     // Other private fields and methods...
+    double MaxLoadFactor_;
+    double GrowthFactor_;
+    OAHTDeletionPolicy DeletionPolicy_;
+    FREEPROC FreeProc_;
 
+    OAHTStats Stats_;
+    OAHTSlot* Slots_;
 };
 
 #include "OAHashTable.cpp"
