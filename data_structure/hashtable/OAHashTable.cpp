@@ -37,33 +37,43 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 
 		// get new container
 		double factor = std::ceil(Stats_.TableSize_ * GrowthFactor_);
-		unsigned new_size = GetClosestPrime(static_cast<unsigned>(factor));
-		OAHTSlot* temp = new OAHTSlot[new_size];
+		unsigned newSize = GetClosestPrime(static_cast<unsigned>(factor));
+		OAHTSlot* tmpSlot = new OAHTSlot[newSize];
 
-		// copy existing container to the new one
+		// move existing data to the new slots
 		for (unsigned i = 0; i < Stats_.TableSize_; ++i)
-			temp[i] = Slots_[i];
+		{
+			unsigned probing = 0;
+			unsigned newIndex = Stats_.PrimaryHashFunc_(Slots_[i].Key, newSize);
+
+			if (Slots_[i].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+				++probing;
+			
+			while (tmpSlot[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+			{
+				++probing;
+				newIndex = ++newIndex % newSize;
+			}
+
+			Stats_.Probes_ += probing;
+			tmpSlot[newIndex] = Slots_[i];
+		}
 
 		// set new container
 		delete[] Slots_;
-		Stats_.TableSize_ = new_size;
-		Slots_ = temp;
+		Slots_ = tmpSlot;
+
+		Stats_.TableSize_ = newSize;
 	}
 
-	// get the index to add
-	unsigned indexToUpdate = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned probing = 1;
+	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the unoccupied slot
-	unsigned probing = 0; 
-	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
+	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 	{
 		++probing;
-		int index = (i + indexToUpdate) % Stats_.TableSize_;
-		if (Slots_[index].State != OAHTSlot::OAHTSlot_State::OCCUPIED)
-		{
-			indexToUpdate = index;
-			break;
-		}
+		newIndex = ++newIndex % Stats_.TableSize_;
 	}
 
 	// update probing
@@ -71,10 +81,10 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 
 	// update the data
 	unsigned strSize = strnlen(Key, MAX_KEYLEN);
-	strncpy(Slots_[indexToUpdate].Key, Key, strSize);
-	Slots_[indexToUpdate].Key[strSize] = '\0';
-	Slots_[indexToUpdate].Data = Data;
-	Slots_[indexToUpdate].State = OAHTSlot::OAHTSlot_State::OCCUPIED;
+	strncpy(Slots_[newIndex].Key, Key, strSize);
+	Slots_[newIndex].Key[strSize] = '\0';
+	Slots_[newIndex].Data = Data;
+	Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::OCCUPIED;
 }
 
 template<typename T>

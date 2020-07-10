@@ -135,8 +135,14 @@ void test_list()
 
 int main(void) {
 
-	std::vector<int> a;
-	a.reserve(10);
+	//std::vector<int> a;
+	//a.reserve(10);
+
+	unsigned size = 7, start = 3;
+	for (unsigned i = 0; i < size; ++i)
+	{
+		std::cout << (i + start) % size << " ";
+	}
 
 	// test_vector();
 	//test_list();
