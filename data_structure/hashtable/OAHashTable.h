@@ -8,7 +8,6 @@
 #pragma warning(disable: 4290 ) 
 #endif
 
-// #include <queue>
 #include <string>
 #include "Support.h"
 
@@ -144,7 +143,6 @@ class OAHashTable
 
     OAHTStats Stats_;
     OAHTSlot* Slots_;
-    // std::queue<OAHTSlot*> Clusters_;
 };
 
 #include "OAHashTable.cpp"

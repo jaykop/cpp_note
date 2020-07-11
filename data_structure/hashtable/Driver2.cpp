@@ -975,7 +975,7 @@ int main(void)
   Test1(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
   Test2(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
   Test3(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
-  //Test4(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], MARK);
+  Test4(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], MARK);
   //Test5(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
   //Test6(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
   //Test7(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
