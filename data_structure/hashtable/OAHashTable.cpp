@@ -30,14 +30,18 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 
 	double currentLoadFactor = Stats_.Count_ / double(Stats_.TableSize_);
 
-	if (currentLoadFactor >= MaxLoadFactor_)
-		GrowTable();
-
 	unsigned probing = 1;
+	
+	if (currentLoadFactor >= MaxLoadFactor_)
+	{
+		probing = 0;
+		GrowTable();
+	}
+
 	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the unoccupied slot
-	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+	while (Slots_[newIndex].State != OAHTSlot::OAHTSlot_State::UNOCCUPIED)
 	{
 		++probing;
 		++newIndex;
@@ -107,7 +111,7 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 	}
 
 	else 
-		throw OAHashTableException::E_ITEM_NOT_FOUND;
+		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "E_ITEM_NOT_FOUND");
 
 	// update probing
 	Stats_.Probes_ += probing;
@@ -116,6 +120,8 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 template<typename T>
 const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 {
+	// ++Stats_.Probes_;
+
 	unsigned findIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the slot
@@ -123,7 +129,7 @@ const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
 	{
 		int index = (i + findIndex) % Stats_.TableSize_;
-		if (Slots_[index].Key == Key)
+		if (!strcmp(Slots_[index].Key, Key))
 		{
 			findIndex = index;
 			found = true;
@@ -132,7 +138,8 @@ const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 	}
 
 	// not found
-	if (!found) throw OAHashTableException::E_ITEM_NOT_FOUND;
+	if (!found) 
+		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "E_ITEM_NOT_FOUND");
 
 	return Slots_[findIndex].Data;
 }
@@ -182,9 +189,6 @@ void OAHashTable<T>::GrowTable(void) throw(OAHashTableException)
 	{
 		unsigned probing = 1;
 		unsigned newIndex = Stats_.PrimaryHashFunc_(Slots_[i].Key, newSize);
-
-		/*if (Slots_[i].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
-			++probing;*/
 
 		while (tmpSlot[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 		{
