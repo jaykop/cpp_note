@@ -978,10 +978,10 @@ int main(void)
   Test4(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], MARK);
   Test5(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
   Test6(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
-  //Test7(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
-  //Test9(&HashingFuncs[UNIVERSAL], &HashingFuncs[RS], MARK);
-  //Test10(&HashingFuncs[UNIVERSAL], &HashingFuncs[RS], MARK);
-  //Test11(&HashingFuncs[UNIVERSAL], &HashingFuncs[NONE], PACK);
+  Test7(&HashingFuncs[SIMPLE], &HashingFuncs[NONE], PACK);
+  Test9(&HashingFuncs[UNIVERSAL], &HashingFuncs[RS], MARK);
+  Test10(&HashingFuncs[UNIVERSAL], &HashingFuncs[RS], MARK);
+  Test11(&HashingFuncs[UNIVERSAL], &HashingFuncs[NONE], PACK);
 
   FreePersonRecs();
   return 0;

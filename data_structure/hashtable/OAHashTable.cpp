@@ -26,6 +26,9 @@ inline OAHashTable<T>::~OAHashTable()
 template<typename T>
 void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableException)
 {
+	if (!Slots_)
+		throw OAHashTableException(OAHashTableException::E_NO_MEMORY, "E_NO_MEMORY");
+
 	++Stats_.Count_;
 
 	double currentLoadFactor = Stats_.Count_ / double(Stats_.TableSize_);
@@ -43,6 +46,9 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	// find the unoccupied slot
 	while (Slots_[newIndex].State != OAHTSlot::OAHTSlot_State::UNOCCUPIED)
 	{
+		if (!strcmp(Slots_[newIndex].Key, Key))
+			throw OAHashTableException(OAHashTableException::E_DUPLICATE, "E_DUPLICATE");
+
 		++probing;
 		++newIndex;
 		newIndex = newIndex % Stats_.TableSize_;
@@ -57,7 +63,6 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	Slots_[newIndex].Key[strSize] = '\0';
 	Slots_[newIndex].Data = Data;
 	Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::OCCUPIED;
-
 }
 
 template<typename T>
@@ -147,12 +152,13 @@ const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 template<typename T>
 void OAHashTable<T>::clear(void)
 {
-	MaxLoadFactor_ = GrowthFactor_ = 0.0;
-	FreeProc_ = nullptr;
-	Stats_ = OAHTStats();
+	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
+		Slots_[i].State = OAHTSlot::UNOCCUPIED;
+	Stats_.Count_ = 0;
 
-	delete[] Slots_;
-	Slots_ = nullptr;
+	//FreeProc_ = nullptr;
+	//delete[] Slots_;
+	//Slots_ = nullptr;
 }
 
 template<typename T>
