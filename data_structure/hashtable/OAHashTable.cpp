@@ -53,11 +53,8 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 		if (Stats_.SecondaryHashFunc_)
 		{
 			unsigned add = Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_);
-			if (add)
-			{
-				++probing;
+			if (add) 
 				newIndex += add;
-			}
 			else
 				++newIndex;
 		}
