@@ -44,13 +44,27 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
 	// find the unoccupied slot
-	while (Slots_[newIndex].State != OAHTSlot::OAHTSlot_State::UNOCCUPIED)
+	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 	{
 		if (!strcmp(Slots_[newIndex].Key, Key))
 			throw OAHashTableException(OAHashTableException::E_DUPLICATE, "E_DUPLICATE");
 
 		++probing;
-		++newIndex;
+		if (Stats_.SecondaryHashFunc_)
+		{
+			unsigned add = Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_);
+			if (add)
+			{
+				++probing;
+				newIndex += add;
+			}
+			else
+				++newIndex;
+		}
+		else
+		{
+			++newIndex;
+		}
 		newIndex = newIndex % Stats_.TableSize_;
 	}
 
