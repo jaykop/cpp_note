@@ -104,13 +104,13 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 				insert(slot->Key, slot->Data);
 			}
 		}
-
-		// update probing
-		Stats_.Probes_ += probing;
 	}
 
 	else 
 		throw OAHashTableException::E_ITEM_NOT_FOUND;
+
+	// update probing
+	Stats_.Probes_ += probing;
 }
 
 template<typename T>
@@ -180,11 +180,11 @@ void OAHashTable<T>::GrowTable(void) throw(OAHashTableException)
 	// move existing data to the new slots
 	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
 	{
-		unsigned probing = 0;
+		unsigned probing = 1;
 		unsigned newIndex = Stats_.PrimaryHashFunc_(Slots_[i].Key, newSize);
 
-		if (Slots_[i].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
-			++probing;
+		/*if (Slots_[i].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+			++probing;*/
 
 		while (tmpSlot[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 		{
