@@ -14,7 +14,6 @@ inline OAHashTable<T>::OAHashTable(const OAHTConfig& Config)
 	Stats_.SecondaryHashFunc_ = Config.SecondaryHashFunc_;
 
 	InitTable();
-	//Slots_ = new OAHTSlot[Stats_.TableSize_];
 }
 
 template<typename T>
@@ -31,17 +30,17 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 
 	++Stats_.Count_;
 
+	unsigned probing = 1;
+
 	double currentLoadFactor = Stats_.Count_ / double(Stats_.TableSize_);
 	if (currentLoadFactor >= MaxLoadFactor_)
 		GrowTable();
 
-	unsigned probing = 1;
 	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
-
-	unsigned add = 1;	
+	unsigned add = 1;
 	if (Stats_.SecondaryHashFunc_)
 		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1);
-	
+
 	// find the unoccupied slot
 	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 	{
@@ -66,89 +65,54 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 template<typename T>
 void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 {
-	unsigned probing = 1;
-	unsigned removeIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	OAHTSlot* found = nullptr;
+	int index = IndexOf(Key, found);
+	if (index < 0)
+		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "Key not in table");
 
-	unsigned add = 1;
-	if (Stats_.SecondaryHashFunc_)
-		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1);
+	// decrease the count
+	--Stats_.Count_;
 
-	while (strcmp(Slots_[removeIndex].Key, Key)/* && probing <= Stats_.TableSize_*/)
+	// MARK
+	if (DeletionPolicy_ == OAHTDeletionPolicy::MARK)
+		found->State = OAHTSlot::OAHTSlot_State::DELETED;
+
+	// PACK
+	else
 	{
-		++probing;
-		removeIndex += add;
-		removeIndex = removeIndex % Stats_.TableSize_;
-	}
+		std::queue<OAHTSlot*> cluster;
+		found->State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
 
-	// update probing
-	Stats_.Probes_ += probing;
+		unsigned removeIndex = unsigned(index);
+		unsigned next = (removeIndex + 1) % Stats_.TableSize_;
 
-	// found the item
-	if (!strcmp(Slots_[removeIndex].Key, Key) &&
-		Slots_[removeIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
-	{
-		// decrease the count
-		--Stats_.Count_;
-
-		// MARK
-		if (DeletionPolicy_ == OAHTDeletionPolicy::MARK)
+		while (Slots_[next].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 		{
-			Slots_[removeIndex].State = OAHTSlot::OAHTSlot_State::DELETED;
+			Slots_[next].State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
+			cluster.push(&Slots_[next]);
+			next = (++next) % Stats_.TableSize_;
+			--Stats_.Count_;
 		}
 
-		// PACK
-		else
+		while (!cluster.empty())
 		{
-			std::queue<OAHTSlot*> cluster;
-			Slots_[removeIndex].State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
-			unsigned next = (removeIndex + 1) % Stats_.TableSize_;
-			while (Slots_[next].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
-			{
-				Slots_[next].State = OAHTSlot::OAHTSlot_State::UNOCCUPIED;
-				cluster.push(&Slots_[next]);
-				++next;
-				next = next % Stats_.TableSize_;
-				--Stats_.Count_;
-			}
-
-			while (!cluster.empty())
-			{
-				auto slot = cluster.front();
-				cluster.pop();
-				insert(slot->Key, slot->Data);
-			}
+			auto slot = cluster.front();
+			cluster.pop();
+			insert(slot->Key, slot->Data);
 		}
 	}
-
-	else 
-		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "E_ITEM_NOT_FOUND");
 }
 
 template<typename T>
 const T& OAHashTable<T>::find(const char* Key) const throw(OAHashTableException)
 {
-	// ++Stats_.Probes_;
+	OAHTSlot* found = nullptr;
+	int index = IndexOf(Key, found);
+	
+	if (index < 0) 
+		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "Item not found in table");
 
-	unsigned findIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
-
-	// find the slot
-	bool found = false;
-	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
-	{
-		int index = (i + findIndex) % Stats_.TableSize_;
-		if (!strcmp(Slots_[index].Key, Key))
-		{
-			findIndex = index;
-			found = true;
-			break;
-		}
-	}
-
-	// not found
-	if (!found) 
-		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "E_ITEM_NOT_FOUND");
-
-	return Slots_[findIndex].Data;
+	return found->Data;
 }
 
 template<typename T>
@@ -158,10 +122,6 @@ void OAHashTable<T>::clear(void)
 		Slots_[i].State = OAHTSlot::UNOCCUPIED;
 
 	Stats_.Count_ = 0;
-
-	//FreeProc_ = nullptr;
-	//delete[] Slots_;
-	//Slots_ = nullptr;
 }
 
 template<typename T>
@@ -196,22 +156,26 @@ void OAHashTable<T>::GrowTable(void) throw(OAHashTableException)
 	// move existing data to the new slots
 	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
 	{
-		unsigned probing = 1;
-		unsigned newIndex = Stats_.PrimaryHashFunc_(Slots_[i].Key, newSize);
-
-		unsigned add = 1;
-		if (Stats_.SecondaryHashFunc_)
-			add += Stats_.SecondaryHashFunc_(Slots_[i].Key, Stats_.TableSize_ - 1);
-
-		while (tmpSlot[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+		if (Slots_[i].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 		{
-			++probing;
-			newIndex += add;
-			newIndex = newIndex % newSize;
-		}
+			unsigned probing = 1;
+			unsigned newIndex = Stats_.PrimaryHashFunc_(Slots_[i].Key, newSize);
 
-		Stats_.Probes_ += probing;
-		tmpSlot[newIndex] = Slots_[i];
+			unsigned add = 1;
+			if (Stats_.SecondaryHashFunc_)
+				add += Stats_.SecondaryHashFunc_(Slots_[i].Key, Stats_.TableSize_ - 1);
+
+			while (tmpSlot[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+			{
+				++probing;
+				newIndex += add;
+				newIndex = newIndex % newSize;
+			}
+
+			tmpSlot[newIndex] = Slots_[i];
+
+			Stats_.Probes_ += probing;
+		}
 	}
 
 	// set new container
@@ -225,32 +189,28 @@ template<typename T>
 int OAHashTable<T>::IndexOf(const char* Key, OAHTSlot*& Slot) const
 {
 	unsigned findIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned probing = 1;
+
 	unsigned add = 1;
 	if (Stats_.SecondaryHashFunc_)
 		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1);
 
-	// find the slot
-	bool found = false;
-
-	while (Slots_[findIndex].Key != Key)
+	while (strcmp(Slots_[findIndex].Key, Key) // identical key 
+		&& probing <= Stats_.TableSize_) // at least one cycle
 	{
 		++probing;
 		findIndex += add;
 		findIndex = findIndex % Stats_.TableSize_;
 	}
 
-	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
-	{
-		int index = (i findIndex) % Stats_.TableSize_;
-		if (Slots_[index].Key == Key)
-		{
-			findIndex = index;
-			found = true;
-			break;
-		}
-	}
+	// set slot
+	Slot = &Slots_[findIndex];
 
-	// not found
-	if (!found) return -1;
-	return findIndex;
+	// update probing count
+	Stats_.Probes_ += probing;
+
+	if (!strcmp(Slots_[findIndex].Key, Key))
+		return int(findIndex);
+
+	return -1;
 }

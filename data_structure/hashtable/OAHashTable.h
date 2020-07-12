@@ -141,7 +141,7 @@ class OAHashTable
     OAHTDeletionPolicy DeletionPolicy_;
     FREEPROC FreeProc_ = nullptr;
 
-    OAHTStats Stats_;
+    mutable OAHTStats Stats_;
     OAHTSlot* Slots_ = nullptr;
 };
 
