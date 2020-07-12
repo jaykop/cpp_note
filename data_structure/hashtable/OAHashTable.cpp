@@ -32,22 +32,18 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	++Stats_.Count_;
 
 	double currentLoadFactor = Stats_.Count_ / double(Stats_.TableSize_);
+	if (currentLoadFactor >= MaxLoadFactor_)
+		GrowTable();
 
 	unsigned probing = 1;
-	
-	if (currentLoadFactor >= MaxLoadFactor_)
-	{
-		probing = 0;
-		GrowTable();
-	}
-
 	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+
 	unsigned add = 0;	
 	if (Stats_.SecondaryHashFunc_)
 		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1) + 1;
 	
 	// find the unoccupied slot
-	while (Slots_[newIndex].State != OAHTSlot::OAHTSlot_State::UNOCCUPIED)
+	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 	{
 		if (!strcmp(Slots_[newIndex].Key, Key))
 			throw OAHashTableException(OAHashTableException::E_DUPLICATE, "E_DUPLICATE");
@@ -83,6 +79,9 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 		removeIndex = add ? removeIndex + add : ++removeIndex;
 		removeIndex = removeIndex % Stats_.TableSize_;
 	}
+
+	// update probing
+	Stats_.Probes_ += probing;
 
 	// found the item
 	if (!strcmp(Slots_[removeIndex].Key, Key) &&
@@ -123,9 +122,6 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 
 	else 
 		throw OAHashTableException(OAHashTableException::E_ITEM_NOT_FOUND, "E_ITEM_NOT_FOUND");
-
-	// update probing
-	Stats_.Probes_ += probing;
 }
 
 template<typename T>

@@ -816,8 +816,6 @@ void Test9(HashData *phd, HashData *shd,  OAHTDeletionPolicy policy)
     {
       Person *person = PersonRecs[i];
       ht.insert(person->ID, person);
-      DumpTable<T>(ht);
-      cout << endl;
 
     }
     DumpTable<T>(ht);
