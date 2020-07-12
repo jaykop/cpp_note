@@ -136,13 +136,13 @@ class OAHashTable
     int IndexOf(const char *Key, OAHTSlot* &Slot) const;
     
     // Other private fields and methods...
-    double MaxLoadFactor_;
-    double GrowthFactor_;
+    double MaxLoadFactor_ = 0.0;
+    double GrowthFactor_ = 0.0;
     OAHTDeletionPolicy DeletionPolicy_;
-    FREEPROC FreeProc_;
+    FREEPROC FreeProc_ = nullptr;
 
     OAHTStats Stats_;
-    OAHTSlot* Slots_;
+    OAHTSlot* Slots_ = nullptr;
 };
 
 #include "OAHashTable.cpp"

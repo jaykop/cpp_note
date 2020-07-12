@@ -38,9 +38,9 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	unsigned probing = 1;
 	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
-	unsigned add = 0;	
+	unsigned add = 1;	
 	if (Stats_.SecondaryHashFunc_)
-		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1) + 1;
+		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1);
 	
 	// find the unoccupied slot
 	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
@@ -49,7 +49,7 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 			throw OAHashTableException(OAHashTableException::E_DUPLICATE, "E_DUPLICATE");
 
 		++probing;
-		newIndex = add ? newIndex + add : ++newIndex;
+		newIndex += add;
 		newIndex = newIndex % Stats_.TableSize_;
 	}
 
@@ -69,14 +69,14 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 	unsigned probing = 1;
 	unsigned removeIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
-	unsigned add = 0;
+	unsigned add = 1;
 	if (Stats_.SecondaryHashFunc_)
-		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1) + 1;
+		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1);
 
-	while (strcmp(Slots_[removeIndex].Key, Key) && probing <= Stats_.TableSize_)
+	while (strcmp(Slots_[removeIndex].Key, Key)/* && probing <= Stats_.TableSize_*/)
 	{
 		++probing;
-		removeIndex = add ? removeIndex + add : ++removeIndex;
+		removeIndex += add;
 		removeIndex = removeIndex % Stats_.TableSize_;
 	}
 
@@ -199,10 +199,14 @@ void OAHashTable<T>::GrowTable(void) throw(OAHashTableException)
 		unsigned probing = 1;
 		unsigned newIndex = Stats_.PrimaryHashFunc_(Slots_[i].Key, newSize);
 
+		unsigned add = 1;
+		if (Stats_.SecondaryHashFunc_)
+			add += Stats_.SecondaryHashFunc_(Slots_[i].Key, Stats_.TableSize_ - 1);
+
 		while (tmpSlot[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
 		{
 			++probing;
-			++newIndex;
+			newIndex += add;
 			newIndex = newIndex % newSize;
 		}
 
@@ -221,12 +225,23 @@ template<typename T>
 int OAHashTable<T>::IndexOf(const char* Key, OAHTSlot*& Slot) const
 {
 	unsigned findIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
+	unsigned add = 1;
+	if (Stats_.SecondaryHashFunc_)
+		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1);
 
 	// find the slot
 	bool found = false;
+
+	while (Slots_[findIndex].Key != Key)
+	{
+		++probing;
+		findIndex += add;
+		findIndex = findIndex % Stats_.TableSize_;
+	}
+
 	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
 	{
-		int index = (i + findIndex) % Stats_.TableSize_;
+		int index = (i findIndex) % Stats_.TableSize_;
 		if (Slots_[index].Key == Key)
 		{
 			findIndex = index;
