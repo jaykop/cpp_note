@@ -42,26 +42,18 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 	}
 
 	unsigned newIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
-
+	unsigned add = 0;	
+	if (Stats_.SecondaryHashFunc_)
+		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1) + 1;
+	
 	// find the unoccupied slot
-	while (Slots_[newIndex].State == OAHTSlot::OAHTSlot_State::OCCUPIED)
+	while (Slots_[newIndex].State != OAHTSlot::OAHTSlot_State::UNOCCUPIED)
 	{
 		if (!strcmp(Slots_[newIndex].Key, Key))
 			throw OAHashTableException(OAHashTableException::E_DUPLICATE, "E_DUPLICATE");
 
 		++probing;
-		if (Stats_.SecondaryHashFunc_)
-		{
-			unsigned add = Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_);
-			if (add) 
-				newIndex += add;
-			else
-				++newIndex;
-		}
-		else
-		{
-			++newIndex;
-		}
+		newIndex = add ? newIndex + add : ++newIndex;
 		newIndex = newIndex % Stats_.TableSize_;
 	}
 
@@ -70,8 +62,7 @@ void OAHashTable<T>::insert(const char* Key, const T& Data) throw(OAHashTableExc
 
 	// update the data
 	unsigned strSize = strlen(Key);
-	strncpy(Slots_[newIndex].Key, Key, strSize);
-	Slots_[newIndex].Key[strSize] = '\0';
+	strncpy(Slots_[newIndex].Key, Key, strSize + 1);
 	Slots_[newIndex].Data = Data;
 	Slots_[newIndex].State = OAHTSlot::OAHTSlot_State::OCCUPIED;
 }
@@ -82,10 +73,14 @@ void OAHashTable<T>::remove(const char* Key) throw(OAHashTableException)
 	unsigned probing = 1;
 	unsigned removeIndex = Stats_.PrimaryHashFunc_(Key, Stats_.TableSize_);
 
+	unsigned add = 0;
+	if (Stats_.SecondaryHashFunc_)
+		add += Stats_.SecondaryHashFunc_(Key, Stats_.TableSize_ - 1) + 1;
+
 	while (strcmp(Slots_[removeIndex].Key, Key) && probing <= Stats_.TableSize_)
 	{
 		++probing;
-		++removeIndex;
+		removeIndex = add ? removeIndex + add : ++removeIndex;
 		removeIndex = removeIndex % Stats_.TableSize_;
 	}
 
@@ -165,6 +160,7 @@ void OAHashTable<T>::clear(void)
 {
 	for (unsigned i = 0; i < Stats_.TableSize_; ++i)
 		Slots_[i].State = OAHTSlot::UNOCCUPIED;
+
 	Stats_.Count_ = 0;
 
 	//FreeProc_ = nullptr;
