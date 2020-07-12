@@ -1,3 +1,17 @@
 1. How a C++ program looks like
 2. How a C++ function works
 3. Difference between pointer and reference
+4. What is function pointer
+5. Describe about Move operator
+6. Differenece between prefix and postfix
+7. Describe about friend keyword
+8. What is exception
+9. Types of Smart pointer
+10. What is lambda expression
+11. What is overloading
+12. lvalue and rvalue
+13. difference btw vector stack
+13. Reason why using namespace
+14. 3 charisteristics of class
+15. Ways to resolve memory fragmentation
+16. Types of casting and differeneces
