@@ -1,5 +1,23 @@
 1. How a C++ program looks like
+	- 
 2. How a C++ function works
+	- https://boycoding.tistory.com/235
+16. Types of casting and differeneces
+	- downcasting
+	- upcasting
+		부모 클래스 -> 자식 클래스 형변환
+		사이즈 차이에 따라 오버 플로우가 생길 수 있음
+		
+	- static_cast
+		
+	- const_cast
+		const(상수성) 추가/제거
+	- reinterpret_cast
+		포인터 간의 캐스팅
+		강제 형변환
+	- dynamic_cast
+		상속관계 끼리의 타입 캐스팅
+	
 3. Difference between pointer and reference
 4. What is function pointer
 5. Describe about Move operator
@@ -14,14 +32,4 @@
 13. Reason why using namespace
 14. 3 charisteristics of class
 15. Ways to resolve memory fragmentation
-16. Types of casting and differeneces
-	- static_cast
-		
-	- const_cast
-		const(상수성) 추가/제거
-	- reinterpret_cast
-		포인터 간의 캐스팅
-		강제 형변환
-	- dynamic_cast
-		상속관계 끼리의 타입 캐스팅
 		
