@@ -19,12 +19,15 @@ int main()
 	char c = i1;
 	std::cout << "int val: " << i1 << " / char val:" << c << "\n";
 	std::cout << "\n";
+	
 	std::cout << "* explicit casting *\n";
 	int i2 = 65;
 	std::cout << "int val: " << i2 << " / char val:" << char(i2) << "\n";
 	std::cout << "\n";
+	
 	upcasting_and_downcasting();
 	std::cout << "\n";
+
 	dynamic_casting();
 	std::cout << "\n";
 

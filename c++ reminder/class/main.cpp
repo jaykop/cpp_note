@@ -1,5 +1,10 @@
 #include <iostream>
 
+class Empty
+{
+	// char c;
+};
+
 class A
 {
 	// 
@@ -21,6 +26,7 @@ class A
 
 int main()
 {
+	unsigned size = sizeof(Empty);
 	//char c;
 	//int a;
 	//double d;

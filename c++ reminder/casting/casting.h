@@ -31,6 +31,7 @@ public:
 
 void upcasting_and_downcasting()
 {
+	Parent2 parent2 = new Parent2;
 	Parent* parent = new Parent;
 	Child* child = new Child;
 
