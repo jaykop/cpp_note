@@ -12,6 +12,21 @@
 		스코프 벗어나면 해제
 	- Heap 
 		동적할당 메모리
+
+* Types of casting and differeneces
+	- downcasting
+	- upcasting
+		부모 클래스 -> 자식 클래스 형변환
+		사이즈 차이에 따라 오버 플로우가 생길 수 있음
+	- static_cast
+		논리형 변환
+	- const_cast
+		const(상수성) 추가/제거
+	- reinterpret_cast
+		포인터 간의 캐스팅
+		강제 형변환
+	- dynamic_cast
+		상속관계 끼리의 타입 캐스팅
 	
 * How a C++ function works
 	
@@ -37,23 +52,8 @@
 	- 스택 프레임이 콜 스택에서 해제
 		모든 지역 변수와 매개 변수에 대한 메모리 해제
 	- 반환 값이 처리
-	- CPU는 반환 주소에서 실행을 재개
+	- CPU는 반환 주소에서 실행을 재개	
 
-* Types of casting and differeneces
-	- downcasting
-	- upcasting
-		부모 클래스 -> 자식 클래스 형변환
-		사이즈 차이에 따라 오버 플로우가 생길 수 있음
-	- static_cast
-		논리형 변환
-	- const_cast
-		const(상수성) 추가/제거
-	- reinterpret_cast
-		포인터 간의 캐스팅
-		강제 형변환
-	- dynamic_cast
-		상속관계 끼리의 타입 캐스팅
-	
 3. Difference between pointer and reference
 4. What is function pointer
 5. Describe about Move operator

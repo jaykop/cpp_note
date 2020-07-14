@@ -22,6 +22,12 @@ class A
 
 	// added pointer +4
 	virtual void func4() {}
+	virtual void func5() {}
+};
+
+class B : public A
+{
+
 };
 
 int main()
@@ -32,6 +38,7 @@ int main()
 	//double d;
 	//size_t size1 = sizeof(d);
 	size_t size2 = sizeof(A);
+	size_t size3 = sizeof(B);
 	std::cout << size2 << "\n";
 
 	return 0;
