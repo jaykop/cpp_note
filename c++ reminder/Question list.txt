@@ -28,6 +28,8 @@
 	- dynamic_cast
 		상속관계 끼리의 타입 캐스팅
 	
+=========================================================
+	
 * How a C++ function works
 	
 	Stack segment(= Call stack)
@@ -54,18 +56,105 @@
 	- 반환 값이 처리
 	- CPU는 반환 주소에서 실행을 재개	
 
-3. Difference between pointer and reference
+* Difference between pointer and reference
+
+	- 레퍼런스는 반드시 처음에 누구의 별명이 될 것인지 지정해야 합니다.
+	- Must initialize the reference at the first
+		int& another_a; // impossible
+		int* p; // possible
+	
+	- 레퍼런스가 한 번 별명이 되면 절대로 다른 이의 별명이 될 수 없다.
+	- Can't change what it references from the first
+		int a = 10;
+		int &another_a = a; // another_a 는 이제 a 의 참조자!
+		int b = 3;
+		another_a = b; // ?? 
+		
+		int a = 10;
+		int* p = &a; // p 는 a 를 가리킨다.
+		int b = 3;
+		p = &b; // 이제 p 는 a 를 버리고 b 를 가리킨다
+	
+	- 레퍼런스는 메모리 상에 존재하지 않을 수도 있다.
+		int a = 10;
+		int* p = &a;  // p 는 메모리 상에서 당당히 8 바이트를 차지하게 됩니다.
+		int a = 10;
+		int &another_a = a; // another_a 가 자리를 차지할 필요가 있을까?
+	- a non-static data member of reference type usually 
+		increases the size of the class by the amount necessary 
+		to store a memory address
+		
+	- https://www.quora.com/Does-a-reference-variable-take-memory-in-RAM-C++
+	- https://stackoverflow.com/questions/1179937/how-does-a-c-reference-look-memory-wise
+	
+* Describe about Move operator / 12. lvalue and rvalue
+
+	-  주소값을 취할 수 있는 값을 좌측값 (lvalue) 
+		좌측값은 어떠한 표현식의 왼쪽 오른쪽 모두에 올 수 있음
+	- 주소값을 취할 수 없는 값을 우측값 (rvalue)
+		우측값은 식의 오른쪽에만
+	-  std::move 함수가 인자로 받은 객체를 우측값으로 변환해서 리턴
+		타입 변환만 수행
+	
+=========================================================
+
+* difference btw switch if statment
+	- switch only takes types of int or char, read-only values (no variable)
+		case labels must be constant and known at compile time
+	- switch cannot express range
+	- if statement checks linearly, switch statment jump to the case directly
+
+	switch 의 경우 내부적으로 jump table 이라는 것을 생성 
+	jump table 의 크기는 case의 개수만큼 생성 
+	* case value: value != variable 인 이유
+		jump table 은 프로그램 초기에 작성 되기 때문
+		이미 switch 문이 실행되기 전에 jump table 이 작성
+		따라서, '값' 부분에 변수가 들어가게 되면 jump table 에 무엇이 올지 알 수 없음
+		이 값들은 무엇을 의미하냐면 각 case 별로 명령들이 위치한 곳의 주소를 가리키는데
+
+	따라서, switch 문을 이용하면 case 에 따라 CMP 연산이 늘어나는 것이 아니라 
+	jump table 의 크기만 커질 뿐 성능에 있어서는 전혀 영향을 받지 않게 됩니다.
+	
+* difference btw enum, enum class c++11
+
+	- 타입 변환 가능(int by default)
+
+	- enum 값 중복 에러
+	- enum type 선언 불필요
+	- implicit 정수 치환 가능 
+	
+	- enum class 값 중복 에러 없음
+	- enum type 선언 필요
+	- implicit 정수 치환 불가능
+
+* difference btw struct / class
+	- public/private 차이
+	- 관용적으로 struct는 데이터의 묶음
+	- class는 object 역할
+
+=========================================================
+
+* Usage of default & delete
+
+	- default: 컴파일러가 함수를 자동으로 생성하도록 명시적으로 지정
+	- delete: 컴파일러가 함수를 자동으로 생성하지 않도록 명시적으로 지정
+
+* Ways to resolve memory fragmentation
+
+	- 
+
+* Usage of friend keyword
+
+	- class의 private/proteced value에 access 허용
+
+=========================================================
+
 4. What is function pointer
-5. Describe about Move operator
-6. Differenece between prefix and postfix
-7. Describe about friend keyword
 8. What is exception
 9. Types of Smart pointer
 10. What is lambda expression
 11. What is overloading
-12. lvalue and rvalue
 13. difference btw vector stack
 13. Reason why using namespace
-14. 3 charisteristics of class
-15. Ways to resolve memory fragmentation
-		
+
+ 

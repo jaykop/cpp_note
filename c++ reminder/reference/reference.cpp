@@ -1,7 +1,32 @@
 #include <iostream>
+#include <vector>
+
+class A
+{
+public:
+	int a;
+	int& b = a;
+};
+
+class B
+{
+public:
+	int a;
+};
 
 int main()
 {
+	A ca; ca.b = 1;
+
+	int size = sizeof(ca);
+
+	B cb1; cb1.a = 1;
+	B cb2; cb2.a = 2;
+	cb1 = std::move(cb2);
+
+	std::vector<int> va = {1,2,3,4,5}, vb;
+	vb = std::move(va);
+
 	int number = 3;
 	
 	int *p = & number;
@@ -46,13 +71,12 @@ int main()
 	const int& c_ref = number;
 	// c_ref = number2; // This invokes an error
 	
-	int arr[3[ = {a,b,c};
-	int &(rarra)[3] = arr;
+	int arr[3] = {1, 2, 3};
+	int (&rarra)[3] = arr;
 	
 	int a; 
-	
-	int& b = a  // b does not exist in the memory
-	int *pb = a; // pb exists in the memory
-	
+	int& b = a;  // b does not exist in the memory
+	int *pb = &a; // pb exists in the memory
+
 	return 0;
 }
