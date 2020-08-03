@@ -1,11 +1,12 @@
-#include "numIdenticalPairs.h"
+#include "restoreString.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 1,2,3,1,1,3 };
-	auto i = a.numIdenticalPairs(v);
+	string s("codeleet");
+	vector<int> v = { 4,5,6,7,0,2,1,3 };
+	auto i = a.restoreString(s, v);
 
 	return 0;
 }
