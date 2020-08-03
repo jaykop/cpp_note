@@ -153,6 +153,7 @@
     <ClInclude Include="combine.h" />
     <ClInclude Include="constructMaximumBinaryTree.h" />
     <ClInclude Include="countAndSay.h" />
+    <ClInclude Include="countGoodTriplets.h" />
     <ClInclude Include="countNegatives.h" />
     <ClInclude Include="createTargetArray.h" />
     <ClInclude Include="CustomStack.h" />

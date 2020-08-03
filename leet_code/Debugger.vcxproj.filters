@@ -355,6 +355,9 @@
     <ClInclude Include="restoreString.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="countGoodTriplets.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

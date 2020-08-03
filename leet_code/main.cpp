@@ -1,12 +1,11 @@
-#include "restoreString.h"
+#include "countGoodTriplets.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	string s("codeleet");
-	vector<int> v = { 4,5,6,7,0,2,1,3 };
-	auto i = a.restoreString(s, v);
+	vector<int> v = { 7, 3, 7, 3, 12, 1, 12, 2, 3 };
+	auto i = a.countGoodTriplets(v, 5, 8, 1);
 
 	return 0;
 }
