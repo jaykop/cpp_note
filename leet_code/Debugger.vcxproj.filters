@@ -349,6 +349,9 @@
     <ClInclude Include="numTrees.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="numIdenticalPairs.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

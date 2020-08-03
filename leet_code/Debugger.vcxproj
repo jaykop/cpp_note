@@ -206,6 +206,7 @@
     <ClInclude Include="myPow.h" />
     <ClInclude Include="nextPermutation.h" />
     <ClInclude Include="-numDecodings.h" />
+    <ClInclude Include="numIdenticalPairs.h" />
     <ClInclude Include="numTilePossibilities.h" />
     <ClInclude Include="numTrees.h" />
     <ClInclude Include="oddCells.h" />
