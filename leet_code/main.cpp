@@ -1,11 +1,11 @@
-#include "countGoodTriplets.h"
+#include "finalPrices.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 7, 3, 7, 3, 12, 1, 12, 2, 3 };
-	auto i = a.countGoodTriplets(v, 5, 8, 1);
+	vector<int> v = { 8,4,6,2,3 };
+	auto i = a.finalPrices(v);
 
 	return 0;
 }

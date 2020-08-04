@@ -162,6 +162,7 @@
     <ClInclude Include="deleteDuplicates.h" />
     <ClInclude Include="diagonalSort.h" />
     <ClInclude Include="exist.h" />
+    <ClInclude Include="finalPrices.h" />
     <ClInclude Include="findMedianSortedArrays.h" />
     <ClInclude Include="defangIPaddr.h" />
     <ClInclude Include="bstToGst.h" />
