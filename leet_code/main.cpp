@@ -1,11 +1,10 @@
-#include "finalPrices.h"
+#include "pascalTriangle.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 8,4,6,2,3 };
-	auto i = a.finalPrices(v);
+	auto i = a.generate(5);
 
 	return 0;
 }

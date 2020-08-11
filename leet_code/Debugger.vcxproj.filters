@@ -361,6 +361,9 @@
     <ClInclude Include="finalPrices.h">
       <Filter>Easy</Filter>
     </ClInclude>
+    <ClInclude Include="pascalTriangle.h">
+      <Filter>Easy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
