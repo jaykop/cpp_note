@@ -1,37 +1,33 @@
 class Solution {
 public:
     
-    vector<vector<int>> res;
+    vector<int> res;
     
     void spread()
     {
-        res.emplace_back(1, 1);
-        const auto& last = res[res.size() - 2];
+        const auto last = res;
+        res.clear();
+        res.emplace_back(1);
         for (int i = 1; i < int(last.size()); ++i)
-            res.back().emplace_back(last[i - 1] + last[i]);
-
-        res.back().emplace_back(1);
+            res.emplace_back(last[i - 1] + last[i]);
+        res.emplace_back(1);
     }
     
     vector<int> getRow(int rowIndex) {
         
-        int numRows = rowIndex + 1;
-        
-        if (numRows)
+        if (rowIndex == 0)
+            res = {1};
+        else 
         {
-            if (numRows > 0)
-                res.emplace_back(1, 1);
-            if (numRows > 1)
-                res.emplace_back(2, 1);
-            if (numRows > 2)
+            res = {1, 1};
+            if (rowIndex > 1)
             {
-                numRows -= 2;
-                while (numRows--)
+                while (--rowIndex)
                     spread();
             }
         }
-
-        return res[rowIndex];
+        
+        return res;
     }
     
 };
