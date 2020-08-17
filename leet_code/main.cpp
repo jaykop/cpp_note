@@ -1,10 +1,16 @@
-#include "pascalTriangle.h"
+#include "minimumTotal.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	auto i = a.generate(5);
+	vector<vector<int>> v
+		=
+	{
+		{-10}
+	};
+
+	auto i = a.minimumTotal(v);
 
 	return 0;
 }
