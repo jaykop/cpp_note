@@ -202,6 +202,7 @@
     <ClInclude Include="merge_easy.h" />
     <ClInclude Include="minDeletionSize.h" />
     <ClInclude Include="minFlips.h" />
+    <ClInclude Include="minimumTotal.h" />
     <ClInclude Include="minPathSum.h" />
     <ClInclude Include="minSteps.h" />
     <ClInclude Include="multiply.h" />
@@ -213,6 +214,7 @@
     <ClInclude Include="numTrees.h" />
     <ClInclude Include="oddCells.h" />
     <ClInclude Include="partitionLabels.h" />
+    <ClInclude Include="pascalTriangle.h" />
     <ClInclude Include="pathInZigZagTree.h" />
     <ClInclude Include="permute.h" />
     <ClInclude Include="permuteUnique.h" />

@@ -1,11 +1,16 @@
-#include "finalPrices.h"
+#include "minimumTotal.h"
 #include <iostream>
 
 int main() {
 
 	Solution a;
-	vector<int> v = { 8,4,6,2,3 };
-	auto i = a.finalPrices(v);
+	vector<vector<int>> v
+		=
+	{
+		{-10}
+	};
+
+	auto i = a.minimumTotal(v);
 
 	return 0;
 }
