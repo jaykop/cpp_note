@@ -11,11 +11,9 @@ int solution(string s) {
         neg = true;
         end = 1;
     }
-    else if (s[0] == '+')
-        end = 1;
-    for (; i >= end; --i)
+    for (; i >= end;--i)
     {
-        ans += (s[i] - '0') * mul;
+        ans += i * mul;
         mul *= 10;
     }
     if (neg) ans *= -1;
@@ -24,6 +22,6 @@ int solution(string s) {
 
 int main()
 {
-    auto i = solution("1234");
-    return 0;
+	auto i = solution("1234");
+	return 0;
 }
