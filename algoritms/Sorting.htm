@@ -1,0 +1,796 @@
+
+<!-- saved from url=(0067)https://faculty.digipen.edu/~mmead/www/Courses/CS280/Sorting-1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="./Sorting_files/new.css">
+<title>Sorting</title>
+</head>
+
+<body>  
+<center><h1>Introduction to Sorting Algorithms</h1></center>
+
+<a href="https://faculty.digipen.edu/~mmead/www/Courses/CS280/Sorting-1.html#BUBBLE">Bubble sort</a><br>
+<a href="https://faculty.digipen.edu/~mmead/www/Courses/CS280/Sorting-1.html#INSERTION">Insertion sort</a><br>
+<a href="https://faculty.digipen.edu/~mmead/www/Courses/CS280/Sorting-1.html#SELECTION">Selection sort</a><br>
+<p>
+<a href="http://www.cs.ubc.ca/spider/harrison/Java/sorting-demo.html">Sorting animations</a><br>
+<a href="http://www.cs.oswego.edu/~mohammad/classes/csc241/samples/sort/Sort2-E.html">More animations</a>
+</p><p>
+
+
+<!-- ************************************************************************************************ -->
+<!-- ************************************************************************************************ -->
+</p><p class="SectionHeader">
+<a name="BUBBLE">
+Bubble Sort (Exchange sort)
+</a>
+</p>
+
+The bubble sort algorithm is a very simple algorithm to understand and to implement. It works great
+on small lists but is very inefficient on large lists. 
+<p>
+
+A bubble sort works by comparing adjacent items and exchanging them if they are out of order. The meaning 
+"out of order" depends on how you want the items sorted: smallest to largest, or largest to smallest.
+</p><p>
+For example, suppose we have this list of numbers that we want to order from smallest to largest:
+
+</p><blockquote><pre>7  4  1  3  8  6  9  5  2
+</pre></blockquote>
+
+The final list should look like this:
+
+<blockquote><pre>1  2  3  4  5  6  7  8  9
+</pre></blockquote>
+
+Using the bubble sort algorithm, we simply compare two items at a time, swapping them if the left
+one is larger than the right one. (We want them ordered from small to large). Starting with the first
+two items:
+
+<blockquote><pre><b>7  4</b>  1  3  8  6  9  5  2
+^  ^
+</pre></blockquote>
+
+7 is larger than 4, so we swap them:
+
+<blockquote><pre>4  7  1  3  8  6  9  5  2
+^  ^
+</pre></blockquote>
+
+Next, we compare the items 2 and 3 and find that 7 &gt; 1
+
+<blockquote><pre>4  <b>7  1</b>  3  8  6  9  5  2
+   ^  ^
+</pre></blockquote>
+
+so we swap them:
+
+<blockquote><pre>4  1  7  3  8  6  9  5  2
+   ^  ^
+</pre></blockquote>
+
+You can see that 7 &gt; 3 as well:
+
+<blockquote><pre>4  1  <b>7  3</b>  8  6  9  5  2
+      ^  ^
+</pre></blockquote>
+
+so we swap them:
+
+<blockquote><pre>4  1  3  7  8  6  9  5  2
+      ^  ^
+</pre></blockquote>
+
+Now, we compare items 4 and 5. 7 is not greater than 8, so we don't swap. 
+<blockquote><pre>4  1  3  <b>7  8</b>  6  9  5  2
+         ^  ^
+</pre></blockquote>
+
+
+We simply move to the next two items, which are items 5 and 6:
+
+<blockquote><pre>4  1  3  7  <b>8  6</b>  9  5  2
+            ^  ^
+</pre></blockquote>
+
+8 &gt; 6, so we swap:
+
+<blockquote><pre>4  1  3  7  6  8  9  5  2
+            ^  ^
+</pre></blockquote>
+
+
+Continuing in this way we will compare 8 and 9 (no swap), 9 and 5 (swap), and then 9 and 2 (swap).
+The list now looks like this:
+
+<blockquote><pre>4  1  3  7  6  8  5  2  9
+</pre></blockquote>
+
+More importantly, after this pass through the list, the value <b>9</b> is now in its proper position.
+
+
+<blockquote><pre></pre></blockquote>
+
+
+Source code for bubble sort:
+<p>
+
+</p><pre class="sourcecode"><code><b>void</b> BubbleSort(<b>int</b> a[], <b>int</b> size)
+{
+  <b>for</b> (<b>int</b> i = 0; i &lt; size - 1; i++)
+    <b>for</b> (<b>int</b> j = 0; j &lt; size - i - 1; j++)
+      <b>if</b> (a[j] &lt; a[j + 1])
+        Swap(a[j], a[j + 1]);
+}
+</code></pre>
+
+If we print out the list after each iteration of the outer loop (controlled by the variable <b>i</b>), 
+we will see this:
+
+<font color="#003399"><i></i></font>
+
+<blockquote><pre>4  1  3  7  6  8  5  2  9       <font color="blue"><i>i == 0</i></font>
+1  3  4  6  7  5  2  8  9       <font color="blue"><i>i == 1</i></font>
+1  3  4  6  5  2  7  8  9       <font color="blue"><i>i == 2</i></font>
+1  3  4  5  2  6  7  8  9       <font color="blue"><i>i == 3</i></font>
+1  3  4  2  5  6  7  8  9       <font color="blue"><i>i == 4</i></font>
+1  3  2  4  5  6  7  8  9       <font color="blue"><i>i == 5</i></font>
+1  2  3  4  5  6  7  8  9       <font color="blue"><i>i == 6</i></font>
+1  2  3  4  5  6  7  8  9       <font color="blue"><i>i == 7</i></font>
+1  2  3  4  5  6  7  8  9       <font color="blue"><i>i == 8</i></font>
+</pre></blockquote>
+
+You'll notice that the list was actually sorted after the 7th (i == 6) iteration, so we have
+a few unecessary iterations. We can add a little code to break out of the loop early, if
+we detect that the list is sorted.
+
+
+<pre class="sourcecode"><code><b>void</b> BubbleSort(<b>int</b> a[], <b>int</b> size)
+{
+  <b>for</b> (<b>int</b> i = 0; i &lt; size - 1; i++)
+  {
+    <b>int</b> swaps = 0;
+    <b>for</b> (<b>int</b> j = 0; j &lt; size - i - 1; j++)
+    {
+      <b>if</b> (a[j] &gt; a[j + 1])
+      {
+        Swap(a[j], a[j + 1]);
+        swaps = 1;
+      }
+    }
+      <font color="#003399"><i>// If we didn't swap any item, the list must be sorted</i></font>
+      <font color="#003399"><i>// and we can stop the algorithm now.</i></font>
+    <b>if</b> (swaps == 0)
+      <b>break</b>;
+  }
+}
+</code></pre>
+
+This very small <i>optimization</i> can have a dramatic impact on efficiency when the lists are
+already sorted or almost sorted.
+
+<blockquote><pre></pre></blockquote>
+
+<!--
+<pre class="sourcecode"><code><b>void</b> BubbleSort(<b>int</b> a[], <b>int</b> size)
+{
+  <b>for</b> (<b>int</b> i = 0; i &lt; size; i++)
+    <b>for</b> (<b>int</b> j = i + 1; j &lt; size; j++)
+      <b>if</b> (a[j] &lt; a[i])
+        Swap(a[i], a[j]);
+}
+</code></pre>
+-->
+
+Source code for a helper function to swap two integers:
+<p>
+
+</p><pre class="sourcecode"><code><b>void</b> Swap(<b>int</b> &amp;a, <b>int</b> &amp;b)
+{
+  <b>int</b> temp = a;
+  a = b;
+  b = temp;
+}
+</code></pre>
+
+Bubble sort animations:<br>
+<ul>
+<!--
+<li><a href="http://www.cs.princeton.edu/~ah/alg_anim/gawain-4.0/BubbleSort.html">Animation #1</a>
+-->
+<li><a href="http://www.cs.ust.hk/faculty/tcpong/cs102/summer96/aids/bubble.html">Bubble sort animation #1</a>
+<br>
+</li><li><a href="http://www.cosc.canterbury.ac.nz/people/mukundan/dsal/BSort.html">Bubble sort animation #2 (bars)</a><br>
+</li></ul>
+
+
+<!-- ************************************************************************************************ -->
+<!-- ************************************************************************************************ -->
+<hr>
+<p class="SectionHeader">
+<a name="INSERTION">
+Insertion Sort
+</a>
+</p>
+Insertion sort is another example of a very simple sort. It is similar to bubble sort,
+but is often more efficient. The canonical example is sorting a hand of playing cards (e.g. poker).
+<p>
+The idea behind the insertion sort is that you start with a sorted list and continually
+insert the next element into its proper position in the sorted list. Sounds like a 
+<i>chicken-or-the-egg</i> thing, but it's not. So, how do we start with a sorted list
+(since that's our end goal)? Simple, we consider the first element in the unsorted list
+to be a list of one. By definition, a list with only one element is already sorted. 
+(Think about it.) So, what we have is our original list that is partitioned into two lists:
+a sorted portion and an unsorted portion. The sorted portion is in the front of the list, and the
+unsorted portion is in the back of the list. For example, if we have 9 elements in our list, the
+sorted portion consists of the first element (in the front) and the unsorted portion consists of the
+remaining 8 elements (at the end).
+</p><p>
+Now, we simply take each element (one-at-a-time) from the unsorted portion, and insert it into
+its proper position in the sorted portion. For example, suppose we have an array of numbers:
+</p><p>
+
+</p><blockquote><pre>7  4  1  3  8  6  9  5  2
+</pre></blockquote>
+
+This is how we would see our "partitioned" array at the start of the sort:
+
+<p>
+<img src="./Sorting_files/Insertion-1.gif">
+</p><p>
+
+Following the logic described above, we take the next element from the unsorted
+portion and insert it into the correct position in the sorted portion. This is done
+by:
+</p><ol>
+<li>Saving the value of the next unsorted element (call it X). This now opens a
+slot in the array that can be filled by other elements.
+</li><li>For each element to the left of X
+<ul>
+<li>If the element is greater than X, copy it to the open slot.
+</li><li>If the element is not greater, then put X in the open slot and <font color="red">STOP</font>.
+</li></ul>
+</li><li>If we run out of sorted elements (we're at index 0), then we put X in the open slot,
+which is the first element.
+</li></ol>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 4:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-2.gif">
+</blockquote>
+<p>
+
+7 is larger than 4, so copy it to the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-3.gif">
+</blockquote>
+<p>
+
+We've run out of sorted elements so put 4 in the open slot at the front:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-4.gif">
+</blockquote>
+<p>
+
+Now, we have 2 elements in the sorted portion and 7 elements in the unsorted portion.
+The next unsorted element is 1, so we perform the same steps using 1 as X:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-5.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 1:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-6.gif">
+</blockquote>
+<p>
+
+7 is larger than 1, so copy it to the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-7.gif">
+</blockquote>
+<p>
+
+4 is larger than 1, so copy it to the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-8.gif">
+</blockquote>
+<p>
+
+We've run out of sorted elements so put 1 in the open slot at the front:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-9.gif">
+</blockquote>
+<p>
+
+Now, we can start to see how our sorted portion is being constructed. We have 3 elements
+(in sorted order) in the left portion, and 6 elements remaining in the right (unsorted)
+portion.
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-10.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 3:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-11.gif">
+</blockquote>
+<p>
+
+7 is larger than 3, so copy it to the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-12.gif">
+</blockquote>
+<p>
+
+4 is larger than 3, so copy it to the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-13.gif">
+</blockquote>
+<p>
+
+1 is not larger than 3, so we copy 3 to the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-14.gif">
+</blockquote>
+<p>
+
+We now have 4 elements in the sorted portion with 5 remaining to be inserted.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-15.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 8:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-16.gif">
+</blockquote>
+<p>
+
+7 is not larger than 8, so we copy 8 to the open slot: (It turns out that 8 was already 
+in the correct position, but we didn't know that until we looked at the element to the 
+left.)
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-17.gif">
+</blockquote>
+<p>
+
+We now have 5 elements in the sorted portion with 4 remaining to be inserted.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-18.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 6:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-19.gif">
+</blockquote>
+<p>
+
+Shift larger elements to the right (7 and 8):
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-20.gif">
+</blockquote>
+<p>
+
+Place 6 in the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-21.gif">
+</blockquote>
+<p>
+
+We now have 6 elements in the sorted portion with 3 remaining to be inserted.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-22.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+9 is in the correct position already, so we have 7 sorted elements and 2 remaining:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-23.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 5:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-24.gif">
+</blockquote>
+<p>
+
+Shift larger elements to the right (6, 7, 8, and 9):
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-25.gif">
+</blockquote>
+<p>
+
+Place 5 in the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-26.gif">
+</blockquote>
+<p>
+
+Now we have 8 sorted elements and one remaining:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-27.gif">
+</blockquote>
+<p>
+
+</p><p>
+</p><hr width="90%">
+<p>
+
+Make a copy of the next unsorted element, which is 2:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-28.gif">
+</blockquote>
+<p>
+
+Shift larger elements to the right (3, 4, 5, 6, 7, 8, and 9):
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-29.gif">
+</blockquote>
+<p>
+
+Place 2 in the open slot:
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Insertion-30.gif">
+</blockquote>
+<p>
+
+There are no more elements in the unsorted portion, so the list is sorted.
+</p><p>
+
+Source code for insertion sort:
+</p><p>
+
+</p><pre class="sourcecode"><code><font color="#003399"><i>// Sort by repeatedly taking the next item and inserting it </i></font>
+<font color="#003399"><i>// into the final data structure in its proper order with </i></font>
+<font color="#003399"><i>// respect to items already inserted.</i></font>
+<font color="#003399"><i>//</i></font>
+<font color="#003399"><i>// Sorting can be done in place by moving the next item into place by </i></font>
+<font color="#003399"><i>// repeatedly swapping it with the preceding item until it is in place</i></font>
+<b>void</b> InsertionSort(<b>int</b> a[], <b>int</b> size)
+{
+  <b>for</b> (<b>int</b> i = 1; i &lt; size; i++) 
+  {
+    <b>int</b> j = i;
+    <b>int</b> current = a[i];
+
+      <font color="#003399"><i>// Shift all elements left of current</i></font>
+      <font color="#003399"><i>// that are greater than current.</i></font>
+      <font color="#003399"><i>// Shifting them to the right. e.g.:</i></font>
+      <font color="#003399"><i>// 5 is the item to insert:</i></font>
+      <font color="#003399"><i>// 123478592  becomes 1234 7892</i></font>
+      <font color="#003399"><i>//       ^</i></font>
+    <b>while</b> ((j &gt; 0) &amp;&amp; (a[j-1] &gt; current)) 
+    {
+      a[j] = a[j-1];
+      j--;
+    }
+
+      <font color="#003399"><i>// Then insert current value in open slot</i></font>
+      <font color="#003399"><i>// 123457892</i></font>
+      <font color="#003399"><i>//     ^</i></font>
+    a[j] = current; 
+  }
+}
+</code></pre>
+
+<a href="http://www.cs.ust.hk/faculty/tcpong/cs102/summer96/aids/insert.html">Insertion sort animation #1</a>
+<br>
+<a href="http://www.cosc.canterbury.ac.nz/mukundan/dsal/ISort.html">Insertion sort animation #2 (bars)</a>
+
+<!--
+<a href="http://www.cs.brockport.edu/cs/java/apps/sorters/insertsort.html">
+Insertion sort animation</a>
+-->
+
+<p>
+</p><hr>
+<p>
+
+<!-- ************************************************************************************************ -->
+<!-- ************************************************************************************************ -->
+</p><p class="SectionHeader">
+<a name="SELECTION">
+Selection Sort
+</a>
+</p><p>
+
+Selection sort is probably the most intuitive sort because it mimics how people think. The algorithm is
+straight-forward:
+
+</p><ol>
+<li>Set the current position to the first element.
+</li><li>From the current position, scan the rest of the array looking for the smallest value.
+</li><li>Swap the smallest value with the current position.
+</li><li>Increment the current position to the next position. (If you are at the last element, you're done and 
+	the array is sorted.)
+</li><li>Go to step 2
+</li></ol>
+
+
+Start out by marking the first element as the current position. (This is where we will
+place the smallest value.) Scan the array looking for the smallest value.
+<p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-1.gif">
+</blockquote>
+<p>
+<br>
+
+1 was found to be the smallest, so it is swapped with the value stored at the 
+current position (the first slot)
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-2.gif">
+</blockquote>
+<p>
+<br>
+
+Move the current position to the right one and scan for the next smallest value.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-3.gif">
+</blockquote>
+<p>
+<br>
+
+2 is the smallest, so swap it with 4.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-4.gif">
+</blockquote>
+<p>
+<br>
+
+Move the current position to the right one and scan for the next smallest value.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-5.gif">
+</blockquote>
+<p>
+<br>
+
+3 is the smallest, so swap with 7.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-6.gif">
+</blockquote>
+<p>
+<br>
+
+Continue the process until the last position is reached.
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-7.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-8.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-9.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-10.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-11.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-12.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-13.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-14.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-15.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-16.gif">
+</blockquote>
+<p>
+<br>
+
+</p><p>
+</p><blockquote>
+<img src="./Sorting_files/Selection-17.gif">
+</blockquote>
+<p>
+
+
+
+</p><p>
+Source code for selection sort:
+</p><p>
+
+</p><pre class="sourcecode"><code><font color="#003399"><i>// Sorting can be done in place by swapping the least remaining item with the</i></font>
+<font color="#003399"><i>// item in the next position to be filled.</i></font>
+<b>void</b> SelectionSort(<b>int</b> a[], <b>int</b> size)
+{
+  <b>for</b> (<b>int</b> i = 0; i &lt; size; i++) 
+  {
+    <b>int</b> min = i;
+    <b>int</b> j;
+
+      <font color="#003399"><i>// Find the smallest element in the unsorted list</i></font>
+      <font color="#003399"><i>// (Linear search)</i></font>
+    <b>for</b> (j = i + 1; j &lt; size; j++) 
+      <b>if</b> (a[j] &lt; a[min]) 
+        min = j;
+
+      <font color="#003399"><i>// Swap the smallest unsorted element with</i></font>
+      <font color="#003399"><i>// the last element in the sorted list.</i></font>
+    Swap(a[min], a[i]);
+  }
+}
+</code></pre>
+
+Notes:
+<ul>
+<li>This code uses the same Swap function from the Bubble sort above.
+</li><li>You could start at the right end and continually search for the largest element instead. The result
+	would be the same.
+</li><li>To sort in reverse, start at the left as above, but search for the largest element.
+</li><li>How could you modify this algorithm to sort the array in half the time? (Not really half the time, but half the number of passes.)
+</li></ul>
+	
+<p>
+<a href="http://www.cs.ust.hk/faculty/tcpong/cs102/summer96/aids/select.html">Selection sort animation #1</a>
+<br>
+<a href="http://www.cosc.canterbury.ac.nz/mukundan/dsal/SSort.html">Selection sort animation #2 (bars)</a>
+</p><p>
+
+
+<!-- ************************************************************************************************ -->
+<!-- ************************************************************************************************ -->
+</p><p class="SectionHeader">
+<a name="QUICK">
+Quick Sort
+</a>
+</p><p>
+	
+Perfect partitioning. 
+
+</p><ol>
+<li>Partition the array into 2 halves:
+<ul>
+<li>Numbers less than or equal to 4 are moved to the left half of the array; numbers greater than 4 are moved to the right half.
+</li></ul>
+</li><li>Partition each half in to halves again (quarters):
+<ul>
+	<li>Left half: Numbers less than or equal to 2 are moved to the left; numbers greater than 2 are moved to the right.
+	</li><li>Right half: Numbers less than or equal to 6 are moved to the left; numbers greater than 6 are moved to the right.
+</li></ul>
+</li><li>Partition each quarter into halves (eighths) repeating the process of putting smaller numbers to the left and larger numbers to the right.
+</li></ol>
+<blockquote>
+<p>
+<img src="./Sorting_files/Quicksort-partitioning-1.png">	
+</p><p>
+</p></blockquote>
+The array is sorted after 3 partitioning steps. (<i>log<sub>2</sub> 8</i>)
+
+<p>
+<a href="http://www.cosc.canterbury.ac.nz/mukundan/dsal/QSort.html">Quick sort animation (bars)</a>
+</p><p>
+	
+</p><blockquote><pre></pre></blockquote>
+
+<blockquote><pre></pre></blockquote>
+
+<blockquote><pre></pre></blockquote>
+<blockquote><pre></pre></blockquote>
+
+
+
+
+
+<blockquote><pre></pre></blockquote>
+
+<!-- ************************************************************************************************ -->
+<!-- ************************************************************************************************ -->
+<hr>
+
+<!-- ************************************************************************************************ -->
+<!-- ************************************************************************************************ -->
+<xhr width="90%">
+
+</xhr></body></html>
