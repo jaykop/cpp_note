@@ -3,29 +3,32 @@
 
 using namespace std;
 
+bool character(char c)
+{
+    if ((65 <= c && c <= 90) || (97 <= c && c <= 122)) 
+        return true;
+    return false;
+}
+
 void qsort(int l, int r, string& s)
 {
     int i = l, j = r;
     int mid = (l + r) / 2;
+
     while (i <= j)
     {
-        char si = 65 < s[i] && s[i] <= 90 ? s[i] + 32 : s[i];
-        char sj = 65 < s[j] && s[j] <= 90 ? s[j] + 32 : s[j];
-        char smid = 65 < s[mid] && s[mid] <= 90 ? s[mid] + 32 : s[mid];
-
-        while (si < smid)
-        {
+        while (s[i] < s[mid])
             ++i;
-            si = 65 < s[i] && s[i] < 90 ? s[i] + 32 : s[i];
-        }
-        while (smid < sj)
-        {
+
+        while (s[mid] < s[j])
             --j;
-            sj = 65 < s[j] && s[j] < 90 ? s[j] + 32 : s[j];
+
+        if (i <= j)
+        {
+            swap(s[i], s[j]);
+            i++;
+            j--;
         }
-
-        if (i <= j) swap(s[i++], s[j--]);
-
     }
 
     if (i < r) qsort(i, r, s);
@@ -34,14 +37,24 @@ void qsort(int l, int r, string& s)
 
 string solution(string s) {
            
-    qsort(0, s.length() - 1, s);
+    string new_s;
+    for (auto& c : s)
+        if (character(c)) new_s += c;
+        
+    qsort(0, new_s.length() - 1, new_s);
 
+    for (int i = 0; i < s.length(); ++i)
+        if (character(s[i]))
+        {
+            s[i] = new_s.back();
+            new_s.pop_back();
+        }
     return s;
 }
 
 int main()
 {
-    solution("Zbcdefg");
+    solution("absd1f");
 
     return 0;
 }
