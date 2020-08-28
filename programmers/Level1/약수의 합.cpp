@@ -9,7 +9,7 @@ int solution(int n) {
     
     int sq = static_cast<int>(sqrt(n));
     for (int i = 1 ; i <= sq; ++i)
-        if (i % 2 == 0)
+        if (n % i == 0)
         {
             if (n/i == i)
                 ans += i;
