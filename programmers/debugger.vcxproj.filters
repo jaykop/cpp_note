@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Level1\약수의 합.cpp" />
+    <ClCompile Include="카카오프렌즈 컬러링북.cpp" />
   </ItemGroup>
 </Project>
