@@ -14,20 +14,19 @@ int solution(vector<int> food_times, long long k) {
         while (!food_times[i])
         {
             if (next.find(i) == next.end())
-            {
-                while (!food_times[i])
-                {
-                    i = ++i % size;
-                    if (i == last)
-                        return -1;
-                }
-                next[last] = i;
-            }
+                i = ++i % size;
+            
             else
-                i = next[last];
+                i = next[i];
 
             if (i == last) 
                 return -1;
+
+            if (food_times[i])
+            {
+                next[last] = i;
+                break;
+            }
         }
 
         food_times[i]--;
@@ -39,7 +38,7 @@ int solution(vector<int> food_times, long long k) {
 
 int main()
 {
-    vector<int> v = { 2, 0, 1 };
-    solution(v, 2);
+    vector<int> v = { 3, 1, 0, 0, 0, 2 };
+    solution(v, 5);
     return 0;
 }
