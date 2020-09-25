@@ -5,5 +5,6 @@
     <ClCompile Include="소스.cpp" />
     <ClCompile Include="베스트앨범.cpp" />
     <ClCompile Include="모의고사.cpp" />
+    <ClCompile Include="소수 찾기.cpp" />
   </ItemGroup>
 </Project>
