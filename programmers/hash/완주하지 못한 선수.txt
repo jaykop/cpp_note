@@ -1,0 +1,21 @@
+#include <string>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+string solution(vector<string> participant, vector<string> completion) {
+    
+    map<string, int> p, c;
+    for (const auto& s : participant)
+        p[s]++;
+    for (const auto& s : completion)
+        c[s]++;
+    
+    for (const auto& it : p)
+        if (it.second != c[it.first])
+        {
+            return it.first;
+        }
+    return string();
+}
