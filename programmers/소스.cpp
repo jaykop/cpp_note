@@ -1,36 +1,25 @@
 #include <string>
 #include <vector>
+#include <map>
 
 using namespace std;
 
-bool solution(vector<string> phone_book) {
+int solution(vector<vector<string>> clothes) {
 
-    int size = phone_book.size();
-    for (int i = 0; i < size - 1; ++i)
+    if (clothes.empty()) return 0;
+
+    map<string, int> table;
+
+    for (const auto& v : clothes)
+        table[v[1]]++;
+
+    int mul = 1;
+    for (auto it = table.begin(); it != table.end(); ++it)
     {
-        for (int j = i + 1; j < size; ++j)
-        {
-            string a, b;
-            // longer always become a
-            // shorter becomes b
-            if (phone_book[j].length() > phone_book[i].length())
-            {
-                a = phone_book[j];
-                b = phone_book[i];
-            }
-            else
-            {
-                a = phone_book[i];
-                b = phone_book[j];
-            }
-
-            int len = b.length();
-            string substr = a.substr(0, len - 1);
-            if (substr == b)
-                return false;
-        }
+        mul *= (it->second + 1);
     }
-    return true;
+    return mul - 1;
+
 }
 
 int main()
