@@ -4,5 +4,6 @@
     <ClCompile Include="124 나라의 숫자.cpp" />
     <ClCompile Include="소스.cpp" />
     <ClCompile Include="베스트앨범.cpp" />
+    <ClCompile Include="모의고사.cpp" />
   </ItemGroup>
 </Project>
