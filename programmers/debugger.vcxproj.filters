@@ -8,5 +8,6 @@
     <ClCompile Include="소수 찾기.cpp" />
     <ClCompile Include="카펫.cpp" />
     <ClCompile Include="가장 큰 수.cpp" />
+    <ClCompile Include="H-Index.cpp" />
   </ItemGroup>
 </Project>
