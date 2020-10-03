@@ -11,5 +11,6 @@
     <ClCompile Include="H-Index.cpp" />
     <ClCompile Include="네트워크.cpp" />
     <ClCompile Include="다리를 지나는 트럭.cpp" />
+    <ClCompile Include="기능개발.cpp" />
   </ItemGroup>
 </Project>
