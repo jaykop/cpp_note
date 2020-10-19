@@ -57,8 +57,40 @@ vector<vector<int>> return_subset(const vector<int> v)
 
 int main()
 {
-	vector<int> v = {1, 2, 3, 4};
-	return_subset(v);
-	auto i = return_digit(121, 11);
+	vector<int> v1 = { 4, 1, 5, 2, 3, },
+		v2 = { 1, 3, 7, 9, 5, },
+		v3, ans;
+
+	int size = -1;
+	scanf("%d", size);
+
+	v1.resize(size);
+	for (int i = 0; i < size; i++)
+		scanf("%d", v1[i]);
+
+	scanf("%d", size);
+
+	v2.resize(size);
+	for (int i = 0; i < size; i++)
+		scanf("%d", v2[i]);
+
+	for (auto i : v1)
+	{
+		if (v3.size() <= i)
+			v3.resize(i + 1);
+
+		v3[i] = 1;
+	}
+
+	for (auto i : v2)
+		if (v3.size() <= i || !v3[i])
+			ans.push_back(0);
+		else
+			ans.push_back(1);
+
+
+	//vector<int> v = {1, 2, 3, 4};
+	//return_subset(v);
+	//auto i = return_digit(60466175, 36);
 	return 0;
 }
