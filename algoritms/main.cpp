@@ -1,93 +1,188 @@
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <numeric>
-#include <set>
-#include <cmath>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-bool prime(int k)
-{
-	if (k == 2)
-		return true;
-
-	else if (k % 2 == 0) 
-		return false;
-
-	else
-	{
-		for (int i = 3; i < k; i += 2)
-			if (k % i == 0) 
-				return false;
-
-		return true;
-	}
-}
-
 int main()
 {
-	int n;
-	scanf_s("%d", &n);
-	// scanf("%d", &n);
+    vector<vector<int>> map;
+    int row = -1;
+    scanf("%d", &row);
 
-	vector<int> v(n + 1, 0), p;
-	int init = 0;
-	for (auto& i : v)
-		i = init++;
+    for (int i = 0; i < row; ++i)
+    {
+        vector<int> v;
+        for (int j = 0; j < 3; ++j)
+        {
+            int n = -1;
+            scanf("%d", &n);
+            v.push_back(n);
+        }
+        map.emplace_back(v);
+    }
 
-	int range = sqrt(n);
+    int max_val = 0, min_val = 0;
+    int i = 0;
+    vector<int> pre_min = { 0, 0, 0 }, cur_min = { 0, 0, 0 },
+        pre_max = { 0, 0, 0 }, cur_max = { 0, 0, 0 };
 
-	for (int i = 2; i <= range; ++i)
-	{
-		if (v[i] == -1) continue;
-		else if (prime(i))
-		{
-			int cnt = i;
-			while (1)
-			{
-				cnt += i;
-				if (cnt > n) break;
-				v[cnt] = -1;
-			}
-		}
-		else
-			v[i] = -1;
-	}
+    while (i < row)
+    {
+        cur_max[0] = max(pre_max[0] + map[i][0], pre_max[1] + map[i][1]);
+        cur_max[1] = max(pre_max[1] + map[i][1],
+            max(pre_max[2] + map[i][2], pre_max[0] + map[i][0]));
+        cur_max[2] = max(pre_max[2] + map[i][2], pre_max[1] + map[i][1]);
+        max_val = max(cur_max[0], max(cur_max[1], cur_max[2]));
 
-	for (auto i : v)
-		if (i >= 2) p.push_back(i);
+        cur_min[0] = min(pre_min[0] + map[i][0], pre_min[1] + map[i][1]);
+        cur_min[1] = min(pre_min[1] + map[i][1],
+            min(pre_min[2] + map[i][2], pre_min[0] + map[i][0]));
+        cur_min[2] = min(pre_min[2] + map[i][2], pre_min[1] + map[i][1]);
+        min_val = min(cur_min[0], min(cur_min[1], cur_min[2]));
 
-	int s = 0, e = 0, count = 0,
-		interval = 0, p_size = static_cast<int>(p.size());
-	
-	while (1)
-	{
-		if (interval > n)
-		{
-			interval -= p[s];
-			++s;
-		}
+        pre_min = cur_min;
+        pre_max = cur_max;
 
-		else if (e >= p_size)
-			break;
+        ++i;
+    }
 
-		else // inteval <= n
-		{
-			interval += p[e];
-			++e;
-		}
+    cout << max_val << " " << min_val;
 
-		if (interval == n)
-			++count;
-	}
-
-	cout << count;
-
-	return 0;
+    return 0;
 }
+
+//#include <vector>
+//#include <iostream>
+//
+//using namespace std;
+//
+//int main()
+//{
+//	int size, target;
+//	scanf("%d", &size);
+//	scanf("%d", &target);
+//	vector<int> v;
+//	for (int i = 0; i < size; ++i)
+//	{
+//		int n;
+//		scanf("%d", &n);
+//		v.push_back(n);
+//	}
+//
+//	int sum = 0, s = 0, e = 0, min = size;
+//	bool edited = false;
+//
+//	while (1)
+//	{
+//		if (sum > target)
+//		{
+//			sum -= v[s];
+//			++s;
+//		}
+//
+//		else if (e == size)
+//			break;
+//
+//		else // sum <= target
+//		{
+//			sum += v[e];
+//			++e;
+//		}
+//		int len = e - s;
+//		if (target <= sum && min >= len)
+//		{
+//			min = len;
+//			edited = true;
+//		}
+//	}
+//
+//	if (!edited) min = 0;
+//
+//	cout << min;
+//
+//	return 0;
+//}
+
+//
+//bool prime(int k)
+//{
+//	if (k == 2)
+//		return true;
+//
+//	else if (k % 2 == 0) 
+//		return false;
+//
+//	else
+//	{
+//		for (int i = 3; i < k; i += 2)
+//			if (k % i == 0) 
+//				return false;
+//
+//		return true;
+//	}
+//}
+//
+//int main()
+//{
+//	int n;
+//	scanf_s("%d", &n);
+//	// scanf("%d", &n);
+//
+//	vector<int> v(n + 1, 0), p;
+//	int init = 0;
+//	for (auto& i : v)
+//		i = init++;
+//
+//	int range = sqrt(n);
+//
+//	for (int i = 2; i <= range; ++i)
+//	{
+//		if (v[i] == -1) continue;
+//		else if (prime(i))
+//		{
+//			int cnt = i;
+//			while (1)
+//			{
+//				cnt += i;
+//				if (cnt > n) break;
+//				v[cnt] = -1;
+//			}
+//		}
+//		else
+//			v[i] = -1;
+//	}
+//
+//	for (auto i : v)
+//		if (i >= 2) p.push_back(i);
+//
+//	int s = 0, e = 0, count = 0,
+//		interval = 0, p_size = static_cast<int>(p.size());
+//	
+//	while (1)
+//	{
+//		if (interval > n)
+//		{
+//			interval -= p[s];
+//			++s;
+//		}
+//
+//		else if (e >= p_size)
+//			break;
+//
+//		else // inteval <= n
+//		{
+//			interval += p[e];
+//			++e;
+//		}
+//
+//		if (interval == n)
+//			++count;
+//	}
+//
+//	cout << count;
+//
+//	return 0;
+//}
 
 //int two_pointer(const vector<int> v, const int target);
 //
