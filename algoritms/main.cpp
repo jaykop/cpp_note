@@ -1,55 +1,93 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 int main()
 {
-    vector<vector<int>> map;
-    int row = -1;
-    scanf("%d", &row);
+    int n = -1;
+    scanf("%d", &n);
 
-    for (int i = 0; i < row; ++i)
+    int s = 1, e = 1;
+    bool exist = false;
+
+    while (1)
     {
-        vector<int> v;
-        for (int j = 0; j < 3; ++j)
+        int res = e * e - s * s;
+
+        if (res >= n)
         {
-            int n = -1;
-            scanf("%d", &n);
-            v.push_back(n);
+            if (e - s == 1 && res > n)
+                break;
+            else
+                ++s;
         }
-        map.emplace_back(v);
+        else // res < n
+            ++e;
+
+        if (res == n)
+        {
+            cout << e << "\n";
+            exist = true;
+        }
     }
 
-    int max_val = 0, min_val = 0;
-    int i = 0;
-    vector<int> pre_min = { 0, 0, 0 }, cur_min = { 0, 0, 0 },
-        pre_max = { 0, 0, 0 }, cur_max = { 0, 0, 0 };
-
-    while (i < row)
-    {
-        cur_max[0] = max(pre_max[0] + map[i][0], pre_max[1] + map[i][1]);
-        cur_max[1] = max(pre_max[1] + map[i][1],
-            max(pre_max[2] + map[i][2], pre_max[0] + map[i][0]));
-        cur_max[2] = max(pre_max[2] + map[i][2], pre_max[1] + map[i][1]);
-        max_val = max(cur_max[0], max(cur_max[1], cur_max[2]));
-
-        cur_min[0] = min(pre_min[0] + map[i][0], pre_min[1] + map[i][1]);
-        cur_min[1] = min(pre_min[1] + map[i][1],
-            min(pre_min[2] + map[i][2], pre_min[0] + map[i][0]));
-        cur_min[2] = min(pre_min[2] + map[i][2], pre_min[1] + map[i][1]);
-        min_val = min(cur_min[0], min(cur_min[1], cur_min[2]));
-
-        pre_min = cur_min;
-        pre_max = cur_max;
-
-        ++i;
-    }
-
-    cout << max_val << " " << min_val;
+    if (!exist) cout << -1;
 
     return 0;
 }
+
+//#include <iostream>
+//#include <vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    vector<vector<int>> map;
+//    int row = -1;
+//    scanf("%d", &row);
+//
+//    for (int i = 0; i < row; ++i)
+//    {
+//        vector<int> v;
+//        for (int j = 0; j < 3; ++j)
+//        {
+//            int n = -1;
+//            scanf("%d", &n);
+//            v.push_back(n);
+//        }
+//        map.emplace_back(v);
+//    }
+//
+//    int max_val = 0, min_val = 0;
+//    int i = 0;
+//    vector<int> pre_min = { 0, 0, 0 }, cur_min = { 0, 0, 0 },
+//        pre_max = { 0, 0, 0 }, cur_max = { 0, 0, 0 };
+//
+//    while (i < row)
+//    {
+//        cur_max[0] = max(pre_max[0] + map[i][0], pre_max[1] + map[i][1]);
+//        cur_max[1] = max(pre_max[1] + map[i][1],
+//            max(pre_max[2] + map[i][2], pre_max[0] + map[i][0]));
+//        cur_max[2] = max(pre_max[2] + map[i][2], pre_max[1] + map[i][1]);
+//        max_val = max(cur_max[0], max(cur_max[1], cur_max[2]));
+//
+//        cur_min[0] = min(pre_min[0] + map[i][0], pre_min[1] + map[i][1]);
+//        cur_min[1] = min(pre_min[1] + map[i][1],
+//            min(pre_min[2] + map[i][2], pre_min[0] + map[i][0]));
+//        cur_min[2] = min(pre_min[2] + map[i][2], pre_min[1] + map[i][1]);
+//        min_val = min(cur_min[0], min(cur_min[1], cur_min[2]));
+//
+//        pre_min = cur_min;
+//        pre_max = cur_max;
+//
+//        ++i;
+//    }
+//
+//    cout << max_val << " " << min_val;
+//
+//    return 0;
+//}
 
 //#include <vector>
 //#include <iostream>
