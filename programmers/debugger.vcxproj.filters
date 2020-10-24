@@ -16,5 +16,6 @@
     <ClCompile Include="조이스틱.cpp" />
     <ClCompile Include="comb.cpp" />
     <ClCompile Include="큰 수.cpp" />
+    <ClCompile Include="입국심사.cpp" />
   </ItemGroup>
 </Project>

@@ -1,40 +1,219 @@
+/*
+Sol2. FSM을 활용한다.
+FSM을 작성하여 이에 맞게 상태를 전이시킨다. 본 코드에서는 비트마스킹을 추가로 활용하였으나 반드시 필요한 것은 아니다.
+입력의 끝까지 읽어들였을 때 가능한 상태가 존재한다면 SUBMARINE, 아니면 NOISE이다.
+*/
+// #include <bits/stdc++.h>
 #include <iostream>
-
 using namespace std;
 
-int main()
-{
-    int n = -1;
-    scanf("%d", &n);
+int state[999];//FSM BitMasking
 
-    int s = 1, e = 1;
-    bool exist = false;
+int main(void) {
 
-    while (1)
-    {
-        int res = e * e - s * s;
+    string s;
+    cin >> s;
+    s += "|"; //Prevent SegmentFault
+    state[0] = 1; //Bin : 0 0 0 0 0 1
+    for (int i = 0; i < s.size() - 1; i++) {
 
-        if (res >= n)
-        {
-            if (e - s == 1 && res > n)
-                break;
-            else
-                ++s;
+        if (state[i] & 1) {// 'Initial'
+
+            //Bin: 000010
+            if (s[i] == '1')
+                state[i + 1] |= 2;         
+
+            //Bin: 100000
+            if (s[i] == '0' && s[i + 1] == '1')
+                state[i + 2] |= 32;  
         }
-        else // res < n
-            ++e;
+        if (state[i] & 2) {//stateate 'A'
 
-        if (res == n)
-        {
-            cout << e << "\n";
-            exist = true;
+            //Bin: 000100
+            if (s[i] == '0')
+                state[i + 1] |= 4;
+        }
+        if (state[i] & 4) {//stateate 'B'
+
+            //Bin: 001000
+            if (s[i] == '0')
+                state[i + 1] |= 8;                
+        }
+        if (state[i] & 8) {//stateate 'C'
+
+            //Bin: 001000
+            if (s[i] == '0')
+                state[i + 1] |= 8;                
+
+            //Bin: 010000
+            if (s[i] == '1')
+                state[i + 1] |= 16;
+        }
+        if (state[i] & 16) {//stateate 'D'
+
+            //Bin: 010010
+            if (s[i] == '1')
+                state[i + 1] |= 18;            
+
+            //Bin: 100000
+            if (s[i] == '0' && s[i + 1] == '1')
+                state[i + 2] |= 32;  
+        }
+        if (state[i] & 32) {//stateate 'E'
+
+            //Bin: 000001
+            if (s[i] == '1')
+                state[i + 1] |= 2;      
+
+            //Bin: 100000
+            if (s[i] == '0' && s[i + 1] == '1')
+                state[i + 2] |= 32;  
         }
     }
 
-    if (!exist) cout << -1;
-
-    return 0;
+    cout << ((state[s.size() - 1] & 48) ? "SUBMARINE" : "NOISE");
 }
+
+//
+//#include <vector>
+//#include <iostream>
+//
+//using namespace std;
+//
+//void qsort(vector<int>& v, int left, int right)
+//{
+//    int i = left, j = right;
+//    int mid = v[(i + j) / 2];
+//    while (i <= j)
+//    {
+//        while (v[i] < mid) ++i;
+//        while (mid < v[j]) --j;
+//        if (i <= j)
+//        {
+//            swap(v[i], v[j]);
+//            ++i; --j;
+//        }
+//    }
+//
+//    if (left < j) qsort(v, left, j);
+//    if (i < right) qsort(v, i, right);
+//}
+//
+//bool binary_search(const vector<int>& v,
+//    int i, int j,
+//    const int k)
+//{
+//    while (j - i >= 0)
+//    {
+//        int mid = (i + j) / 2;
+//        if (v[mid] == k) return true;
+//        else if (v[mid] < k) i = mid + 1;
+//        else // (k < v[mid]) 
+//            j = mid - 1;
+//    }
+//
+//    return false;
+//}
+//
+//int main()
+//{
+//    int v_size = -1;
+//    scanf("%d", &v_size);
+//    vector<int> v;
+//    for (int i = 0; i < v_size; i++)
+//    {
+//        int n = -1;
+//        scanf("%d", &n);
+//        v.push_back(n);
+//    }
+//
+//    qsort(v, 0, v_size - 1);
+//    int size = -1;
+//    scanf("%d", &size);
+//
+//    for (int i = 0; i < size; ++i)
+//    {
+//        int n = -1;
+//        scanf("%d", &n);
+//        if (binary_search(v, 0, v_size - 1, n))
+//            cout << "1\n";
+//        else
+//            cout << "0\n";
+//    }
+//
+//    return 0;
+//}
+
+//#include <vector>
+//#include <iostream>
+//
+//using namespace std;
+//
+//void qsort(vector<int>& v, int left, int right)
+//{
+//    int i = left, j = right;
+//    int mid = v[(left + right) / 2];
+//    while (i <= j)
+//    {
+//        while (mid < v[i])
+//            ++i;
+//        while (mid > v[j])
+//            --j;
+//        if (i <= j)
+//        {
+//            swap(v[j], v[i]);
+//            ++i; --j;
+//        }
+//    }
+//
+//    if (left < i) qsort(v, left, mid - 1);
+//    if (j < right) qsort(v, mid + 1, right);
+//}
+//
+//int main()
+//{
+//    vector<int> v = { 3,56,4,3467,8,54,32,4,1};
+//    qsort(v, 0, v.size() - 1);
+//    return 0;
+//}
+
+//#include <iostream>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = -1;
+//    scanf("%d", &n);
+//
+//    int s = 1, e = 1;
+//    bool exist = false;
+//
+//    while (1)
+//    {
+//        int res = e * e - s * s;
+//
+//        if (res >= n)
+//        {
+//            if (e - s == 1 && res > n)
+//                break;
+//            else
+//                ++s;
+//        }
+//        else // res < n
+//            ++e;
+//
+//        if (res == n)
+//        {
+//            cout << e << "\n";
+//            exist = true;
+//        }
+//    }
+//
+//    if (!exist) cout << -1;
+//
+//    return 0;
+//}
 
 //#include <iostream>
 //#include <vector>
