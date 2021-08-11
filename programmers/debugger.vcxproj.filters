@@ -13,9 +13,9 @@
     <ClCompile Include="다리를 지나는 트럭.cpp" />
     <ClCompile Include="기능개발.cpp" />
     <ClCompile Include="큰 수 만들기.cpp" />
-    <ClCompile Include="조이스틱.cpp" />
     <ClCompile Include="comb.cpp" />
     <ClCompile Include="큰 수.cpp" />
     <ClCompile Include="입국심사.cpp" />
+    <ClCompile Include="Level2\조이스틱.cpp" />
   </ItemGroup>
 </Project>
