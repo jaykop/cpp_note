@@ -260,6 +260,7 @@
     <ClInclude Include="uniquePaths.h" />
     <ClInclude Include="uniquePathsIII.h" />
     <ClInclude Include="uniquePathsWithObstacles.h" />
+    <ClInclude Include="combinationSum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fib.h" />

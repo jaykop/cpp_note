@@ -367,6 +367,9 @@
     <ClInclude Include="minimumTotal.h">
       <Filter>Medium</Filter>
     </ClInclude>
+    <ClInclude Include="combinationSum.h">
+      <Filter>Medium</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

@@ -1,4 +1,4 @@
-#include "minimumTotal.h"
+#include "combinationSum.h"
 #include <iostream>
 
 int cut_rod(vector<int>& table, int n)
@@ -17,10 +17,14 @@ int cut_rod(vector<int>& table, int n)
 
 int main() {
 
-	// simple dp practice
-	vector<int> table = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+	Solution s;
+	vector<int> v = { 1,2 };
+	auto res = s.combinationSum(v, 1);
 
-	auto ans = cut_rod(table, 4);
+	// simple dp practice
+	//vector<int> table = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+
+	//auto ans = cut_rod(table, 4);
 		
 	//Solution a;
 	//vector<vector<int>> v
